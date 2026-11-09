@@ -113,6 +113,7 @@ struct OnboardingView: View {
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .clipShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
             }
             .aspectRatio(1, contentMode: .fit)
         }
