@@ -308,9 +308,7 @@ private struct ReadyPanel: View {
                             .font(Theme.text(13)).foregroundStyle(Theme.inkSoft)
                     }
                 }
-                Text(game.request.practice
-                     ? "まずは指でためしに 4 回。輪がレコードの縁に重なる瞬間に、画面のどこかに触れてください。"
-                     : "床に置いて、画面の上側に頭がくるように。押してから 5 秒で始まります。鼻かあごで、どこに触れても 1 回。")
+                Text(instructions)
                     .font(Theme.text(14)).foregroundStyle(Theme.ink)
                     .fixedSize(horizontal: false, vertical: true)
                 Button("はじめる") { game.begin() }
@@ -323,6 +321,15 @@ private struct ReadyPanel: View {
             .shadow(color: Theme.ink.opacity(0.08), radius: 12, y: 6)
             .padding(16)
         }
+    }
+}
+
+extension ReadyPanel {
+    var instructions: String {
+        if game.request.practice {
+            return "まずは指でためしに 4 回。輪がレコードの縁に重なる瞬間に、画面のどこかに触れてください。"
+        }
+        return "床に置いて、画面の上側に頭がくるように。押してから 5 秒で始まります。鼻かあごで、どこに触れても 1 回。"
     }
 }
 

@@ -51,12 +51,26 @@ struct ResultView: View {
         }
     }
 
+    private var headline: String {
+        if result.practice { return "ためし" }
+        if result.quit { return "途中まで" }
+        return result.record.endless ? "フリー" : "Result"
+    }
+
+    private var subline: String {
+        if result.practice { return "つかめたら、次は床に置いて腕立てで" }
+        if result.quit { return "ここまでの記録も残しました" }
+        return result.grade.line
+    }
+
+    private var homeTitle: String { result.practice ? "今日の 1 曲へ" : "ホームへ" }
+
     private var top: some View {
         HStack(alignment: .center, spacing: 16) {
             VStack(alignment: .leading, spacing: 6) {
-                Caption(result.practice ? "ためし" : (result.quit ? "途中まで" : (result.record.endless ? "フリー" : "Result")))
+                Caption(headline)
                 Text(result.song.title).font(Theme.serif(26, .medium)).foregroundStyle(Theme.ink)
-                Text(result.practice ? "つかめたら、次は床に置いて腕立てで" : (result.quit ? "ここまでの記録も残しました" : result.grade.line))
+                Text(subline)
                     .font(Theme.text(14)).foregroundStyle(Theme.inkSoft)
                 if result.newBest {
                     Text("フリーの自己ベスト更新").font(Theme.text(12, .semibold)).foregroundStyle(Theme.peachDeep)
@@ -161,7 +175,7 @@ struct ResultView: View {
 
     private var buttons: some View {
         VStack(spacing: 8) {
-            Button(result.practice ? "今日の 1 曲へ" : "ホームへ") { app.goHome() }.buttonStyle(PrimaryButtonStyle())
+            Button(homeTitle) { app.goHome() }.buttonStyle(PrimaryButtonStyle())
             HStack(spacing: 10) {
                 Button("もう一回") { app.replay() }.buttonStyle(QuietButtonStyle())
                 if let shareImage {

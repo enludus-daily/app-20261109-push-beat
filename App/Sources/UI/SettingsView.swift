@@ -22,7 +22,7 @@ struct SettingsView: View {
                     }
                     section("毎日のお知らせ") {
                         Toggle(isOn: Binding(get: { app.progress.settings.reminder }, set: { setReminder($0) })) {
-                            Label("毎日 \(app.progress.settings.reminderHour) 時にお知らせ", systemImage: "bell.badge")
+                            Label("毎日 " + String(app.progress.settings.reminderHour) + " 時にお知らせ", systemImage: "bell.badge")
                                 .font(Theme.text(14)).foregroundStyle(Theme.ink)
                         }
                         .tint(Theme.skyDeep)
@@ -54,7 +54,7 @@ struct SettingsView: View {
                     section("タイミングの調整") {
                         VStack(alignment: .leading, spacing: 8) {
                             HStack {
-                                Text(app.progress.settings.calibrationMs == 0 ? "調整なし" : "判定を \(abs(app.progress.settings.calibrationMs)) ms \(app.progress.settings.calibrationMs > 0 ? "おそく" : "はやく")")
+                                Text(Self.calibrationLabel(app.progress.settings.calibrationMs))
                                     .font(Theme.text(14, .medium)).monospacedDigit().foregroundStyle(Theme.ink)
                                 Spacer()
                                 Button("もとに戻す") { app.progress.settings.calibrationMs = 0 }
@@ -134,6 +134,12 @@ struct SettingsView: View {
                 }
             }
         }
+    }
+
+    static func calibrationLabel(_ ms: Int) -> String {
+        if ms == 0 { return "調整なし" }
+        let direction: String = ms > 0 ? "おそく" : "はやく"
+        return "判定を " + String(abs(ms)) + " ms " + direction
     }
 
     private func setReminder(_ on: Bool) {
