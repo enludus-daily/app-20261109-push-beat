@@ -59,6 +59,9 @@ struct Settings: Codable, Equatable, Sendable {
     /// タイミングの調整（ミリ秒）。プラスなら判定を遅らせる（触れるのが遅れがちな人向け）
     var calibrationMs = 0
     var course: Course = .starter
+    /// 毎日のお知らせ（オフが既定）
+    var reminder = false
+    var reminderHour = 21
 }
 
 /// 端末に保存する進み具合

@@ -8,8 +8,6 @@ import UIKit
 final class GameModel {
     enum Phase: Equatable { case ready, preparing, playing, finished }
 
-    /// 位置につくまでの待ち時間（秒）。はじめるを押してから、床に置いて構えるまで
-    static let leadIn = 5.0
 
     let request: PlayRequest
     let chart: Chart
@@ -24,6 +22,9 @@ final class GameModel {
     private(set) var touching = false
     /// 撮影用に止めた時刻（曲の頭からの秒）
     private var frozen: Double?
+
+    /// 位置につくまでの待ち時間（秒）。はじめるを押してから、床に置いて構えるまで。指の練習は短く
+    var leadIn: Double { request.practice ? 2 : 5 }
 
     @ObservationIgnored private let audio: AudioPlayer?
     @ObservationIgnored private var loop: Task<Void, Never>?
@@ -40,7 +41,7 @@ final class GameModel {
     /// 曲の頭からの秒（調整込み）。始まる前は負
     func songTime(now: Double = CACurrentMediaTime()) -> Double {
         if let frozen { return frozen }
-        guard let startTime else { return -Self.leadIn }
+        guard let startTime else { return -leadIn }
         return now - startTime - Double(settings.calibrationMs) / 1000
     }
 
@@ -65,7 +66,7 @@ final class GameModel {
                 ? await Task.detached(priority: .userInitiated) { Synth.render(chart: chart, mood: mood, music: music, cues: cues) }.value
                 : nil
             guard let self, !Task.isCancelled else { return }
-            let start = CACurrentMediaTime() + Self.leadIn
+            let start = CACurrentMediaTime() + self.leadIn
             self.startTime = start
             if let samples { self.audio?.play(samples, at: start) }
             self.phase = .playing

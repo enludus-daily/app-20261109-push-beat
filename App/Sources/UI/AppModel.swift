@@ -16,7 +16,8 @@ struct PlayRequest: Equatable {
     let reps: Int
     var plan: PlanDay?
     var endless = false
-    var isTrial = false
+    /// 指でためす練習（記録しない）
+    var practice = false
 }
 
 /// アプリ全体の状態：進み具合（端末に保存）・課金・いまの画面
@@ -84,6 +85,12 @@ final class AppModel {
         start(PlayRequest(song: plan.song, reps: plan.reps, plan: plan))
     }
 
+    /// はじめの案内から、指で 4 回だけためす
+    func startPractice() {
+        progress.hasOnboarded = true
+        start(PlayRequest(song: Songbook.all[0], reps: 4, practice: true))
+    }
+
     func startEndless(song: Song) {
         start(PlayRequest(song: song, reps: 300, endless: true))
     }
@@ -99,18 +106,25 @@ final class AppModel {
                                    perfect: c.perfect, good: c.good, miss: c.miss, maxCombo: s.maxCombo, score: s.score,
                                    meanOffsetMs: s.meanOffsetMs, course: quit ? nil : g.request.plan?.course,
                                    planDay: quit ? nil : g.request.plan?.day, endless: g.request.endless)
+        if g.request.practice {
+            lastResult = ResultSummary(record: record, song: g.request.song, plan: nil, clearedPlan: false, newBest: false,
+                                       streak: progress.streak(today: today), totalReps: progress.totalReps, quit: quit, practice: true)
+            game = nil
+            route = .result
+            return
+        }
         let wasBest = g.request.endless && s.reps > progress.bestEndless
         let advanced = progress.record(record, today: today)
         lastResult = ResultSummary(record: record, song: g.request.song, plan: g.request.plan, clearedPlan: advanced,
                                    newBest: wasBest, streak: progress.streak(today: today), totalReps: progress.totalReps,
-                                   quit: quit)
+                                   quit: quit, practice: false)
         game = nil
         route = .result
     }
 
     /// 価値を感じた直後（2 回目に遊び終えたとき）に 1 回だけ Pro を見せる
     func maybeShowProAfterResult() {
-        guard !isPro, !progress.hasSeenPaywall, progress.sessions >= 2 else { return }
+        guard !isPro, !progress.hasSeenPaywall, progress.sessions >= 2, lastResult?.practice != true else { return }
         progress.hasSeenPaywall = true
         sheet = .pro
     }
@@ -185,6 +199,7 @@ struct ResultSummary: Equatable {
     let streak: Int
     let totalReps: Int
     let quit: Bool
+    let practice: Bool
 
     var grade: Grade { Grade.from(accuracy: record.accuracy) }
     var tendency: Tendency { Tendency.from(ms: record.meanOffsetMs) }

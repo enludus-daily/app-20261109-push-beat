@@ -23,11 +23,19 @@ struct ResultView: View {
                     tendencyCard
                     planCard
                 }
-                buttons
             }
             .padding(20)
             .frame(maxWidth: 760)
             .frame(maxWidth: .infinity)
+        }
+        .safeAreaInset(edge: .bottom) {
+            buttons
+                .frame(maxWidth: 520)
+                .padding(.horizontal, 20)
+                .padding(.top, 10)
+                .padding(.bottom, 8)
+                .frame(maxWidth: .infinity)
+                .background(Theme.ground.opacity(0.96).ignoresSafeArea())
         }
         .background(Theme.ground.ignoresSafeArea())
         .task {
@@ -46,9 +54,9 @@ struct ResultView: View {
     private var top: some View {
         HStack(alignment: .center, spacing: 16) {
             VStack(alignment: .leading, spacing: 6) {
-                Caption(result.quit ? "途中まで" : (result.record.endless ? "フリー" : "Result"))
+                Caption(result.practice ? "ためし" : (result.quit ? "途中まで" : (result.record.endless ? "フリー" : "Result")))
                 Text(result.song.title).font(Theme.serif(26, .medium)).foregroundStyle(Theme.ink)
-                Text(result.quit ? "ここまでの記録も残しました" : result.grade.line)
+                Text(result.practice ? "つかめたら、次は床に置いて腕立てで" : (result.quit ? "ここまでの記録も残しました" : result.grade.line))
                     .font(Theme.text(14)).foregroundStyle(Theme.inkSoft)
                 if result.newBest {
                     Text("フリーの自己ベスト更新").font(Theme.text(12, .semibold)).foregroundStyle(Theme.peachDeep)
@@ -140,7 +148,7 @@ struct ResultView: View {
                         Caption("これまで")
                         Text("\(result.totalReps) 回").font(Theme.serif(24, .medium)).monospacedDigit().foregroundStyle(Theme.ink)
                     }
-                    Text(result.streak > 1 ? "\(result.streak) 日つづけています ・ 合計 \(result.totalReps) 回" : "合計 \(result.totalReps) 回")
+                    Text(result.streak > 1 ? "\(result.streak) 日連続 ・ 合計 \(result.totalReps) 回" : "合計 \(result.totalReps) 回")
                         .font(Theme.text(13)).foregroundStyle(Theme.inkSoft)
                 }
                 Spacer()
@@ -152,8 +160,8 @@ struct ResultView: View {
     }
 
     private var buttons: some View {
-        VStack(spacing: 10) {
-            Button("ホームへ") { app.goHome() }.buttonStyle(PrimaryButtonStyle())
+        VStack(spacing: 8) {
+            Button(result.practice ? "今日の 1 曲へ" : "ホームへ") { app.goHome() }.buttonStyle(PrimaryButtonStyle())
             HStack(spacing: 10) {
                 Button("もう一回") { app.replay() }.buttonStyle(QuietButtonStyle())
                 if let shareImage {

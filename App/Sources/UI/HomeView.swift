@@ -91,7 +91,13 @@ private struct TodayHero: View {
             HStack(alignment: .center, spacing: 14) {
                 RecordDisc(label: plan.song.title, angle: .degrees(-20)).frame(width: 112, height: 112)
                 VStack(alignment: .leading, spacing: 4) {
-                    Caption("Day \(plan.day) / \(Program.length) ・ \(plan.style)", color: Theme.skyDeep)
+                    HStack(spacing: 6) {
+                        Caption("Day \(plan.day) / \(Program.length)", color: Theme.skyDeep)
+                        Text(plan.style).font(Theme.label(10)).foregroundStyle(Theme.skyDeep)
+                            .padding(.horizontal, 6).padding(.vertical, 2)
+                            .background(Capsule().fill(Theme.paper.opacity(0.8)))
+                    }
+                    .lineLimit(1)
                     HStack(alignment: .firstTextBaseline, spacing: 4) {
                         Text(done ? "できた" : "今日は").font(Theme.serif(17)).foregroundStyle(Theme.inkSoft)
                         Text("\(plan.reps)").font(Theme.serif(54)).kerning(-3).monospacedDigit().foregroundStyle(Theme.ink)

@@ -61,7 +61,14 @@ struct OnboardingView: View {
             .buttonStyle(PrimaryButtonStyle())
             .frame(maxWidth: 520)
             .padding(.horizontal, 24)
-            .padding(.bottom, 24)
+            .padding(.bottom, page == pages.count - 1 ? 8 : 24)
+            if page == pages.count - 1 {
+                Button("まず指でためす（4 回）") { app.startPractice() }
+                    .buttonStyle(QuietButtonStyle())
+                    .frame(maxWidth: 520)
+                    .padding(.horizontal, 24)
+                    .padding(.bottom, 20)
+            }
         }
         .background(Theme.ground.ignoresSafeArea())
     }

@@ -295,7 +295,9 @@ private struct ReadyPanel: View {
                 HStack(spacing: 14) {
                     PlacementSketch().frame(width: 92, height: 92)
                     VStack(alignment: .leading, spacing: 4) {
-                        if let plan = game.request.plan {
+                        if game.request.practice {
+                            Caption("指でためす")
+                        } else if let plan = game.request.plan {
                             Caption("Day \(plan.day) ・ \(plan.style)")
                         } else {
                             Caption(game.request.endless ? "フリー" : game.request.song.english)
@@ -306,7 +308,9 @@ private struct ReadyPanel: View {
                             .font(Theme.text(13)).foregroundStyle(Theme.inkSoft)
                     }
                 }
-                Text("床に置いて、画面の上側に頭がくるように。押してから 5 秒で始まります。鼻かあごで、どこに触れても 1 回。")
+                Text(game.request.practice
+                     ? "まずは指でためしに 4 回。輪がレコードの縁に重なる瞬間に、画面のどこかに触れてください。"
+                     : "床に置いて、画面の上側に頭がくるように。押してから 5 秒で始まります。鼻かあごで、どこに触れても 1 回。")
                     .font(Theme.text(14)).foregroundStyle(Theme.ink)
                     .fixedSize(horizontal: false, vertical: true)
                 Button("はじめる") { game.begin() }

@@ -65,7 +65,7 @@ struct RecordDisc: View {
                 .rotationEffect(angle)
                 Circle().fill(Theme.peach).frame(width: d * 0.38, height: d * 0.38)
                 Circle().stroke(Theme.paper.opacity(0.7), lineWidth: Theme.hairline).frame(width: d * 0.33, height: d * 0.33)
-                Text(label)
+                Text(d >= 150 ? label : "")
                     .font(Theme.serif(max(10, d * 0.045), .medium))
                     .foregroundStyle(Theme.ink)
                     .lineLimit(1).minimumScaleFactor(0.6)

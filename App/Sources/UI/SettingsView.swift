@@ -1,9 +1,12 @@
 import SwiftUI
+import UIKit
 
 /// 設定：音・振動・タイミングの調整・コース・使い方・Pro・プライバシー
 struct SettingsView: View {
     @Environment(AppModel.self) private var app
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.openURL) private var openURL
+    @State private var reminderDenied = false
 
     var body: some View {
         @Bindable var app = app
@@ -17,10 +20,41 @@ struct SettingsView: View {
                         hairline
                         toggle("振動", "iphone.radiowaves.left.and.right", $app.progress.settings.haptics)
                     }
+                    section("毎日のお知らせ") {
+                        Toggle(isOn: Binding(get: { app.progress.settings.reminder }, set: { setReminder($0) })) {
+                            Label("毎日 \(app.progress.settings.reminderHour) 時にお知らせ", systemImage: "bell.badge")
+                                .font(Theme.text(14)).foregroundStyle(Theme.ink)
+                        }
+                        .tint(Theme.skyDeep)
+                        if app.progress.settings.reminder {
+                            HStack(spacing: 8) {
+                                ForEach([7, 12, 18, 21], id: \.self) { h in
+                                    Button { app.progress.settings.reminderHour = h; setReminder(true) } label: {
+                                        Text("\(h) 時").font(Theme.text(13, .medium))
+                                            .foregroundStyle(app.progress.settings.reminderHour == h ? .white : Theme.ink)
+                                            .frame(maxWidth: .infinity, minHeight: 36)
+                                            .background(RoundedRectangle(cornerRadius: Theme.rSmall, style: .continuous)
+                                                .fill(app.progress.settings.reminderHour == h ? Theme.skyDeep : Theme.skyMist))
+                                    }
+                                    .buttonStyle(.plain)
+                                }
+                            }
+                        }
+                        if reminderDenied {
+                            VStack(alignment: .leading, spacing: 6) {
+                                Text("通知が許可されていません。設定アプリの「通知」で許可すると、お知らせが届きます。")
+                                    .font(Theme.text(12)).foregroundStyle(Theme.inkSoft).fixedSize(horizontal: false, vertical: true)
+                                Button("設定アプリを開く") {
+                                    if let url = URL(string: UIApplication.openSettingsURLString) { openURL(url) }
+                                }
+                                .font(Theme.text(13, .medium)).foregroundStyle(Theme.skyDeep)
+                            }
+                        }
+                    }
                     section("タイミングの調整") {
                         VStack(alignment: .leading, spacing: 8) {
                             HStack {
-                                Text("判定を \(abs(app.progress.settings.calibrationMs)) ms \(app.progress.settings.calibrationMs >= 0 ? "おそく" : "はやく")")
+                                Text(app.progress.settings.calibrationMs == 0 ? "調整なし" : "判定を \(abs(app.progress.settings.calibrationMs)) ms \(app.progress.settings.calibrationMs > 0 ? "おそく" : "はやく")")
                                     .font(Theme.text(14, .medium)).monospacedDigit().foregroundStyle(Theme.ink)
                                 Spacer()
                                 Button("もとに戻す") { app.progress.settings.calibrationMs = 0 }
@@ -99,6 +133,20 @@ struct SettingsView: View {
                     Button("とじる", systemImage: "xmark") { dismiss() }
                 }
             }
+        }
+    }
+
+    private func setReminder(_ on: Bool) {
+        guard on else {
+            app.progress.settings.reminder = false
+            Reminder.cancel()
+            return
+        }
+        let hour = app.progress.settings.reminderHour
+        Task {
+            let outcome = await Reminder.schedule(hour: hour)
+            reminderDenied = outcome == .denied
+            app.progress.settings.reminder = outcome == .scheduled
         }
     }
 
