@@ -200,7 +200,7 @@ struct PlayView: View {
     @ViewBuilder
     private func ripple(d: CGFloat) -> some View {
         if let e = game.lastEvent, e.judgement != .miss, !reduceMotion {
-            let age = CACurrentMediaTime() - game.lastEventTime
+            let age = game.eventAge()
             if age < 0.45 {
                 let p = age / 0.45
                 Circle()
@@ -218,7 +218,7 @@ struct PlayView: View {
         } else if game.phase == .playing, beat < Double(Chart.countIn) {
             countdown(big: "\(Int(beat) + 1)", small: "カウント")
         } else if let e = game.lastEvent {
-            let age = CACurrentMediaTime() - game.lastEventTime
+            let age = game.eventAge()
             if age < 0.7 {
                 let pop = reduceMotion ? 1 : 1 + 0.18 * max(0, 1 - age / 0.18)
                 Text(e.judgement.label)

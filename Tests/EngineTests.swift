@@ -97,8 +97,8 @@ struct PlaySessionTests {
 
     @Test func offBeatPushUpsStillCountAsReps() {
         var s = PlaySession(chart: chart)
-        s.touchDown(at: 6.0)  // 拍の外
-        s.touchUp(at: 6.3)
+        s.touchDown(at: 2.0)  // 拍の外（最初のノーツより 2 秒前）
+        s.touchUp(at: 2.3)
         #expect(s.reps == 1)
         #expect(s.judgedCount == 0)
     }

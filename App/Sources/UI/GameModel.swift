@@ -46,6 +46,11 @@ final class GameModel {
 
     func beat(now: Double = CACurrentMediaTime()) -> Double { chart.beat(atSeconds: songTime(now: now)) }
 
+    /// いちばん新しい判定からの経過（秒）。撮影で止めているときは、波紋と文字が見える 0.15 秒にする
+    func eventAge(now: Double = CACurrentMediaTime()) -> Double {
+        frozen != nil ? 0.15 : now - lastEventTime
+    }
+
     // MARK: 進行
 
     func begin() {
