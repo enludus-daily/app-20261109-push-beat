@@ -74,9 +74,11 @@ struct PlaySessionTests {
 
     @Test func hittingOnTheBeatBuildsACombo() {
         var s = PlaySession(chart: chart)
-        #expect(s.touchDown(at: 4.02)?.judgement == .perfect)
+        let r1 = s.touchDown(at: 4.02)
+        #expect(r1?.judgement == .perfect)
         s.touchUp(at: 4.3)
-        #expect(s.touchDown(at: 8.2)?.judgement == .good)
+        let r2 = s.touchDown(at: 8.2)
+        #expect(r2?.judgement == .good)
         s.touchUp(at: 8.5)
         #expect(s.combo == 2)
         #expect(s.maxCombo == 2)
@@ -112,11 +114,14 @@ struct PlaySessionTests {
     @Test func keepNeedsToStayDownUntilTheEnd() {
         let keepChart = Chart.make(bpm: 60, bars: ["k=.."], reps: 2)  // 4〜6 秒、8〜10 秒
         var s = PlaySession(chart: keepChart)
-        #expect(s.touchDown(at: 4.0) == nil)  // 下ろしただけでは決まらない
+        let r3 = s.touchDown(at: 4.0)
+        #expect(r3 == nil)  // 下ろしただけでは決まらない
         #expect(s.holding != nil)
-        #expect(s.touchUp(at: 6.0)?.judgement == .perfect)
+        let r4 = s.touchUp(at: 6.0)
+        #expect(r4?.judgement == .perfect)
         s.touchDown(at: 8.0)
-        #expect(s.touchUp(at: 8.6)?.judgement == .good)  // 早く上げた → 1 段下がる
+        let r5 = s.touchUp(at: 8.6)
+        #expect(r5?.judgement == .good)  // 早く上げた → 1 段下がる
     }
 
     @Test func keepIsSettledWhenTimePassesItsEnd() {

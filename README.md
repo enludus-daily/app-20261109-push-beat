@@ -1,36 +1,77 @@
-# daily-app-template
+# うでたてビート（app-20261109-push-beat）
 
-enludus-daily で毎日作る iOS アプリ（SwiftUI）のテンプレート。テンプレートから作ったリポジトリでは、この README をそのアプリの説明に書き換える。
+**腕立て × リズムゲーム。** 床に置いた iPhone のレコードに、輪が重なる瞬間に体を下ろして、鼻かあごで画面に触れる。拍に合えば Perfect。数えなくても、曲が終われば今日の分が終わる。
 
-## 中身
+- だれの：宅トレを続けたい 20〜30 代。「腕立てしよう」と思っても、数えるのが退屈で 10 回でやめてしまう人
+- 枠：001（`com.enludus.daily.001`。app-20261103-spread-diary の枠を使い回し）
+- 題材の決め方と採点：daily-ideas #11（idea-fusion の表。悩み「運動が続かない」× エンタメ「リズムゲーム」）
+- 因果：腕立ての「下ろす」動作そのものがノーツを叩く入力。腕立てをしないと曲は進まない
 
-| パス | 役割 |
+## 遊びの中身
+
+| 仕組み | 中身 |
 |---|---|
-| `project.yml` | XcodeGen の spec。`.xcodeproj` はコミットしない |
-| `App/Sources/`, `Tests/` | ひな形のアプリとテスト（Swift Testing） |
-| `App/Resources/` | アイコン、アクセントカラー、`PrivacyInfo.xcprivacy` |
-| `.github/workflows/ci.yml` | push / PR で daily-actions の `ios-ci.yml` を呼ぶ（40 桁の SHA で固定） |
-| `.github/workflows/testflight.yml` | 手動（workflow_dispatch）で `ios-testflight.yml` を呼ぶ（アップロードのあと内部テストに配信） |
-| `.github/workflows/asc.yml` | 手動で `ios-asc.yml` を呼ぶ（App Store Connect に名前・説明などを入れる / 最新ビルドを配信） |
-| `docs/app-store.json`, `PRIVACY.md` | App Store Connect に入れる情報、プライバシーポリシー |
-| `scripts/pin-daily-actions.sh` | daily-actions の SHA を書き換える（整備用のセッションか本人だけ。自己 CI の成功を確かめる） |
-| `scripts/new-app.sh` | 名前・表示名・枠（Bundle ID）に書き換える |
-| `scripts/preflight-push.sh`, `.githooks/pre-push` | push の前の検査（秘密・個人情報）と1日の上限 |
-| `scripts/scan-sensitive.sh` | 検査の複製（正本は daily-actions/scan/。違うと CI が警告） |
-| `scripts/make-icon.py` | アイコンを作る（Pillow） |
-| `.claude/skills/` | dev-lifecycle / dev-judgment / dev-workflow（naki0227/useful-map から取得） |
-| `CLAUDE.md`, `docs/daily-runbook.md` | 毎日のセッションの決まりと手順 |
-| `docs/app-store.md` | 審査の危険・本人がすることの記録 |
+| 判定 | 拍からのずれで Perfect（±0.13 秒）・Good（±0.28 秒）・Miss。腕立ては指より遅れるので音ゲーとしては広め。拍の外の 1 回も回数には数える |
+| キープ | 触れたまま 2〜4 拍止まる（プランクの下の姿勢）。早く上げると 1 段下がる |
+| 曲 | 手で用意した 18 曲（無料 6・Pro 12）。BPM 70〜100、6 つの雰囲気（lo-fi カフェ・さわやか・夕焼け・雨・元気・夜）。曲と合図の音はその場で作る（音源ファイルなし） |
+| 30 日の道 | 「はじめての 30 日」（無料。ひざつき 6 回 → 30 回）と「つよくなる 30 日」（Pro。20 → 60 回、ワイド・ダイヤモンド・キープ多め）。1 日 1 マス、7 日ごとに軽い日、毎日のひとこと（45 本） |
+| フリー | 3 回続けて外すまで続ける。自己ベストが残る |
+| くせ | 触れたタイミングの平均のずれ（ms）を「はやめ・ちょうど・おそめ」とアドバイスで見せる。設定で判定を ±150 ms 調整できる |
+| 毎日開く理由 | 今日のマス（回数と曲が毎日変わる）・続けた日数（途切れたら「おかえり。合計 N 日」）・これまでの回数・7 日の棒・結果の共有カード |
 
-## 手元（Mac）で開く
+作らなかったもの：カメラでのフォーム判定（重く、カメラの許可が要る）、HealthKit 連携（許可と申告が増える）、ランキング（サーバーが要る）、手持ちの音楽の取り込み、Apple Intelligence（使わない。新しさは組み合わせ、厚みは手で用意した譜面と道で出す）。
 
-```sh
-brew install xcodegen   # CI は 2.46.0 で固定
-xcodegen generate
-open DailyApp.xcodeproj
-```
+## 世界観と見た目
 
-## 版
+- このアプリでは「ヨガマット」が画面の地になり、「レコード盤」が叩く的になる。曲はレコードのジャケット（自作の Canvas。雰囲気ごとに湯気・泡・夕日・雨・輪切り・月の構図）で並ぶ
+- トーンは StudyReel：地 `#F3F6F9`、主の色 sky（`#9EC3E2` / soft `#E1EDF6` / deep `#5E8DB8`）、差し色 peach（`#F4BBA4`。Perfect・今日のマス・レコードのラベル）。セリフの大きな数字（字間 -3〜-4）、線 0.6、影は弱く。`scripts/tone-check.py` の強い色は 0 件
+- 判定の色に意味がある：Perfect は peach、Good は sky、Miss は灰。回数の棒は 5 段階の濃さ
+- 明るい見た目に固定（淡いマットとレコードの世界をそのまま見せるため。StudyReel と同じ）
+- 参考：StudyReel（トーン）と Duolingo（借りたもの：ホームの「1 本の道」→ 30 日の道、レッスン後の数え上がるタイル → 結果の画面、今日のお題を大きく 1 つ → 今日の 1 曲）
 
-- Xcode 27.1（ランナー `xcode-27`。GitHub では Preview 扱い）、iOS 18.0 以降、iPhone だけ（iPhone Duo の内側の画面にも合わせる）、Swift 6
-- スキルの取得元：`naki0227/personal-knowledge`（Vault、private）の `templates/repo-bootstrap/.claude/skills/` を、本人の整備用セッションで写す（2026-11-05 に app-quality-bar を追加）
+### iPhone Duo
+
+出典：Apple「[Preparing your app for iPhone Duo](https://developer.apple.com/documentation/technologyoverviews/preparing-your-app-for-iphone-duo)」・Tech Talk「[Prepare your app for iPhone Duo](https://developer.apple.com/videos/play/tech-talks/111461/)」。
+
+- 並べ方は size class で変える（機種・向き・`UIScreen` で決めない）。内側の画面（regular）では、遊ぶ画面がレコードと「次のノーツの列・回数・コンボ」の 2 列、ホームと結果も 2 列になる
+- 内側を開いて床に置くと、どこに触れても 1 回の面が広がり、輪も大きく見える。閉じたまま（外側の画面）でも同じように遊べる
+- CI は開いた姿勢（`screenshot-posture: open`）にしてから撮る
+
+## 手応えの表
+
+| できごと | 動き | 振動 | 音 |
+|---|---|---|---|
+| 押す（ボタン・回数の選択） | 0.97 倍に沈む（spring 0.25） | selection | なし（ボタンは静かに） |
+| ノーツが近づく | 輪が 1.7 倍から縮んでレコードの縁に重なる（2 拍） | なし | 1 拍前に小さな合図・ノーツの拍にベル |
+| 1 つ成功 | 波紋が広がる（0.45 秒）・判定の文字が 1.18 倍から戻る・レコードが 0.965 倍に沈む | Perfect：rigid 0.75、Good：light 0.6 | Perfect：3 つの音の和音、Good：短い音 |
+| 連続 | コンボの数字・10 からは peach | 10 コンボごとに success | 和音は同じ（うるさくしない） |
+| キープ | peach の弧がレコードの外を回る | 下ろしたとき soft 0.6 | 静かにのびる音と終わりの合図 |
+| 失敗 | 波紋なし・Miss の文字（灰） | soft 0.3 | なし |
+| 完了 | 結果の数字が数え上がる・レコードが回って段階が出る | success | 曲の終わりの和音 |
+| 場面の切れ目 | 位置について（5 秒）→ カウント 4 拍（大きな数字） | なし | カウントの木の音 4 つ（4 つめだけ高い） |
+
+動きを減らす設定がオンなら、レコードの回転・波紋・文字の弾み・数え上がりを止め、値を直接出す。
+
+## 課金
+
+形：**買い切りの Pro**（`com.enludus.daily.001.pro`・¥480・家族共有あり）。サブスクにしない理由：続けて増える中身（毎月の新曲）をサーバーなしで約束できないため。
+中身：Pro の 12 曲（キープ・3 拍のうねり・BPM 100 まで、むずかしさ 5 は Pro だけ）／つよくなる 30 日（20 → 60 回）／30 日の回数・くせの移り変わり・1 曲ずつの記録。核（はじめての 30 日・無料の 6 曲・フリー・7 日の記録）は無料、広告なし。
+出す場面：2 回目に遊び終えた結果の画面のあと 1 回だけ。あとはホーム右上の「Pro」、設定、記録の鍵、Pro の曲から。Pro の曲は 1 回だけ無料で試せる。値段は StoreKit の `displayPrice` を出す。
+
+### 勝算の表（money.md §8。2026-11-09 に App Store の公開ページで確かめた）
+
+| 項目 | 内容 |
+|---|---|
+| 払う理由 3 つ | ①30 回を超えたあとも続けたい（はじめての 30 日を終えた人の次の道。30 日チャレンジ系のアプリが「プログラム」を売っていることが、この悩みに払う人がいる証拠）②同じ 6 曲に飽きた（曲が 3 倍になり、むずかしい譜面で遊びの手応えが続く）③上達を見たい（くせが日ごとに直ってきたかが分かる） |
+| 比べたアプリ | [PushUp Synth](https://apps.apple.com/jp/app/id6756027096)：鼻で触れて数える＋BGM、拍の判定なし、Pro 買い切り ¥500（評価はまだ少ない）／[腕立て伏せワークアウト](https://apps.apple.com/jp/app/id706159378)：数えるだけ、広告削除 ¥300（★4.2・20 件）／[30日プランクチャレンジ](https://apps.apple.com/jp/app/id1173618819)（Stefan Roobol）：プログラムの追加パック ¥300、全部 ¥800／[Habitica](https://apps.apple.com/jp/app/id994882113)（ゲーム化した習慣）：月 ¥550・年 ¥5,400。推定の売上は公開の推定サイトが読めず**未調査** |
+| 値段の位置 | 中身（12 曲＋30 日の道＋詳しい記録）が PushUp Synth の Pro（¥500）より多く、¥480 で安い側。プランクの全部入り ¥800 より安い。Habitica の 1 か月分より安く、ずっと使える |
+| 売上の幅（フリーミアム 2%、手数料 15%、¥480 → 手取り約 ¥408） | 月 300 本 → 約 ¥2,400／1,000 本 → 約 ¥8,200／3,000 本 → 約 ¥24,500 |
+| 弱点 | 床に置いて鼻で触れるのが恥ずかしい・衛生が気になる人は払わない → あご・胸で触れてもよい、と案内。音が単調だと飽きる → 曲を追加パックで足す余地 |
+
+## 開発
+
+- 処理は画面から切り離してテストする：`Engine/Chart.swift`（譜面）・`PlaySession.swift`（判定・コンボ・キープ・くせ）・`Program.swift`（30 日の道）・`Progress.swift`（記録・続けた日・道の進み）・`Audio/Synth.swift`（曲の合成）。テストは `Tests/`（Swift Testing）
+- 時計は `CACurrentMediaTime`。曲は `AVAudioPlayerNode.play(at:)` で同じ時刻に頭を合わせる。音が出せなくても遊びは時計だけで進む
+- スクリーンショット：起動引数 `-screenshotScene <launch|home|play|result|songs|records|settings|pro>`（見本のデータ 12 日分で開く）
+- 手元（Mac）：`brew install xcodegen && xcodegen generate && open PushBeat.xcodeproj`
+- 版：Xcode 27.1（ランナー `xcode-27`）、iOS 18.0 以降、iPhone だけ、Swift 6

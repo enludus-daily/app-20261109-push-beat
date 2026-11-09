@@ -35,18 +35,21 @@ struct ProgressTests {
     @Test func clearingTodaysPlanMovesOneStepPerDay() {
         var p = Progress()
         #expect(p.plan(.starter, today: "2026-11-09").day == 1)
-        #expect(p.record(record("2026-11-09", planDay: 1), today: "2026-11-09"))
+        let first = p.record(record("2026-11-09", planDay: 1), today: "2026-11-09")
+        #expect(first)
         // 同じ日にもう一度遊んでも、道は進まない
         #expect(p.plan(.starter, today: "2026-11-09").day == 1)
         #expect(p.planDoneToday(.starter, today: "2026-11-09"))
-        #expect(!p.record(record("2026-11-09", planDay: 1), today: "2026-11-09"))
+        let again = p.record(record("2026-11-09", planDay: 1), today: "2026-11-09")
+        #expect(!again)
         // 次の日は 2 日目
         #expect(p.plan(.starter, today: "2026-11-10").day == 2)
     }
 
     @Test func aMostlyMissedRunDoesNotClearTheDay() {
         var p = Progress()
-        #expect(!p.record(record("2026-11-09", reps: 6, planDay: 1, perfect: 1, miss: 5), today: "2026-11-09"))
+        let cleared = p.record(record("2026-11-09", reps: 6, planDay: 1, perfect: 1, miss: 5), today: "2026-11-09")
+        #expect(!cleared)
         #expect(p.plan(.starter, today: "2026-11-09").day == 1)
     }
 

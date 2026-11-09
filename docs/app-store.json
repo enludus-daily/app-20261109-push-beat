@@ -1,14 +1,14 @@
 {
   "_doc": "App Store Connect に API で入れる情報（.github/workflows/asc.yml の metadata が読む）。文字数：name・subtitle 30、keywords 100（カンマ区切り）、promotionalText 170、description 4000。カテゴリの ID は EDUCATION・PRODUCTIVITY・UTILITIES・LIFESTYLE・HEALTH_AND_FITNESS など。審査への提出と App プライバシーの申告は本人が行う。",
   "locale": "ja",
-  "name": "",
-  "subtitle": "",
-  "primaryCategory": "",
-  "secondaryCategory": "",
+  "name": "うでたてビート - 腕立てで音ゲー",
+  "subtitle": "拍に合わせて、鼻でタッチ",
+  "primaryCategory": "HEALTH_AND_FITNESS",
+  "secondaryCategory": "ENTERTAINMENT",
   "supportUrl": "https://github.com/enludus-daily/app-20261109-push-beat/issues",
   "privacyPolicyUrl": "https://github.com/enludus-daily/app-20261109-push-beat/blob/main/PRIVACY.md",
-  "keywords": "",
-  "promotionalText": "",
-  "description": "",
-  "whatToTest": ""
+  "keywords": "腕立て,腕立て伏せ,筋トレ,宅トレ,リズムゲーム,音ゲー,プッシュアップ,30日チャレンジ,自重トレーニング,運動,習慣",
+  "promotionalText": "床に置いた iPhone のレコードに輪が重なる瞬間、体を下ろして鼻かあごでタッチ。拍に合えば Perfect。数えなくても、曲が終われば今日の腕立てが終わります。",
+  "description": "うでたてビートは、腕立て伏せがそのままリズムゲームになるアプリです。\n\niPhone を床に置き、画面の上に頭がくるように構えます。真ん中のレコードに輪が重なる瞬間に体を下ろして、鼻かあごで画面に触れてください。拍に合えば Perfect、少しずれたら Good。どこに触れても 1 回です。\n\n■ 腕立てが、数えなくていい遊びになる\n・拍に合わせる判定とコンボ。1 回ずつが気持ちいい\n・下で止まる「キープ」の譜面で、プランクのように体幹にも効く\n・曲と合図の音はアプリの中で作ります。音に合わせて下ろすだけ\n\n■ 30 日の道\n・はじめての 30 日：ひざつき 6 回から、30 回まで少しずつ\n・1 日 1 マス。7 日ごとに軽い日。毎日ちがうひとことのコツ\n\n■ 記録\n・これまでの回数、続けた日、この 7 日の回数\n・タイミングのくせ（はやめ・おそめ）とアドバイス。判定の調整もできます\n・結果は画像で共有できます\n\n■ Pro（買い切り）\n・曲が 12 曲ふえて全 18 曲（BPM 100 の速い曲・長いキープ）\n・つよくなる 30 日：20 回から 60 回へ。ワイド・ダイヤモンドの日\n・30 日の回数、くせの移り変わり、1 曲ずつの記録\nPro の曲は 1 回だけ無料で試せます。\n\n■ 安心して使えるように\n・ログインなし、広告なし\n・記録はこの iPhone の中だけに保存し、外に送りません\n・カメラ・マイク・位置情報は使いません\n\niPhone Duo の内側の大きな画面では、レコードと次のノーツを並べて表示します。\n\n※ 体調に合わせて無理のない回数で行ってください。痛みがあるときは中止してください。",
+  "whatToTest": "1. はじめの 3 ページを見て「はじめる」。2. ホームの「はじめる」→ 置き方を読んで「はじめる」。5 秒後にカウントが始まり、輪がレコードに重なるときに画面に触れる（指でも試せます）。3. 結果の画面の数字・くせ・共有。4. 2 回遊ぶと Pro の画面が 1 回だけ出る。購入と「購入を復元」を確かめる。5. 曲をえらぶ → Pro の曲を 1 回だけ試す。6. 記録・設定（タイミングの調整・コース）。"
 }
