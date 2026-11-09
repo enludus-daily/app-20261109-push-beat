@@ -1,0 +1,38 @@
+{
+  "identifier" : "7A1C2B30",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "480",
+      "familyShareable" : true,
+      "internalID" : "6754000101",
+      "localizations" : [
+        {
+          "description" : "12 曲・つよくなる 30 日・詳しい記録",
+          "displayName" : "うでたてビート Pro",
+          "locale" : "ja"
+        }
+      ],
+      "productID" : "com.enludus.daily.001.pro",
+      "referenceName" : "Pro",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6754000100",
+    "_locale" : "ja",
+    "_storefront" : "JPN",
+    "_storeKitErrors" : [
+
+    ]
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

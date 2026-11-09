@@ -3,15 +3,23 @@
   "products": [
     {
       "type": "NON_CONSUMABLE",
-      "productId": "com.enludus.daily.template.pro",
+      "productId": "com.enludus.daily.001.pro",
       "referenceName": "Pro",
       "price": 480,
       "familySharable": true,
-      "reviewNote": "Pro を買うと、すべての〇〇と詳しい振り返りが使えます。課金の画面は設定 > Pro から開けます。",
+      "reviewNote": "Pro を買うと、Pro の 12 曲（全 18 曲）・Pro のコース「つよくなる 30 日」・30 日の記録とタイミングのくせの移り変わりが使えます。課金の画面はホーム右上の「Pro」、または設定 > Pro について から開けます。",
       "reviewScreenshot": "docs/iap/paywall.png",
       "localizations": [
-        {"locale": "ja", "name": "Pro", "description": "すべての〇〇と詳しい振り返り"},
-        {"locale": "en-US", "name": "Pro", "description": "All 〇〇 and detailed reviews"}
+        {
+          "locale": "ja",
+          "name": "うでたてビート Pro",
+          "description": "12 曲・つよくなる 30 日・詳しい記録"
+        },
+        {
+          "locale": "en-US",
+          "name": "Push Beat Pro",
+          "description": "12 more songs, 30-day advanced course, detailed stats"
+        }
       ]
     }
   ]
