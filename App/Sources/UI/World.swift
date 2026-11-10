@@ -57,10 +57,12 @@ struct RecordDisc: View {
                         rr -= r * 0.035
                         i += 1
                     }
-                    // 光の筋（回ると見える）
-                    var glint = Path()
-                    glint.addArc(center: c, radius: r * 0.75, startAngle: .degrees(-60), endAngle: .degrees(-30), clockwise: false)
-                    ctx.stroke(glint, with: .color(.white.opacity(0.22)), style: StrokeStyle(lineWidth: r * 0.28, lineCap: .round))
+                    // 光の反射：溝に沿った細い弧を 2 本だけ（太い帯にすると汚れに見える。監督のレビュー #12）
+                    for (radius, from, to, alpha) in [(0.82, -64.0, -26.0, 0.32), (0.66, -58.0, -36.0, 0.2)] {
+                        var glint = Path()
+                        glint.addArc(center: c, radius: r * radius, startAngle: .degrees(from), endAngle: .degrees(to), clockwise: false)
+                        ctx.stroke(glint, with: .color(.white.opacity(alpha)), style: StrokeStyle(lineWidth: max(1, r * 0.018), lineCap: .round))
+                    }
                 }
                 .rotationEffect(angle)
                 Circle().fill(Theme.peach).frame(width: d * 0.38, height: d * 0.38)

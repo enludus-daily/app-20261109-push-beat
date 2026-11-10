@@ -6,6 +6,8 @@ struct OnboardingView: View {
     @Environment(AppModel.self) private var app
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var page = 0
+    @State private var demoRunning = false
+    @State private var demoRun = 0
 
     private let pages: [(caption: String, title: String, body: String)] = [
         ("Push Beat", "腕立てが、\n音ゲーになる。", "輪がレコードに重なる瞬間に、体を下ろして画面に触れる。拍に合うと Perfect。数えなくても、曲が終われば今日の分。"),
@@ -24,8 +26,17 @@ struct OnboardingView: View {
             .frame(height: 44)
             .padding(.horizontal, 20)
 
-            TimelineView(.animation(paused: reduceMotion)) { _ in
-                demo(time: reduceMotion ? 0.9 : CACurrentMediaTime())
+            // 見本は 3 回くり返したら止まる（止まったら重なった瞬間の絵。触れるともう一度）。
+            // 動き続ける画面を作らない（電池と、CI の撮影で右上に黒い丸が出た件の切り分け。監督のレビュー #12）
+            TimelineView(.animation(paused: reduceMotion || !demoRunning)) { _ in
+                demo(time: reduceMotion || !demoRunning ? 1.68 : CACurrentMediaTime())
+            }
+            .contentShape(Rectangle())
+            .onTapGesture { demoRun += 1 }
+            .task(id: "\(page)-\(demoRun)") {
+                demoRunning = !reduceMotion
+                try? await Task.sleep(for: .seconds(7.2))
+                demoRunning = false
             }
             .frame(maxWidth: 340, maxHeight: 340)
             .padding(.horizontal, 30)
@@ -110,6 +121,7 @@ struct OnboardingView: View {
                             .padding(.horizontal, 12).padding(.vertical, 3)
                             .background(Capsule().fill(Theme.paper.opacity(0.92)))
                             .opacity(q < 0.7 ? 1 : (1 - q) / 0.3)
+                            .offset(y: -(min(geo.size.width, geo.size.height) / 2 - 30))
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)

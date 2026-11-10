@@ -159,7 +159,7 @@ struct PlayView: View {
                 keepArc(t, d: d)
                 approachRing(t, d: d)
                 ripple(d: d)
-                centerText(t, beat: beat)
+                centerText(t, beat: beat, d: d)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
@@ -212,7 +212,7 @@ struct PlayView: View {
     }
 
     @ViewBuilder
-    private func centerText(_ t: Double, beat: Double) -> some View {
+    private func centerText(_ t: Double, beat: Double, d: CGFloat) -> some View {
         if game.phase == .preparing || (game.phase == .playing && t < 0) {
             countdown(big: "\(Int(max(1, ceil(-t))))", small: "位置について")
         } else if game.phase == .playing, beat < Double(Chart.countIn) {
@@ -228,7 +228,8 @@ struct PlayView: View {
                     .background(Capsule().fill(Theme.paper.opacity(0.92)))
                     .scaleEffect(pop)
                     .opacity(age < 0.5 ? 1 : (0.7 - age) / 0.2)
-                    .offset(y: -12)
+                    // 判定の文字は的の外（上）に出す。レコードのラベルに重ねない（監督のレビュー #12）
+                    .offset(y: -(d * 0.56 + 34))
             }
         }
     }
