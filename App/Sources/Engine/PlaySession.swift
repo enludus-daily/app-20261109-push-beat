@@ -213,10 +213,10 @@ enum Grade: String, Sendable, Codable {
 
     var line: String {
         switch self {
-        case .s: "拍とからだが、ぴったり"
-        case .a: "いいリズム。あと少しで S"
-        case .b: "ちゃんと続いた。次は輪を見て"
-        case .c: "まずは最後までやれたのが一番"
+        case .s: L("拍とからだが、ぴったり")
+        case .a: L("いいリズム。あと少しで S")
+        case .b: L("ちゃんと続いた。次は輪を見て")
+        case .c: L("まずは最後までやれたのが一番")
         }
     }
 }
@@ -233,17 +233,17 @@ enum Tendency: Equatable, Sendable {
 
     var label: String {
         switch self {
-        case .early: "はやめ"
-        case .onTime: "ちょうど"
-        case .late: "おそめ"
+        case .early: L("はやめ")
+        case .onTime: L("ちょうど")
+        case .late: L("おそめ")
         }
     }
 
     var advice: String {
         switch self {
-        case .early: "下ろすのが少し急ぎ気味。輪が的に重なるまで待ってから"
-        case .onTime: "拍どおり。このまま回数を増やそう"
-        case .late: "下ろし始めが遅め。ひとつ前の小さな音で下ろし始めて"
+        case .early: L("下ろすのが少し急ぎ気味。輪が的に重なるまで待ってから")
+        case .onTime: L("拍どおり。このまま回数を増やそう")
+        case .late: L("下ろし始めが遅め。ひとつ前の小さな音で下ろし始めて")
         }
     }
 }

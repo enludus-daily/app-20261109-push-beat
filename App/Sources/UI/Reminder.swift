@@ -13,8 +13,8 @@ enum Reminder {
         guard granted else { return .denied }
         center.removePendingNotificationRequests(withIdentifiers: [id])
         let content = UNMutableNotificationContent()
-        content.title = "今日の 1 曲"
-        content.body = "床に置いて、3 分だけ。拍に合わせて腕立てを。"
+        content.title = L("今日の 1 曲")
+        content.body = L("床に置いて、3 分だけ。拍に合わせて腕立てを。")
         content.sound = .default
         let trigger = UNCalendarNotificationTrigger(dateMatching: DateComponents(hour: hour, minute: 0), repeats: true)
         do {

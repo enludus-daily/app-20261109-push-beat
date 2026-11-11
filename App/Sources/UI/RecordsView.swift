@@ -25,11 +25,11 @@ struct RecordsView: View {
                 .frame(maxWidth: .infinity)
             }
             .background(Theme.ground.ignoresSafeArea())
-            .navigationTitle("記録")
+            .navigationTitle(L("記録"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("とじる", systemImage: "xmark") { dismiss() }
+                    Button(L("とじる"), systemImage: "xmark") { dismiss() }
                 }
             }
         }
@@ -38,10 +38,10 @@ struct RecordsView: View {
     private var empty: some View {
         VStack(spacing: 14) {
             RecordDisc(label: "", angle: .zero).frame(width: 140, height: 140).opacity(0.6)
-            Text("まだ記録がありません").font(Theme.serif(22, .medium)).foregroundStyle(Theme.ink)
-            Text("今日の 1 曲を遊ぶと、ここに回数とタイミングのくせがたまっていきます。").font(Theme.text(14)).foregroundStyle(Theme.inkSoft)
+            Text(L("まだ記録がありません")).font(Theme.serif(22, .medium)).foregroundStyle(Theme.ink)
+            Text(L("今日の 1 曲を遊ぶと、ここに回数とタイミングのくせがたまっていきます。")).font(Theme.text(14)).foregroundStyle(Theme.inkSoft)
                 .multilineTextAlignment(.center)
-            Button("今日の 1 曲をはじめる") { app.startToday() }.buttonStyle(PrimaryButtonStyle())
+            Button(L("今日の 1 曲をはじめる")) { app.startToday() }.buttonStyle(PrimaryButtonStyle())
         }
         .padding(.top, 40)
     }
@@ -50,16 +50,16 @@ struct RecordsView: View {
         let p = app.progress
         return HStack(alignment: .firstTextBaseline) {
             VStack(alignment: .leading, spacing: 2) {
-                Caption("これまで")
+                Caption(L("これまで"))
                 HStack(alignment: .firstTextBaseline, spacing: 4) {
                     Text("\(p.totalReps)").font(Theme.serif(64)).kerning(-3).monospacedDigit().foregroundStyle(Theme.ink)
-                    Text("回").font(Theme.serif(20)).foregroundStyle(Theme.inkSoft)
+                    Text(L("回")).font(Theme.serif(20)).foregroundStyle(Theme.inkSoft)
                 }
             }
             Spacer()
             VStack(alignment: .trailing, spacing: 4) {
-                Text("\(p.activeDays) 日 ・ \(p.sessions) 曲").font(Theme.text(13, .medium)).foregroundStyle(Theme.ink)
-                Text("続けて \(p.streak(today: app.today)) 日").font(Theme.text(13)).foregroundStyle(Theme.inkSoft)
+                Text(L("%@ 日 ・ %@ 曲", "\(p.activeDays)", "\(p.sessions)")).font(Theme.text(13, .medium)).foregroundStyle(Theme.ink)
+                Text(L("続けて %@ 日", "\(p.streak(today: app.today))")).font(Theme.text(13)).foregroundStyle(Theme.inkSoft)
             }
         }
     }
@@ -70,9 +70,9 @@ struct RecordsView: View {
         return Slab {
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
-                    Caption("最近 10 曲のくせ")
+                    Caption(L("最近 10 曲のくせ"))
                     Spacer()
-                    Text("\(t.label)（\(ms > 0 ? "+" : "")\(ms) ms）").font(Theme.text(13, .medium)).monospacedDigit().foregroundStyle(Theme.ink)
+                    Text(L("%@（%@%@ ms）", "\(t.label)", "\(ms > 0 ? "+" : "")", "\(ms)")).font(Theme.text(13, .medium)).monospacedDigit().foregroundStyle(Theme.ink)
                 }
                 TendencyMeter(ms: ms)
                 Text(t.advice).font(Theme.text(13)).foregroundStyle(Theme.inkSoft).fixedSize(horizontal: false, vertical: true)
@@ -86,9 +86,9 @@ struct RecordsView: View {
             ProRecords().blur(radius: 6).allowsHitTesting(false).accessibilityHidden(true)
             VStack(spacing: 10) {
                 Image(systemName: "lock.fill").font(.system(size: 16)).foregroundStyle(Theme.ink)
-                Text("週の筋肉の偏り・30 日の回数・くせの移り変わり・1 曲ずつの記録は Pro で").font(Theme.text(14, .medium)).foregroundStyle(Theme.ink)
+                Text(L("週の筋肉の偏り・30 日の回数・くせの移り変わり・1 曲ずつの記録は Pro で")).font(Theme.text(14, .medium)).foregroundStyle(Theme.ink)
                     .multilineTextAlignment(.center)
-                Button("Pro を見る") { app.sheet = .pro }.buttonStyle(PrimaryButtonStyle()).frame(maxWidth: 220)
+                Button(L("Pro を見る")) { app.sheet = .pro }.buttonStyle(PrimaryButtonStyle()).frame(maxWidth: 220)
             }
             .padding(20)
             .background(RoundedRectangle(cornerRadius: Theme.rCard, style: .continuous).fill(Theme.paper.opacity(0.92)))
@@ -108,9 +108,9 @@ private struct ProRecords: View {
             MuscleWeek()
             Slab {
                 VStack(alignment: .leading, spacing: 10) {
-                    Caption("この 30 日の回数")
+                    Caption(L("この 30 日の回数"))
                     Charts.Chart(days, id: \.day) { item in
-                        BarMark(x: .value("日", String(item.day.suffix(5))), y: .value("回数", item.reps))
+                        BarMark(x: .value(L("日"), String(item.day.suffix(5))), y: .value(L("回数"), item.reps))
                             .foregroundStyle(Theme.level(item.reps))
                             .cornerRadius(3)
                     }
@@ -121,12 +121,12 @@ private struct ProRecords: View {
             }
             Slab {
                 VStack(alignment: .leading, spacing: 10) {
-                    Caption("くせの移り変わり（ms・0 がちょうど）")
+                    Caption(L("くせの移り変わり（ms・0 がちょうど）"))
                     Charts.Chart(points) { item in
-                        LineMark(x: .value("回", item.index), y: .value("ms", item.ms))
+                        LineMark(x: .value(L("回"), item.index), y: .value("ms", item.ms))
                             .foregroundStyle(Theme.skyDeep)
                             .interpolationMethod(.catmullRom)
-                        PointMark(x: .value("回", item.index), y: .value("ms", item.ms))
+                        PointMark(x: .value(L("回"), item.index), y: .value("ms", item.ms))
                             .foregroundStyle(Theme.peachDeep)
                             .symbolSize(24)
                     }
@@ -141,16 +141,16 @@ private struct ProRecords: View {
             }
             Slab {
                 VStack(alignment: .leading, spacing: 10) {
-                    Caption("1 曲ずつ（新しい順）")
+                    Caption(L("1 曲ずつ（新しい順）"))
                     ForEach(recent.reversed()) { r in
                         HStack {
                             Text(String(r.day.suffix(5))).font(Theme.label(11)).monospacedDigit().foregroundStyle(Theme.inkSoft).frame(width: 42, alignment: .leading)
                             VStack(alignment: .leading, spacing: 0) {
-                                Text(r.endless ? "エンドレス" : (Songbook.song(r.songID)?.title ?? r.songID)).font(Theme.text(13)).foregroundStyle(Theme.ink).lineLimit(1)
+                                Text(r.endless ? L("エンドレス") : (Songbook.song(r.songID)?.title ?? r.songID)).font(Theme.text(13)).foregroundStyle(Theme.ink).lineLimit(1)
                                 Text(r.resolvedTechnique.title).font(Theme.label(10)).foregroundStyle(Theme.inkSoft).lineLimit(1)
                             }
                             Spacer()
-                            Text("\(r.reps) 回").font(Theme.text(13, .medium)).monospacedDigit().foregroundStyle(Theme.ink)
+                            Text(L("%@ 回", "\(r.reps)")).font(Theme.text(13, .medium)).monospacedDigit().foregroundStyle(Theme.ink)
                             Text(Grade.from(accuracy: r.accuracy).rawValue).font(Theme.serif(16, .medium).italic()).foregroundStyle(Theme.peachDeep).frame(width: 22)
                         }
                         .accessibilityElement(children: .combine)
@@ -177,13 +177,13 @@ struct WeekTechniques: View {
         Slab {
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
-                    Caption("この 7 日のやり方")
+                    Caption(L("この 7 日のやり方"))
                     Spacer()
-                    Button("やり方を見る") { app.techniqueFilter = nil; app.sheet = .techniques }
+                    Button(L("やり方を見る")) { app.techniqueFilter = nil; app.sheet = .techniques }
                         .font(Theme.text(12, .medium)).foregroundStyle(Theme.skyDeep)
                 }
                 if rows.isEmpty {
-                    Text("この 7 日はまだ記録がありません。1 曲やると、やり方ごとの回数がここに並びます。")
+                    Text(L("この 7 日はまだ記録がありません。1 曲やると、やり方ごとの回数がここに並びます。"))
                         .font(Theme.text(13)).foregroundStyle(Theme.inkSoft).fixedSize(horizontal: false, vertical: true)
                 }
                 ForEach(rows) { row in
@@ -197,7 +197,7 @@ struct WeekTechniques: View {
                                 .frame(maxHeight: .infinity)
                         }
                         .frame(height: 26)
-                        Text("\(row.reps) 回").font(Theme.text(12, .medium)).monospacedDigit().foregroundStyle(Theme.ink)
+                        Text(L("%@ 回", "\(row.reps)")).font(Theme.text(12, .medium)).monospacedDigit().foregroundStyle(Theme.ink)
                             .frame(width: 48, alignment: .trailing)
                     }
                     .accessibilityElement(children: .combine)
@@ -219,7 +219,7 @@ struct MuscleWeek: View {
         let shade = load.mapValues { $0 / top >= 0.6 ? 1.0 : ($0 > 0 ? 0.5 : 0) }
         Slab {
             VStack(alignment: .leading, spacing: 12) {
-                Caption("この 7 日の筋肉")
+                Caption(L("この 7 日の筋肉"))
                 HStack(alignment: .center, spacing: 14) {
                     BodyFigure(technique: .standard, load: shade, showPhone: false)
                         .frame(width: 120, height: 68)
@@ -249,7 +249,7 @@ struct MuscleWeek: View {
                     .accessibilityElement(children: .combine)
                     .accessibilityLabel("\(m.label) \(Int(v.rounded()))")
                 }
-                Text("数は「回数 × 効き方」（主に効く所は 1、補助は 0.5）の目安です。")
+                Text(L("数は「回数 × 効き方」（主に効く所は 1、補助は 0.5）の目安です。"))
                     .font(Theme.text(11)).foregroundStyle(Theme.inkSoft)
             }
         }

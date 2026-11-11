@@ -172,7 +172,7 @@ struct WeekRecordTests {
         let chestOnly = MuscleBalance(load: [.chest: 30, .shoulder: 15])
         #expect(chestOnly.top == .chest)
         #expect(chestOnly.isLopsided)
-        #expect(chestOnly.headline == "今週は胸ばかり")
+        #expect(chestOnly.headline == L("今週は%@ばかり", Muscle.chest.label))
         #expect(chestOnly.least == .triceps || chestOnly.least == .core)
         let even = MuscleBalance(load: [.chest: 10, .triceps: 10, .shoulder: 10, .core: 10])
         #expect(!even.isLopsided)
@@ -227,5 +227,26 @@ struct WeekRecordTests {
         p.record(record("2026-11-11", reps: 9, .hold, endless: true, combo: 9, seconds: 40), today: "2026-11-11")
         let back = try JSONDecoder().decode(Progress.self, from: JSONEncoder().encode(p))
         #expect(back == p)
+    }
+}
+
+struct LocalizationTests {
+    /// 英語の訳が入っていて、どの訳も %@ の数がキーと同じ（数や名前が抜けない・落ちない）
+    @Test func englishHasEveryPlaceholder() throws {
+        let path = try #require(Bundle.main.path(forResource: "Localizable", ofType: "strings", inDirectory: nil, forLocalization: "en"))
+        let table = try #require(NSDictionary(contentsOfFile: path) as? [String: String])
+        #expect(table.count > 300)
+        #expect(table["胸"] == "Chest")
+        func placeholders(_ s: String) -> Int {
+            s.components(separatedBy: "%").dropFirst().filter { $0.hasPrefix("@") || $0.range(of: #"^\d\$@"#, options: .regularExpression) != nil }.count
+        }
+        for (key, value) in table {
+            #expect(placeholders(key) == placeholders(value), "\(key)")
+        }
+    }
+
+    @Test func formatsArguments() {
+        // 訳がない文は日本語のまま、引数が入る
+        #expect(L("テスト %@ と %@", "1", "2") == "テスト 1 と 2")
     }
 }

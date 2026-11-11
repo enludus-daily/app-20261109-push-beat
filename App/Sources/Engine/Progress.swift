@@ -290,13 +290,13 @@ struct MuscleBalance: Equatable, Sendable {
     var isLopsided: Bool { topShare > 0.4 }
 
     var headline: String {
-        guard let top else { return "今週はまだ記録がありません" }
-        return isLopsided ? "今週は\(top.label)ばかり" : "今週はバランスよく"
+        guard let top else { return L("今週はまだ記録がありません") }
+        return isLopsided ? L("今週は%@ばかり", "\(top.label)") : L("今週はバランスよく")
     }
 
     var advice: String {
-        guard top != nil, let least else { return "1 曲やると、どの筋肉をどれだけ使ったかがここに出ます" }
-        return isLopsided ? "次は\(least.dayTitle)にしてみよう" : "この調子で。少ないのは\(least.label)"
+        guard top != nil, let least else { return L("1 曲やると、どの筋肉をどれだけ使ったかがここに出ます") }
+        return isLopsided ? L("次は%@にしてみよう", "\(least.dayTitle)") : L("この調子で。少ないのは%@", "\(least.label)")
     }
 }
 

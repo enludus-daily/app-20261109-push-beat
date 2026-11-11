@@ -116,9 +116,9 @@ struct BodyFigure: View {
     }
 
     private var accessibilityText: String {
-        if let focus { return "\(focus.label)に効く姿勢の絵" }
-        let main = technique.mainMuscles.map(\.label).joined(separator: "・")
-        return "\(technique.title)の姿勢。主に\(main)"
+        if let focus { return L("%@に効く姿勢の絵", "\(focus.label)") }
+        let main = technique.mainMuscles.map(\.label).joined(separator: L("・"))
+        return L("%@の姿勢。主に%@", "\(technique.title)", "\(main)")
     }
 }
 

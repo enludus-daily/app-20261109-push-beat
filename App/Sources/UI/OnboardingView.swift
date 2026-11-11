@@ -10,9 +10,9 @@ struct OnboardingView: View {
     @State private var demoRun = 0
 
     private let pages: [(caption: String, title: String, body: String)] = [
-        ("Push Beat", "腕立てが、\n音ゲーになる。", "輪がレコードに重なる瞬間に、体を下ろして画面に触れる。拍に合うと Perfect。数えなくても、曲が終われば今日の分。"),
-        ("置き方", "床に置いて、\n鼻かあごで触れる。", "画面の上側に頭がくるように置く。どこに触れても 1 回。下で止まる「キープ」は、触れたまま拍を待つ。"),
-        ("自分に合わせる", "回数も、やり方も、\n自分で決める。", "いまの自分の回数から 30 日の道を作り、毎回の結果で次の回数を提案します。胸・二の腕・肩・体幹から、今日のやり方を選べます。記録はこの iPhone の中だけ。カメラもマイクも使いません。"),
+        ("Push Beat", L("腕立てが、\n音ゲーになる。"), L("輪がレコードに重なる瞬間に、体を下ろして画面に触れる。拍に合うと Perfect。数えなくても、曲が終われば今日の分。")),
+        (L("置き方"), L("床に置いて、\n鼻かあごで触れる。"), L("画面の上側に頭がくるように置く。どこに触れても 1 回。下で止まる「キープ」は、触れたまま拍を待つ。")),
+        (L("自分に合わせる"), L("回数も、やり方も、\n自分で決める。"), L("いまの自分の回数から 30 日の道を作り、毎回の結果で次の回数を提案します。胸・二の腕・肩・体幹から、今日のやり方を選べます。記録はこの iPhone の中だけ。カメラもマイクも使いません。")),
     ]
 
     var body: some View {
@@ -20,7 +20,7 @@ struct OnboardingView: View {
             HStack {
                 Spacer()
                 if page < pages.count - 1 {
-                    Button("スキップ") { finish() }.font(Theme.text(14)).foregroundStyle(Theme.inkSoft)
+                    Button(L("スキップ")) { finish() }.font(Theme.text(14)).foregroundStyle(Theme.inkSoft)
                 }
             }
             .frame(height: 44)
@@ -61,7 +61,7 @@ struct OnboardingView: View {
             }
             .padding(.bottom, 16)
             .accessibilityHidden(true)
-            Button(page == pages.count - 1 ? "はじめる" : "次へ") {
+            Button(page == pages.count - 1 ? L("はじめる") : L("次へ")) {
                 if page < pages.count - 1 {
                     withAnimation(.easeOut(duration: 0.25)) { page += 1 }
                     Feedback.select()
@@ -74,7 +74,7 @@ struct OnboardingView: View {
             .padding(.horizontal, 24)
             .padding(.bottom, page == pages.count - 1 ? 8 : 24)
             if page == pages.count - 1 {
-                Button("まず指でためす（4 回）") { app.startPractice() }
+                Button(L("まず指でためす（4 回）")) { app.startPractice() }
                     .buttonStyle(QuietButtonStyle())
                     .frame(maxWidth: 520)
                     .padding(.horizontal, 24)

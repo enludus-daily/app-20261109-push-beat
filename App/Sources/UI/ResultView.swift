@@ -55,21 +55,21 @@ struct ResultView: View {
     }
 
     private var headline: String {
-        if result.practice { return "ためし" }
-        if result.measure { return "いまの自分" }
-        if result.record.endless { return "エンドレス" }
-        if result.quit { return "途中まで" }
+        if result.practice { return L("ためし") }
+        if result.measure { return L("いまの自分") }
+        if result.record.endless { return L("エンドレス") }
+        if result.quit { return L("途中まで") }
         return "Result"
     }
 
     private var subline: String {
-        if result.practice { return "つかめたら、次は床に置いて腕立てで" }
-        if result.measure { return "\(result.record.reps) 回できた。これが、いまの自分" }
-        if result.quit, !result.record.endless { return "ここまでの記録も残しました" }
+        if result.practice { return L("つかめたら、次は床に置いて腕立てで") }
+        if result.measure { return L("%@ 回できた。これが、いまの自分", "\(result.record.reps)") }
+        if result.quit, !result.record.endless { return L("ここまでの記録も残しました") }
         return result.grade.line
     }
 
-    private var homeTitle: String { result.practice ? "今日の 1 曲へ" : "ホームへ" }
+    private var homeTitle: String { result.practice ? L("今日の 1 曲へ") : L("ホームへ") }
 
     private var top: some View {
         HStack(alignment: .center, spacing: 16) {
@@ -79,11 +79,11 @@ struct ResultView: View {
                 Text(subline)
                     .font(Theme.text(14)).foregroundStyle(Theme.inkSoft)
                 if !result.practice {
-                    Text("やり方：\(result.record.resolvedTechnique.title) ・ 主に" + result.record.resolvedTechnique.mainMuscles.map(\.label).joined(separator: "・"))
+                    Text(L("やり方：%@ ・ 主に", "\(result.record.resolvedTechnique.title)") + result.record.resolvedTechnique.mainMuscles.map(\.label).joined(separator: L("・")))
                         .font(Theme.text(12, .medium)).foregroundStyle(Theme.skyDeep)
                 }
                 if result.newBest {
-                    Text("エンドレスの自己ベスト更新").font(Theme.text(12, .semibold)).foregroundStyle(Theme.peachDeep)
+                    Text(L("エンドレスの自己ベスト更新")).font(Theme.text(12, .semibold)).foregroundStyle(Theme.peachDeep)
                         .padding(.horizontal, 10).padding(.vertical, 4)
                         .background(Capsule().fill(Theme.peachSoft))
                 }
@@ -96,7 +96,7 @@ struct ResultView: View {
                     .foregroundStyle(Theme.ink)
             }
             .accessibilityElement()
-            .accessibilityLabel("段階 \(result.grade.rawValue)")
+            .accessibilityLabel(L("段階 %@", "\(result.grade.rawValue)"))
         }
     }
 
@@ -110,7 +110,7 @@ struct ResultView: View {
                     .monospacedDigit()
                     .foregroundStyle(Theme.ink)
                     .contentTransition(.numericText())
-                Text("回").font(Theme.serif(22)).foregroundStyle(Theme.inkSoft)
+                Text(L("回")).font(Theme.serif(22)).foregroundStyle(Theme.inkSoft)
                 Spacer()
                 VStack(alignment: .trailing, spacing: 2) {
                     Caption("max combo")
@@ -158,41 +158,41 @@ struct ResultView: View {
         return Slab {
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
-                    Caption("次の回数")
+                    Caption(L("次の回数"))
                     Spacer()
-                    Text("Perfect \(perfectPct)% ・ \(result.quit ? "途中まで" : "最後まで")")
+                    Text(L("Perfect %@%% ・ %@", "\(perfectPct)", "\(result.quit ? L("途中まで") : L("最後まで"))"))
                         .font(Theme.text(12, .medium)).monospacedDigit().foregroundStyle(Theme.inkSoft)
                 }
                 switch advice {
                 case .keep:
-                    Text("ちょうどいい回数です").font(Theme.serif(20, .medium)).foregroundStyle(Theme.ink)
-                    Text("Day \(result.nextDay) は \(result.nextReps) 回。きつければホームの −／＋ でいつでも変えられます")
+                    Text(L("ちょうどいい回数です")).font(Theme.serif(20, .medium)).foregroundStyle(Theme.ink)
+                    Text(L("Day %@ は %@ 回。きつければホームの −／＋ でいつでも変えられます", "\(result.nextDay)", "\(result.nextReps)"))
                         .font(Theme.text(13)).foregroundStyle(Theme.inkSoft).fixedSize(horizontal: false, vertical: true)
                 case .up, .down:
                     HStack(alignment: .firstTextBaseline, spacing: 8) {
-                        Text(advice.delta > 0 ? "少し上げてみる？" : "少し下げてみる？").font(Theme.serif(20, .medium)).foregroundStyle(Theme.ink)
+                        Text(advice.delta > 0 ? L("少し上げてみる？") : L("少し下げてみる？")).font(Theme.serif(20, .medium)).foregroundStyle(Theme.ink)
                         Spacer()
                         Text("\(result.nextReps)").font(Theme.serif(20)).monospacedDigit().foregroundStyle(Theme.inkSoft).strikethrough(acceptedAdvice)
                         Image(systemName: "arrow.right").font(.system(size: 12)).foregroundStyle(Theme.inkSoft)
-                        Text("\(result.nextRepsAfter) 回").font(Theme.serif(26, .medium)).monospacedDigit()
+                        Text(L("%@ 回", "\(result.nextRepsAfter)")).font(Theme.serif(26, .medium)).monospacedDigit()
                             .foregroundStyle(advice.delta > 0 ? Theme.peachDeep : Theme.skyDeep)
                     }
                     Text(advice.delta > 0
-                         ? "Perfect が多く、最後まで続きました。Day \(result.nextDay) から \(advice.delta) 回ふやす提案です"
-                         : (result.quit ? "今日は途中まで。Day \(result.nextDay) から \(-advice.delta) 回へらして、最後まで続けよう"
-                                        : "外した回が多め。Day \(result.nextDay) から \(-advice.delta) 回へらして、拍に乗ろう"))
+                         ? L("Perfect が多く、最後まで続きました。Day %@ から %@ 回ふやす提案です", "\(result.nextDay)", "\(advice.delta)")
+                         : (result.quit ? L("今日は途中まで。Day %@ から %@ 回へらして、最後まで続けよう", "\(result.nextDay)", "\(-advice.delta)")
+                                        : L("外した回が多め。Day %@ から %@ 回へらして、拍に乗ろう", "\(result.nextDay)", "\(-advice.delta)")))
                         .font(Theme.text(13)).foregroundStyle(Theme.inkSoft).fixedSize(horizontal: false, vertical: true)
                     if acceptedAdvice {
-                        Label("Day \(result.nextDay) から \(result.nextRepsAfter) 回にしました", systemImage: "checkmark")
+                        Label(L("Day %@ から %@ 回にしました", "\(result.nextDay)", "\(result.nextRepsAfter)"), systemImage: "checkmark")
                             .font(Theme.text(13, .medium)).foregroundStyle(Theme.skyDeep)
                     } else {
                         HStack(spacing: 10) {
-                            Button(advice.delta > 0 ? "+\(advice.delta) 回にする" : "\(advice.delta) 回にする") {
+                            Button(advice.delta > 0 ? L("+%@ 回にする", "\(advice.delta)") : L("%@ 回にする", "\(advice.delta)")) {
                                 app.acceptAdvice(advice)
                                 withAnimation(.easeOut(duration: 0.25)) { acceptedAdvice = true }
                             }
                             .buttonStyle(PrimaryButtonStyle(fill: advice.delta > 0 ? Theme.peachDeep : Theme.skyDeep))
-                            Button("このまま") { withAnimation(.easeOut(duration: 0.25)) { acceptedAdvice = true } }
+                            Button(L("このまま")) { withAnimation(.easeOut(duration: 0.25)) { acceptedAdvice = true } }
                                 .buttonStyle(QuietButtonStyle())
                                 .frame(maxWidth: 110)
                         }
@@ -206,17 +206,17 @@ struct ResultView: View {
     private var measureCard: some View {
         Slab {
             VStack(alignment: .leading, spacing: 10) {
-                Caption("いまの自分の回数")
+                Caption(L("いまの自分の回数"))
                 if usedBaseline {
-                    Label("\(result.record.reps) 回で 30 日の道を作りました", systemImage: "checkmark")
+                    Label(L("%@ 回で 30 日の道を作りました", "\(result.record.reps)"), systemImage: "checkmark")
                         .font(Theme.text(14, .medium)).foregroundStyle(Theme.skyDeep)
                 } else {
-                    Text("\(result.record.reps) 回をもとに、30 日の回数を合わせますか？").font(Theme.text(14)).foregroundStyle(Theme.ink)
+                    Text(L("%@ 回をもとに、30 日の回数を合わせますか？", "\(result.record.reps)")).font(Theme.text(14)).foregroundStyle(Theme.ink)
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 PlanPreview(baseline: max(1, result.record.reps), course: app.course)
                 if !usedBaseline {
-                    Button("この回数で道を作る") {
+                    Button(L("この回数で道を作る")) {
                         app.useAsBaseline(max(1, result.record.reps))
                         withAnimation(.easeOut(duration: 0.25)) { usedBaseline = true }
                     }
@@ -231,11 +231,11 @@ struct ResultView: View {
         let r = result.record
         return Slab {
             VStack(alignment: .leading, spacing: 10) {
-                Caption("自己ベストと比べる")
+                Caption(L("自己ベストと比べる"))
                 HStack(spacing: 0) {
-                    compareColumn("回数", r.reps, before.reps, format: { "\($0)" })
-                    compareColumn("コンボ", r.maxCombo, before.combo, format: { "\($0)" })
-                    compareColumn("続いた時間", r.seconds ?? 0, before.seconds, format: { Self.time($0) })
+                    compareColumn(L("回数"), r.reps, before.reps, format: { "\($0)" })
+                    compareColumn(L("コンボ"), r.maxCombo, before.combo, format: { "\($0)" })
+                    compareColumn(L("続いた時間"), r.seconds ?? 0, before.seconds, format: { Self.time($0) })
                 }
             }
         }
@@ -244,7 +244,7 @@ struct ResultView: View {
     private func compareColumn(_ label: String, _ now: Int, _ best: Int, format: (Int) -> String) -> some View {
         let diff = now - best
         let nowText = format(now)
-        let note: String = best == 0 ? "はじめて" : (diff > 0 ? "ベスト +" + format(diff) : (diff == 0 ? "ベストと同じ" : "ベストまで " + format(-diff)))
+        let note: String = best == 0 ? L("はじめて") : (diff > 0 ? L("ベスト +") + format(diff) : (diff == 0 ? L("ベストと同じ") : L("ベストまで ") + format(-diff)))
         return VStack(spacing: 3) {
             Text(nowText).font(Theme.serif(26, .medium)).monospacedDigit().foregroundStyle(Theme.ink)
             Text(note)
@@ -262,9 +262,9 @@ struct ResultView: View {
         Slab {
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
-                    Caption("タイミングのくせ")
+                    Caption(L("タイミングのくせ"))
                     Spacer()
-                    Text("\(result.tendency.label)（\(result.record.meanOffsetMs > 0 ? "+" : "")\(result.record.meanOffsetMs) ms）")
+                    Text(L("%@（%@%@ ms）", "\(result.tendency.label)", "\(result.record.meanOffsetMs > 0 ? "+" : "")", "\(result.record.meanOffsetMs)"))
                         .font(Theme.text(13, .medium)).monospacedDigit().foregroundStyle(Theme.ink)
                 }
                 TendencyMeter(ms: result.record.meanOffsetMs)
@@ -280,15 +280,15 @@ struct ResultView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     if let plan = result.plan, result.clearedPlan {
                         Caption("\(plan.course.title)")
-                        Text("Day \(plan.day) クリア").font(Theme.serif(24, .medium)).foregroundStyle(Theme.ink)
+                        Text(L("Day %@ クリア", "\(plan.day)")).font(Theme.serif(24, .medium)).foregroundStyle(Theme.ink)
                     } else if let plan = result.plan {
                         Caption("\(plan.course.title)")
-                        Text(result.quit ? "Day \(plan.day) はまた今度" : "Day \(plan.day) をもう一度").font(Theme.serif(22, .medium)).foregroundStyle(Theme.ink)
+                        Text(result.quit ? L("Day %@ はまた今度", "\(plan.day)") : L("Day %@ をもう一度", "\(plan.day)")).font(Theme.serif(22, .medium)).foregroundStyle(Theme.ink)
                     } else {
-                        Caption("これまで")
-                        Text("\(result.totalReps) 回").font(Theme.serif(24, .medium)).monospacedDigit().foregroundStyle(Theme.ink)
+                        Caption(L("これまで"))
+                        Text(L("%@ 回", "\(result.totalReps)")).font(Theme.serif(24, .medium)).monospacedDigit().foregroundStyle(Theme.ink)
                     }
-                    Text(result.streak > 1 ? "\(result.streak) 日連続 ・ 合計 \(result.totalReps) 回" : "合計 \(result.totalReps) 回")
+                    Text(result.streak > 1 ? L("%@ 日連続 ・ 合計 %@ 回", "\(result.streak)", "\(result.totalReps)") : L("合計 %@ 回", "\(result.totalReps)"))
                         .font(Theme.text(13)).foregroundStyle(Theme.inkSoft)
                 }
                 Spacer()
@@ -303,10 +303,10 @@ struct ResultView: View {
         VStack(spacing: 8) {
             Button(homeTitle) { app.goHome() }.buttonStyle(PrimaryButtonStyle())
             HStack(spacing: 10) {
-                Button("もう一回") { app.replay() }.buttonStyle(QuietButtonStyle())
+                Button(L("もう一回")) { app.replay() }.buttonStyle(QuietButtonStyle())
                 if let shareImage {
-                    ShareLink(item: shareImage, preview: SharePreview("うでたてビートの記録", image: shareImage)) {
-                        Label("記録を共有", systemImage: "square.and.arrow.up")
+                    ShareLink(item: shareImage, preview: SharePreview(L("うでたてビートの記録"), image: shareImage)) {
+                        Label(L("記録を共有"), systemImage: "square.and.arrow.up")
                     }
                     .buttonStyle(QuietButtonStyle())
                 }
@@ -334,15 +334,15 @@ struct TendencyMeter: View {
         .frame(height: 18)
         .overlay(alignment: .bottom) {
             HStack {
-                Text("はやい").font(Theme.label(10)).foregroundStyle(Theme.inkSoft)
+                Text(L("はやい")).font(Theme.label(10)).foregroundStyle(Theme.inkSoft)
                 Spacer()
-                Text("おそい").font(Theme.label(10)).foregroundStyle(Theme.inkSoft)
+                Text(L("おそい")).font(Theme.label(10)).foregroundStyle(Theme.inkSoft)
             }
             .offset(y: 16)
         }
         .padding(.bottom, 14)
         .accessibilityElement()
-        .accessibilityLabel("タイミングのくせ \(ms) ミリ秒")
+        .accessibilityLabel(L("タイミングのくせ %@ ミリ秒", "\(ms)"))
     }
 }
 
@@ -375,19 +375,19 @@ struct ShareCard: View {
             Theme.ground
             YogaMat(corner: 28).padding(14)
             VStack(alignment: .leading, spacing: 14) {
-                Caption("Push Beat ・ うでたてビート")
+                Caption(L("Push Beat ・ うでたてビート"))
                 Spacer()
                 RecordDisc(label: result.song.title).frame(width: 220, height: 220).frame(maxWidth: .infinity)
                 Spacer()
                 HStack(alignment: .firstTextBaseline, spacing: 6) {
                     Text("\(result.record.reps)").font(Theme.serif(96)).kerning(-4).monospacedDigit().foregroundStyle(Theme.ink)
-                    Text("回").font(Theme.serif(24)).foregroundStyle(Theme.inkSoft)
+                    Text(L("回")).font(Theme.serif(24)).foregroundStyle(Theme.inkSoft)
                     Spacer()
                     Text(result.grade.rawValue).font(Theme.serif(56, .medium).italic()).foregroundStyle(Theme.peachDeep)
                 }
-                Text("Perfect \(result.record.perfect) ・ Good \(result.record.good) ・ Combo \(result.record.maxCombo)")
+                Text(L("Perfect %@ ・ Good %@ ・ Combo %@", "\(result.record.perfect)", "\(result.record.good)", "\(result.record.maxCombo)"))
                     .font(Theme.text(14, .medium)).monospacedDigit().foregroundStyle(Theme.ink)
-                Text(result.song.title + " ・ " + result.record.resolvedTechnique.title + (result.plan.map { " ・ Day \($0.day)" } ?? ""))
+                Text(result.song.title + L(" ・ ") + result.record.resolvedTechnique.title + (result.plan.map { L(" ・ Day %@", "\($0.day)") } ?? ""))
                     .font(Theme.text(13)).foregroundStyle(Theme.inkSoft)
             }
             .padding(34)

@@ -182,6 +182,6 @@ struct LevelDots: View {
             }
         }
         .accessibilityElement()
-        .accessibilityLabel("むずかしさ \(level)")
+        .accessibilityLabel(L("むずかしさ %@", "\(level)"))
     }
 }

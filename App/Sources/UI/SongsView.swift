@@ -10,17 +10,17 @@ struct SongsView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
-                    shelf("無料の 6 曲", Songbook.free)
-                    shelf("Pro の 12 曲", Songbook.pro)
+                    shelf(L("無料の 6 曲"), Songbook.free)
+                    shelf(L("Pro の 12 曲"), Songbook.pro)
                 }
                 .padding(18)
             }
             .background(Theme.ground.ignoresSafeArea())
-            .navigationTitle("曲をえらぶ")
+            .navigationTitle(L("曲をえらぶ"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("とじる", systemImage: "xmark") { dismiss() }
+                    Button(L("とじる"), systemImage: "xmark") { dismiss() }
                 }
             }
             .navigationDestination(for: String.self) { id in
@@ -41,12 +41,12 @@ struct SongsView: View {
                             HStack(spacing: 6) {
                                 LevelDots(level: song.level)
                                 Text("BPM \(Int(song.bpm))").font(Theme.label(10)).foregroundStyle(Theme.inkSoft)
-                                if song.hasKeep { Text("キープ").font(Theme.label(10)).foregroundStyle(Theme.peachDeep) }
+                                if song.hasKeep { Text(L("キープ")).font(Theme.label(10)).foregroundStyle(Theme.peachDeep) }
                             }
                         }
                     }
                     .buttonStyle(.plain)
-                    .accessibilityLabel("\(song.title)、むずかしさ \(song.level)\(song.isPro && !app.isPro ? "、Pro" : "")")
+                    .accessibilityLabel(L("%@、むずかしさ %@%@", "\(song.title)", "\(song.level)", "\(song.isPro && !app.isPro ? L("、Pro") : "")"))
                 }
             }
         }
@@ -68,23 +68,23 @@ private struct SongDetail: View {
                         Caption(song.english)
                         Text(song.title).font(Theme.serif(26, .medium)).foregroundStyle(Theme.ink)
                         LevelDots(level: song.level)
-                        Text("BPM \(Int(song.bpm)) ・ \(song.mood.label)").font(Theme.text(13)).foregroundStyle(Theme.inkSoft)
+                        Text(L("BPM %@ ・ %@", "\(Int(song.bpm))", "\(song.mood.label)")).font(Theme.text(13)).foregroundStyle(Theme.inkSoft)
                         Text(song.line).font(Theme.text(14)).foregroundStyle(Theme.ink).fixedSize(horizontal: false, vertical: true)
                     }
                 }
                 Slab {
                     VStack(alignment: .leading, spacing: 10) {
-                        Caption("譜面の形（はじめの 16 拍）")
+                        Caption(L("譜面の形（はじめの 16 拍）"))
                         PatternStrip(song: song)
                         HStack(spacing: 14) {
-                            legend(Theme.skyDeep, "タッチ")
-                            legend(Theme.peachDeep, "キープ（下で止まる）")
+                            legend(Theme.skyDeep, L("タッチ"))
+                            legend(Theme.peachDeep, L("キープ（下で止まる）"))
                         }
                     }
                 }
                 Slab {
                     VStack(alignment: .leading, spacing: 10) {
-                        Caption("回数")
+                        Caption(L("回数"))
                         HStack(spacing: 8) {
                             ForEach([10, 20, 30, 40], id: \.self) { n in
                                 Button { reps = n; Feedback.select() } label: {
@@ -94,7 +94,7 @@ private struct SongDetail: View {
                                         .background(RoundedRectangle(cornerRadius: Theme.rMid, style: .continuous).fill(reps == n ? Theme.skyDeep : Theme.skyMist))
                                 }
                                 .buttonStyle(.plain)
-                                .accessibilityLabel("\(n) 回")
+                                .accessibilityLabel(L("%@ 回", "\(n)"))
                                 .accessibilityAddTraits(reps == n ? .isSelected : [])
                             }
                         }
@@ -114,18 +114,18 @@ private struct SongDetail: View {
     @ViewBuilder private var actions: some View {
         let locked = song.isPro && !app.isPro
         if locked && app.progress.usedProTrial {
-            Text("Pro の曲は、Pro で遊べます（お試しの 1 回は使いました）").font(Theme.text(13)).foregroundStyle(Theme.inkSoft)
-            Button("Pro を見る") { app.sheet = .pro }.buttonStyle(PrimaryButtonStyle())
+            Text(L("Pro の曲は、Pro で遊べます（お試しの 1 回は使いました）")).font(Theme.text(13)).foregroundStyle(Theme.inkSoft)
+            Button(L("Pro を見る")) { app.sheet = .pro }.buttonStyle(PrimaryButtonStyle())
         } else {
             if locked {
-                Text("Pro の曲を 1 回だけ、無料で試せます").font(Theme.text(13)).foregroundStyle(Theme.peachDeep)
+                Text(L("Pro の曲を 1 回だけ、無料で試せます")).font(Theme.text(13)).foregroundStyle(Theme.peachDeep)
             }
-            Button(locked ? "1 回だけ試す" : "この曲で \(reps) 回（\(app.todayTechnique.title)）") {
+            Button(locked ? L("1 回だけ試す") : L("この曲で %@ 回（%@）", "\(reps)", "\(app.todayTechnique.title)")) {
                 app.start(PlayRequest(song: song, reps: reps, technique: app.todayTechnique))
             }
             .buttonStyle(PrimaryButtonStyle())
             if !locked {
-                Button("エンドレスで遊ぶ（3 回続けて外すまで）") { app.startEndless(song: song) }
+                Button(L("エンドレスで遊ぶ（3 回続けて外すまで）")) { app.startEndless(song: song) }
                     .buttonStyle(QuietButtonStyle())
             }
         }

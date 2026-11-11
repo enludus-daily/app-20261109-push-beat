@@ -21,7 +21,7 @@ struct PlayView: View {
                         .onEnded { _ in game.touchUp() }
                 )
                 .accessibilityElement()
-                .accessibilityLabel("触れる面。拍に合わせて、どこでも触れる")
+                .accessibilityLabel(L("触れる面。拍に合わせて、どこでも触れる"))
                 .accessibilityAddTraits(.allowsDirectInteraction)
             TimelineView(.animation(paused: game.phase == .finished)) { _ in
                 let t = game.songTime()
@@ -64,7 +64,7 @@ struct PlayView: View {
                         .background(Circle().fill(Theme.paper))
                         .overlay(Circle().stroke(Theme.line, lineWidth: 1))
                 }
-                .accessibilityLabel("やめる")
+                .accessibilityLabel(L("やめる"))
                 Spacer()
             }
             Spacer()
@@ -106,13 +106,13 @@ struct PlayView: View {
                 .monospacedDigit()
                 .foregroundStyle(Theme.ink)
                 .contentTransition(.numericText())
-            Text(game.request.endless ? "回" : "/ \(game.chart.notes.count)")
+            Text(game.request.endless ? L("回") : "/ \(game.chart.notes.count)")
                 .font(Theme.serif(20))
                 .foregroundStyle(Theme.inkSoft)
             if game.request.endless { bestGap(s.reps) }
         }
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("\(s.reps) 回")
+        .accessibilityLabel(L("%@ 回", "\(s.reps)"))
     }
 
     /// エンドレス：自己ベストとの差（追いつくまで「あと N」、超えたら「+N」）
@@ -121,7 +121,7 @@ struct PlayView: View {
         let best = app.progress.bestEndless
         if best > 0 {
             let over = reps > best
-            Text(over ? "ベスト +\(reps - best)" : "ベストまで \(best - reps + 1)")
+            Text(over ? L("ベスト +%@", "\(reps - best)") : L("ベストまで %@", "\(best - reps + 1)"))
                 .font(Theme.text(12, .semibold)).monospacedDigit()
                 .foregroundStyle(over ? Theme.peachDeep : Theme.inkSoft)
                 .padding(.horizontal, 8).padding(.vertical, 3)
@@ -143,7 +143,7 @@ struct PlayView: View {
     }
 
     private var hint: some View {
-        Text(game.request.measure ? "できなくなったら左上の × で終える" : (game.request.endless ? "3 回続けて外したら終わり。どこに触れても 1 回" : "\(game.request.technique.title) ・ 鼻かあごで、どこに触れても 1 回"))
+        Text(game.request.measure ? L("できなくなったら左上の × で終える") : (game.request.endless ? L("3 回続けて外したら終わり。どこに触れても 1 回") : L("%@ ・ 鼻かあごで、どこに触れても 1 回", "\(game.request.technique.title)")))
             .font(Theme.text(13))
             .foregroundStyle(Theme.inkSoft)
     }
@@ -230,9 +230,9 @@ struct PlayView: View {
     @ViewBuilder
     private func centerText(_ t: Double, beat: Double, d: CGFloat) -> some View {
         if game.phase == .preparing || (game.phase == .playing && t < 0) {
-            countdown(big: "\(Int(max(1, ceil(-t))))", small: "位置について")
+            countdown(big: "\(Int(max(1, ceil(-t))))", small: L("位置について"))
         } else if game.phase == .playing, beat < Double(Chart.countIn) {
-            countdown(big: "\(Int(beat) + 1)", small: "カウント")
+            countdown(big: "\(Int(beat) + 1)", small: L("カウント"))
         } else if let e = game.lastEvent {
             let age = game.eventAge()
             if age < 0.7 {
@@ -268,16 +268,16 @@ private struct UpcomingLane: View {
     var body: some View {
         let upcoming = upcomingNotes()
         VStack(alignment: .leading, spacing: 8) {
-            Caption("つぎ")
+            Caption(L("つぎ"))
             ForEach(upcoming) { item in
                 HStack(spacing: 10) {
                     Circle().fill(item.keep ? Theme.peach : Theme.sky).frame(width: 10, height: 10)
-                    Text(item.keep ? "キープ" : "タッチ").font(Theme.text(14, .medium)).foregroundStyle(Theme.ink)
+                    Text(item.keep ? L("キープ") : L("タッチ")).font(Theme.text(14, .medium)).foregroundStyle(Theme.ink)
                     Spacer()
-                    Text(String(format: "%.1f 拍", item.beats)).font(Theme.text(13)).monospacedDigit().foregroundStyle(Theme.inkSoft)
+                    Text(String(format: L("%.1f 拍"), item.beats)).font(Theme.text(13)).monospacedDigit().foregroundStyle(Theme.inkSoft)
                 }
             }
-            if upcoming.isEmpty { Text("あと少し").font(Theme.text(14)).foregroundStyle(Theme.inkSoft) }
+            if upcoming.isEmpty { Text(L("あと少し")).font(Theme.text(14)).foregroundStyle(Theme.inkSoft) }
         }
         .padding(14)
         .background(RoundedRectangle(cornerRadius: Theme.rMid, style: .continuous).fill(Theme.paper.opacity(0.85)))
@@ -321,7 +321,7 @@ private struct ReadyPanel: View {
                         Caption(caption)
                         Text(title)
                             .font(Theme.serif(30)).kerning(-1).foregroundStyle(Theme.ink)
-                        Text("\(game.request.song.title) ・ BPM \(Int(game.chart.bpm))")
+                        Text(L("%@ ・ BPM %@", "\(game.request.song.title)", "\(Int(game.chart.bpm))"))
                             .font(Theme.text(13)).foregroundStyle(Theme.inkSoft)
                     }
                 }
@@ -331,12 +331,12 @@ private struct ReadyPanel: View {
                 if !game.request.practice {
                     VStack(alignment: .leading, spacing: 3) {
                         ForEach(Array(game.request.technique.form.prefix(2)), id: \.self) { line in
-                            Text("・" + line).font(Theme.text(13)).foregroundStyle(Theme.inkSoft)
+                            Text(L("・") + line).font(Theme.text(13)).foregroundStyle(Theme.inkSoft)
                                 .fixedSize(horizontal: false, vertical: true)
                         }
                     }
                 }
-                Button("はじめる") { game.begin() }
+                Button(L("はじめる")) { game.begin() }
                     .buttonStyle(PrimaryButtonStyle())
             }
             .padding(20)
@@ -352,28 +352,28 @@ private struct ReadyPanel: View {
 extension ReadyPanel {
     var caption: String {
         let r = game.request
-        if r.practice { return "指でためす" }
-        if r.measure { return "いまの自分をためす" }
-        if let plan = r.plan { return "Day \(plan.day) ・ \(r.technique.title)" }
-        if r.endless { return "エンドレス ・ \(r.technique.title)" }
-        return "\(r.song.english) ・ \(r.technique.title)"
+        if r.practice { return L("指でためす") }
+        if r.measure { return L("いまの自分をためす") }
+        if let plan = r.plan { return L("Day %@ ・ %@", "\(plan.day)", "\(r.technique.title)") }
+        if r.endless { return L("エンドレス ・ %@", "\(r.technique.title)") }
+        return L("%@ ・ %@", "\(r.song.english)", "\(r.technique.title)")
     }
 
     var title: String {
         let r = game.request
-        if r.measure { return "できるだけ続ける" }
-        if r.endless { return "外すまで続ける" }
-        return "\(game.chart.notes.count) 回"
+        if r.measure { return L("できるだけ続ける") }
+        if r.endless { return L("外すまで続ける") }
+        return L("%@ 回", "\(game.chart.notes.count)")
     }
 
     var instructions: String {
         if game.request.practice {
-            return "まずは指でためしに 4 回。輪がレコードの縁に重なる瞬間に、画面のどこかに触れてください。"
+            return L("まずは指でためしに 4 回。輪がレコードの縁に重なる瞬間に、画面のどこかに触れてください。")
         }
         if game.request.measure {
-            return "ふつうの腕立てで、フォームを崩さずに何回続くか。拍に合わなくても回数は数えます。押してから 5 秒で始まります。"
+            return L("ふつうの腕立てで、フォームを崩さずに何回続くか。拍に合わなくても回数は数えます。押してから 5 秒で始まります。")
         }
-        return "床に置いて、画面の上側に頭がくるように。押してから 5 秒で始まります。鼻かあごで、どこに触れても 1 回。"
+        return L("床に置いて、画面の上側に頭がくるように。押してから 5 秒で始まります。鼻かあごで、どこに触れても 1 回。")
     }
 }
 

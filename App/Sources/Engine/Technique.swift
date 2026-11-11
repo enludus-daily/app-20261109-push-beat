@@ -11,14 +11,14 @@ enum Muscle: String, Sendable, Codable, CaseIterable, Identifiable {
 
     var label: String {
         switch self {
-        case .chest: "胸"
-        case .triceps: "二の腕"
-        case .shoulder: "肩の前"
-        case .core: "体幹"
+        case .chest: L("胸")
+        case .triceps: L("二の腕")
+        case .shoulder: L("肩の前")
+        case .core: L("体幹")
         }
     }
 
-    var dayTitle: String { label + "の日" }
+    var dayTitle: String { label + L("の日") }
 }
 
 /// 譜面の性格
@@ -47,14 +47,14 @@ enum Technique: String, Sendable, Codable, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .standard: "ふつう"
-        case .knee: "ひざつき"
-        case .wide: "ワイド"
-        case .diamond: "ダイヤモンド"
-        case .negative: "ゆっくり下ろす"
-        case .hold: "下でキープ"
-        case .decline: "デクライン"
-        case .pike: "パイク"
+        case .standard: L("ふつう")
+        case .knee: L("ひざつき")
+        case .wide: L("ワイド")
+        case .diamond: L("ダイヤモンド")
+        case .negative: L("ゆっくり下ろす")
+        case .hold: L("下でキープ")
+        case .decline: L("デクライン")
+        case .pike: L("パイク")
         }
     }
 
@@ -133,24 +133,24 @@ enum Technique: String, Sendable, Codable, CaseIterable, Identifiable {
     /// 譜面の性格を 1 行で
     var rhythmLine: String {
         switch rhythm {
-        case .song: tempoScale < 1 ? "曲の譜面を、少しゆっくり" : "曲の譜面のまま"
-        case .sparse: "1 小節に 1 回。1 回ずつ間を取る"
-        case .slowLower: "下がる音に合わせて 3 拍で下ろす"
-        case .hold: "触れたら下で 2〜3 拍止まる"
+        case .song: tempoScale < 1 ? L("曲の譜面を、少しゆっくり") : L("曲の譜面のまま")
+        case .sparse: L("1 小節に 1 回。1 回ずつ間を取る")
+        case .slowLower: L("下がる音に合わせて 3 拍で下ろす")
+        case .hold: L("触れたら下で 2〜3 拍止まる")
         }
     }
 
     /// フォームの要点（2〜3 行）
     var form: [String] {
         switch self {
-        case .standard: ["手は肩の真下、指は前へ", "かかとから頭まで 1 枚の板に", "ひじは体から 45 度くらい"]
-        case .knee: ["ひざをついて、ひざから頭までまっすぐ", "おしりが上がらないように", "回数より、胸を床に近づけることを大事に"]
-        case .wide: ["手を肩幅の 1.5 倍に開く", "胸から床へ下ろす", "ひじが肩より上に出ないように"]
-        case .diamond: ["両手の親指と人さし指で三角形を作る", "ひじを体に沿わせて下ろす", "きつければひざをついてOK"]
-        case .negative: ["下がる音に合わせて 3 拍かけて下ろす", "触れたら、ふつうの速さで上げる", "下ろす間も息を止めない"]
-        case .hold: ["触れたら、そのまま止まる", "おなかに力を入れて、腰を落とさない", "上げるのは、終わりの音が鳴ってから"]
-        case .decline: ["足を低い台（ソファのふちなど）にのせる", "高さはひざくらいまで。滑らない台で", "首を長く、頭から下ろす"]
-        case .pike: ["おしりを高く上げて、体を「へ」の字に", "頭を手の間へ下ろす。iPhone は手の少し前に", "首を痛めないよう、ゆっくり"]
+        case .standard: [L("手は肩の真下、指は前へ"), L("かかとから頭まで 1 枚の板に"), L("ひじは体から 45 度くらい")]
+        case .knee: [L("ひざをついて、ひざから頭までまっすぐ"), L("おしりが上がらないように"), L("回数より、胸を床に近づけることを大事に")]
+        case .wide: [L("手を肩幅の 1.5 倍に開く"), L("胸から床へ下ろす"), L("ひじが肩より上に出ないように")]
+        case .diamond: [L("両手の親指と人さし指で三角形を作る"), L("ひじを体に沿わせて下ろす"), L("きつければひざをついてOK")]
+        case .negative: [L("下がる音に合わせて 3 拍かけて下ろす"), L("触れたら、ふつうの速さで上げる"), L("下ろす間も息を止めない")]
+        case .hold: [L("触れたら、そのまま止まる"), L("おなかに力を入れて、腰を落とさない"), L("上げるのは、終わりの音が鳴ってから")]
+        case .decline: [L("足を低い台（ソファのふちなど）にのせる"), L("高さはひざくらいまで。滑らない台で"), L("首を長く、頭から下ろす")]
+        case .pike: [L("おしりを高く上げて、体を「へ」の字に"), L("頭を手の間へ下ろす。iPhone は手の少し前に"), L("首を痛めないよう、ゆっくり")]
         }
     }
 

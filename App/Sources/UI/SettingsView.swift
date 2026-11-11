@@ -13,33 +13,33 @@ struct SettingsView: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 16) {
-                    section("回数") {
-                        row(app.progress.baseline.map { "いまの自分の回数：\($0) 回" } ?? "いまの自分の回数を決める", "figure.strengthtraining.traditional") {
+                    section(L("回数")) {
+                        row(app.progress.baseline.map { L("いまの自分の回数：%@ 回", "\($0)") } ?? L("いまの自分の回数を決める"), "figure.strengthtraining.traditional") {
                             app.sheet = .baseline
                         }
                         hairline
                         HStack {
-                            Text(app.progress.repShift == 0 ? "回数の調整：なし" : "回数の調整：\(app.progress.repShift > 0 ? "+" : "")\(app.progress.repShift) 回")
+                            Text(app.progress.repShift == 0 ? L("回数の調整：なし") : L("回数の調整：%@%@ 回", "\(app.progress.repShift > 0 ? "+" : "")", "\(app.progress.repShift)"))
                                 .font(Theme.text(14)).monospacedDigit().foregroundStyle(Theme.ink)
                             Spacer()
                             if app.progress.repShift != 0 {
-                                Button("もとに戻す") { app.progress.repShift = 0 }
+                                Button(L("もとに戻す")) { app.progress.repShift = 0 }
                                     .font(Theme.text(12)).foregroundStyle(Theme.skyDeep)
                             }
                         }
-                        Text("ホームの −／＋ と、結果の画面の提案で動いた分です。いまの自分の回数を決め直すと 0 に戻ります。")
+                        Text(L("ホームの −／＋ と、結果の画面の提案で動いた分です。いまの自分の回数を決め直すと 0 に戻ります。"))
                             .font(Theme.text(12)).foregroundStyle(Theme.inkSoft).fixedSize(horizontal: false, vertical: true)
                     }
-                    section("音と振動") {
-                        toggle("曲", "music.note", $app.progress.settings.music)
+                    section(L("音と振動")) {
+                        toggle(L("曲"), "music.note", $app.progress.settings.music)
                         hairline
-                        toggle("合図の音（ノーツ・触れた音）", "bell", $app.progress.settings.cues)
+                        toggle(L("合図の音（ノーツ・触れた音）"), "bell", $app.progress.settings.cues)
                         hairline
-                        toggle("振動", "iphone.radiowaves.left.and.right", $app.progress.settings.haptics)
+                        toggle(L("振動"), "iphone.radiowaves.left.and.right", $app.progress.settings.haptics)
                     }
-                    section("毎日のお知らせ") {
+                    section(L("毎日のお知らせ")) {
                         Toggle(isOn: Binding(get: { app.progress.settings.reminder }, set: { setReminder($0) })) {
-                            Label("毎日 " + String(app.progress.settings.reminderHour) + " 時にお知らせ", systemImage: "bell.badge")
+                            Label(L("毎日 ") + String(app.progress.settings.reminderHour) + L(" 時にお知らせ"), systemImage: "bell.badge")
                                 .font(Theme.text(14)).foregroundStyle(Theme.ink)
                         }
                         .tint(Theme.skyDeep)
@@ -47,7 +47,7 @@ struct SettingsView: View {
                             HStack(spacing: 8) {
                                 ForEach([7, 12, 18, 21], id: \.self) { h in
                                     Button { app.progress.settings.reminderHour = h; setReminder(true) } label: {
-                                        Text("\(h) 時").font(Theme.text(13, .medium))
+                                        Text(L("%@ 時", "\(h)")).font(Theme.text(13, .medium))
                                             .foregroundStyle(app.progress.settings.reminderHour == h ? .white : Theme.ink)
                                             .frame(maxWidth: .infinity, minHeight: 36)
                                             .background(RoundedRectangle(cornerRadius: Theme.rSmall, style: .continuous)
@@ -59,33 +59,33 @@ struct SettingsView: View {
                         }
                         if reminderDenied {
                             VStack(alignment: .leading, spacing: 6) {
-                                Text("通知が許可されていません。設定アプリの「通知」で許可すると、お知らせが届きます。")
+                                Text(L("通知が許可されていません。設定アプリの「通知」で許可すると、お知らせが届きます。"))
                                     .font(Theme.text(12)).foregroundStyle(Theme.inkSoft).fixedSize(horizontal: false, vertical: true)
-                                Button("設定アプリを開く") {
+                                Button(L("設定アプリを開く")) {
                                     if let url = URL(string: UIApplication.openSettingsURLString) { openURL(url) }
                                 }
                                 .font(Theme.text(13, .medium)).foregroundStyle(Theme.skyDeep)
                             }
                         }
                     }
-                    section("タイミングの調整") {
+                    section(L("タイミングの調整")) {
                         VStack(alignment: .leading, spacing: 8) {
                             HStack {
                                 Text(Self.calibrationLabel(app.progress.settings.calibrationMs))
                                     .font(Theme.text(14, .medium)).monospacedDigit().foregroundStyle(Theme.ink)
                                 Spacer()
-                                Button("もとに戻す") { app.progress.settings.calibrationMs = 0 }
+                                Button(L("もとに戻す")) { app.progress.settings.calibrationMs = 0 }
                                     .font(Theme.text(12)).foregroundStyle(Theme.skyDeep)
                             }
                             Slider(value: Binding(get: { Double(app.progress.settings.calibrationMs) },
                                                   set: { app.progress.settings.calibrationMs = Int($0.rounded()) }),
                                    in: -150...150, step: 10)
                                 .tint(Theme.skyDeep)
-                            Text("いつも「おそめ」と出るなら、判定をおそくすると合いやすくなります。Bluetooth のイヤホンでは音が遅れるので、＋100 ms くらいから試してください。")
+                            Text(L("いつも「おそめ」と出るなら、判定をおそくすると合いやすくなります。Bluetooth のイヤホンでは音が遅れるので、＋100 ms くらいから試してください。"))
                                 .font(Theme.text(12)).foregroundStyle(Theme.inkSoft).fixedSize(horizontal: false, vertical: true)
                         }
                     }
-                    section("30 日のコース") {
+                    section(L("30 日のコース")) {
                         ForEach(Course.allCases, id: \.self) { c in
                             Button {
                                 if c.isPro && !app.isPro { app.sheet = .pro } else { app.progress.settings.course = c; Feedback.select() }
@@ -93,7 +93,7 @@ struct SettingsView: View {
                                 HStack {
                                     VStack(alignment: .leading, spacing: 2) {
                                         Text(c.title).font(Theme.text(14, .medium)).foregroundStyle(Theme.ink)
-                                        Text(c == .starter ? "ひざつきから、ふつうへ（無料）" : "回数多め。ワイド・ダイヤモンド・キープの日（Pro）")
+                                        Text(c == .starter ? L("ひざつきから、ふつうへ（無料）") : L("回数多め。ワイド・ダイヤモンド・キープの日（Pro）"))
                                             .font(Theme.text(12)).foregroundStyle(Theme.inkSoft)
                                     }
                                     Spacer()
@@ -111,27 +111,27 @@ struct SettingsView: View {
                     }
                     section("Pro") {
                         if app.isPro {
-                            Label("Pro を使っています", systemImage: "checkmark.seal").font(Theme.text(14, .medium)).foregroundStyle(Theme.skyDeep)
+                            Label(L("Pro を使っています"), systemImage: "checkmark.seal").font(Theme.text(14, .medium)).foregroundStyle(Theme.skyDeep)
                         } else {
-                            row("Pro について", "sparkles") { app.sheet = .pro }
+                            row(L("Pro について"), "sparkles") { app.sheet = .pro }
                         }
                         hairline
-                        row("購入を復元", "arrow.clockwise") { Task { await app.store.restore() } }
+                        row(L("購入を復元"), "arrow.clockwise") { Task { await app.store.restore() } }
                     }
-                    section("そのほか") {
-                        row("使い方をもう一度見る", "questionmark.circle") {
+                    section(L("そのほか")) {
+                        row(L("使い方をもう一度見る"), "questionmark.circle") {
                             app.progress.hasOnboarded = false
                             dismiss()
                         }
                         hairline
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("プライバシー").font(Theme.text(14, .medium)).foregroundStyle(Theme.ink)
-                            Text("記録はこの iPhone の中だけに保存し、外に送りません。カメラ・マイク・位置情報は使いません。ログインも広告もありません。")
+                            Text(L("プライバシー")).font(Theme.text(14, .medium)).foregroundStyle(Theme.ink)
+                            Text(L("記録はこの iPhone の中だけに保存し、外に送りません。カメラ・マイク・位置情報は使いません。ログインも広告もありません。"))
                                 .font(Theme.text(12)).foregroundStyle(Theme.inkSoft).fixedSize(horizontal: false, vertical: true)
                         }
                         hairline
                         HStack {
-                            Text("バージョン").font(Theme.text(14)).foregroundStyle(Theme.ink)
+                            Text(L("バージョン")).font(Theme.text(14)).foregroundStyle(Theme.ink)
                             Spacer()
                             Text(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "-")
                                 .font(Theme.text(13)).foregroundStyle(Theme.inkSoft)
@@ -143,20 +143,20 @@ struct SettingsView: View {
                 .frame(maxWidth: .infinity)
             }
             .background(Theme.ground.ignoresSafeArea())
-            .navigationTitle("設定")
+            .navigationTitle(L("設定"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("とじる", systemImage: "xmark") { dismiss() }
+                    Button(L("とじる"), systemImage: "xmark") { dismiss() }
                 }
             }
         }
     }
 
     static func calibrationLabel(_ ms: Int) -> String {
-        if ms == 0 { return "調整なし" }
-        let direction: String = ms > 0 ? "おそく" : "はやく"
-        return "判定を " + String(abs(ms)) + " ms " + direction
+        if ms == 0 { return L("調整なし") }
+        let direction: String = ms > 0 ? L("おそく") : L("はやく")
+        return L("判定を ") + String(abs(ms)) + " ms " + direction
     }
 
     private func setReminder(_ on: Bool) {

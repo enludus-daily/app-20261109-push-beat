@@ -11,16 +11,16 @@ struct TechniquesView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
-                    Text("今日はどこに効かせる？").font(Theme.serif(24, .medium)).foregroundStyle(Theme.ink)
+                    Text(L("今日はどこに効かせる？")).font(Theme.serif(24, .medium)).foregroundStyle(Theme.ink)
                     MuscleGrid(selected: app.techniqueFilter) { m in
                         withAnimation(.easeOut(duration: 0.25)) { app.techniqueFilter = app.techniqueFilter == m ? nil : m }
                         Feedback.select()
                     }
                     HStack {
-                        Caption(app.techniqueFilter.map { "\($0.dayTitle)のやり方" } ?? "8 つのやり方")
+                        Caption(app.techniqueFilter.map { L("%@のやり方", "\($0.dayTitle)") } ?? L("8 つのやり方"))
                         Spacer()
                         if app.techniqueFilter != nil {
-                            Button("すべて見る") { withAnimation(.easeOut(duration: 0.25)) { app.techniqueFilter = nil } }
+                            Button(L("すべて見る")) { withAnimation(.easeOut(duration: 0.25)) { app.techniqueFilter = nil } }
                                 .font(Theme.text(12, .medium)).foregroundStyle(Theme.skyDeep)
                         }
                     }
@@ -32,7 +32,7 @@ struct TechniquesView: View {
                             }
                         }
                     }
-                    Text("効く所は、一般的なフォームで主に使われる筋肉の目安です。痛みがあるときは休んでください。")
+                    Text(L("効く所は、一般的なフォームで主に使われる筋肉の目安です。痛みがあるときは休んでください。"))
                         .font(Theme.text(11)).foregroundStyle(Theme.inkSoft).fixedSize(horizontal: false, vertical: true)
                 }
                 .padding(18)
@@ -40,11 +40,11 @@ struct TechniquesView: View {
                 .frame(maxWidth: .infinity)
             }
             .background(Theme.ground.ignoresSafeArea())
-            .navigationTitle("やり方と筋肉")
+            .navigationTitle(L("やり方と筋肉"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("とじる", systemImage: "xmark") { dismiss() }
+                    Button(L("とじる"), systemImage: "xmark") { dismiss() }
                 }
             }
         }
@@ -75,7 +75,7 @@ struct MuscleGrid: View {
                             HStack(alignment: .firstTextBaseline) {
                                 Text(m.dayTitle).font(Theme.serif(17, .medium)).foregroundStyle(Theme.ink)
                                 Spacer()
-                                Text("\(Technique.targeting(m).count) つ").font(Theme.label(10)).foregroundStyle(Theme.inkSoft)
+                                Text(L("%@ つ", "\(Technique.targeting(m).count)")).font(Theme.label(10)).foregroundStyle(Theme.inkSoft)
                             }
                         }
                     }
@@ -158,7 +158,7 @@ struct TechniqueCard: View {
             .stroke(picked ? Theme.skyDeep : Theme.line, lineWidth: picked ? 1.2 : Theme.hairline))
         .overlay(alignment: .bottom) {
             if locked && !app.canUse(t) {
-                Button("Pro で使える") { app.sheet = .pro }
+                Button(L("Pro で使える")) { app.sheet = .pro }
                     .buttonStyle(PrimaryButtonStyle(fill: Theme.peachDeep))
                     .padding(14)
             }
@@ -166,9 +166,9 @@ struct TechniqueCard: View {
     }
 
     private func buttonTitle(picked: Bool, locked: Bool) -> String {
-        if picked { return "今日のやり方" }
-        if locked { return "1 回だけ試す（今日のやり方にする）" }
-        return "今日はこれにする"
+        if picked { return L("今日のやり方") }
+        if locked { return L("1 回だけ試す（今日のやり方にする）") }
+        return L("今日はこれにする")
     }
 }
 
@@ -192,7 +192,7 @@ struct MuscleTags: View {
         }
         .lineLimit(1)
         .accessibilityElement()
-        .accessibilityLabel("主に" + technique.mainMuscles.map(\.label).joined(separator: "・"))
+        .accessibilityLabel(L("主に") + technique.mainMuscles.map(\.label).joined(separator: L("・")))
     }
 }
 
@@ -218,9 +218,9 @@ struct BaselineView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("いまの自分は、\n休まず何回できる？").font(Theme.serif(26, .medium)).foregroundStyle(Theme.ink)
+                        Text(L("いまの自分は、\n休まず何回できる？")).font(Theme.serif(26, .medium)).foregroundStyle(Theme.ink)
                             .fixedSize(horizontal: false, vertical: true)
-                        Text("ふつうの腕立てで、フォームを崩さずに続けられる回数。ひざをついてやっとなら 3〜5 回で。")
+                        Text(L("ふつうの腕立てで、フォームを崩さずに続けられる回数。ひざをついてやっとなら 3〜5 回で。"))
                             .font(Theme.text(13)).foregroundStyle(Theme.inkSoft).fixedSize(horizontal: false, vertical: true)
                     }
                     HStack(spacing: 18) {
@@ -228,7 +228,7 @@ struct BaselineView: View {
                         HStack(alignment: .firstTextBaseline, spacing: 4) {
                             Text("\(value)").font(Theme.serif(72)).kerning(-3).monospacedDigit().foregroundStyle(Theme.ink)
                                 .contentTransition(.numericText())
-                            Text("回").font(Theme.serif(20)).foregroundStyle(Theme.inkSoft)
+                            Text(L("回")).font(Theme.serif(20)).foregroundStyle(Theme.inkSoft)
                         }
                         .frame(maxWidth: .infinity)
                         stepButton("plus", 1)
@@ -236,7 +236,7 @@ struct BaselineView: View {
                     LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 4), spacing: 8) {
                         ForEach(quick, id: \.self) { n in
                             Button { withAnimation(.easeOut(duration: 0.2)) { value = n }; Feedback.select() } label: {
-                                Text(n == 3 ? "3 以下" : (n == 50 ? "50+" : "\(n)"))
+                                Text(n == 3 ? L("3 以下") : (n == 50 ? "50+" : "\(n)"))
                                     .font(Theme.serif(17, .medium)).monospacedDigit()
                                     .foregroundStyle(value == n ? .white : Theme.ink)
                                     .frame(maxWidth: .infinity, minHeight: 42)
@@ -246,14 +246,14 @@ struct BaselineView: View {
                         }
                     }
                     PlanPreview(baseline: value, course: app.course)
-                    Button("この回数で 30 日の道を作る") {
+                    Button(L("この回数で 30 日の道を作る")) {
                         app.useAsBaseline(value)
                         dismiss()
                     }
                     .buttonStyle(PrimaryButtonStyle())
-                    Button("ためして決める（エンドレスで数える）") { app.startMeasure() }
+                    Button(L("ためして決める（エンドレスで数える）")) { app.startMeasure() }
                         .buttonStyle(QuietButtonStyle())
-                    Text("あとから設定でいつでも変えられます。毎回の結果で、次の回数を少し上げ下げする提案も出ます。")
+                    Text(L("あとから設定でいつでも変えられます。毎回の結果で、次の回数を少し上げ下げする提案も出ます。"))
                         .font(Theme.text(12)).foregroundStyle(Theme.inkSoft).fixedSize(horizontal: false, vertical: true)
                 }
                 .padding(20)
@@ -261,11 +261,11 @@ struct BaselineView: View {
                 .frame(maxWidth: .infinity)
             }
             .background(Theme.ground.ignoresSafeArea())
-            .navigationTitle("いまの自分の回数")
+            .navigationTitle(L("いまの自分の回数"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("とじる", systemImage: "xmark") { dismiss() }
+                    Button(L("とじる"), systemImage: "xmark") { dismiss() }
                 }
             }
         }
@@ -283,7 +283,7 @@ struct BaselineView: View {
                 .overlay(Circle().stroke(Theme.line, lineWidth: 1))
         }
         .buttonStyle(PressStyle())
-        .accessibilityLabel(delta > 0 ? "1 回ふやす" : "1 回へらす")
+        .accessibilityLabel(delta > 0 ? L("1 回ふやす") : L("1 回へらす"))
     }
 }
 
@@ -300,7 +300,7 @@ struct PlanPreview: View {
                 HStack(alignment: .firstTextBaseline) {
                     Caption(course.title)
                     Spacer()
-                    Text("Day 1 は \(days[0].reps) 回 → Day 30 は \(days[29].reps) 回")
+                    Text(L("Day 1 は %@ 回 → Day 30 は %@ 回", "\(days[0].reps)", "\(days[29].reps)"))
                         .font(Theme.text(12, .medium)).monospacedDigit().foregroundStyle(Theme.ink)
                 }
                 HStack(alignment: .bottom, spacing: 2) {
@@ -313,11 +313,11 @@ struct PlanPreview: View {
                 }
                 .frame(height: 56, alignment: .bottom)
                 .animation(.easeOut(duration: 0.25), value: baseline)
-                Text("7 日ごとに軽い日。はじめは今の 6 割から、少しずつ増えます。")
+                Text(L("7 日ごとに軽い日。はじめは今の 6 割から、少しずつ増えます。"))
                     .font(Theme.text(11)).foregroundStyle(Theme.inkSoft)
             }
         }
         .accessibilityElement()
-        .accessibilityLabel("1 日目 \(days[0].reps) 回から 30 日目 \(days[29].reps) 回まで")
+        .accessibilityLabel(L("1 日目 %@ 回から 30 日目 %@ 回まで", "\(days[0].reps)", "\(days[29].reps)"))
     }
 }
