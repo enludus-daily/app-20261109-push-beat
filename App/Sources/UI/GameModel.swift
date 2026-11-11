@@ -22,6 +22,14 @@ final class GameModel {
     private(set) var touching = false
     /// 撮影用に止めた時刻（曲の頭からの秒）
     private var frozen: Double?
+    /// 終わった時刻（曲の頭からの秒）
+    private(set) var endedAt: Double?
+
+    /// 続いた秒数（カウントのあとから終わりまで）
+    var seconds: Int {
+        let end = endedAt ?? songTime()
+        return max(0, Int((end - chart.seconds(atBeat: Double(Chart.countIn))).rounded()))
+    }
 
     /// 位置につくまでの待ち時間（秒）。はじめるを押してから、床に置いて構えるまで。指の練習は短く
     var leadIn: Double { request.practice ? 2 : 5 }
@@ -33,7 +41,7 @@ final class GameModel {
     init(request: PlayRequest, settings: Settings, audio: Bool = true) {
         self.request = request
         self.settings = settings
-        self.chart = request.song.chart(reps: request.reps)
+        self.chart = request.technique.chart(song: request.song, reps: request.reps)
         self.session = PlaySession(chart: chart, missLimit: request.endless ? 3 : nil)
         self.audio = audio ? AudioPlayer() : nil
     }
@@ -57,13 +65,13 @@ final class GameModel {
     func begin() {
         guard phase == .ready else { return }
         phase = .preparing
-        let chart = self.chart, mood = request.song.mood
+        let chart = self.chart, mood = request.song.mood, cue = request.technique.cue
         let music = settings.music, cues = settings.cues
         UIApplication.shared.isIdleTimerDisabled = true
         loop = Task { [weak self] in
             // 音はその場で作る（重いので裏で）
             let samples: [Float]? = (music || cues)
-                ? await Task.detached(priority: .userInitiated) { Synth.render(chart: chart, mood: mood, music: music, cues: cues) }.value
+                ? await Task.detached(priority: .userInitiated) { Synth.render(chart: chart, mood: mood, music: music, cues: cues, cue: cue) }.value
                 : nil
             guard let self, !Task.isCancelled else { return }
             let start = CACurrentMediaTime() + self.leadIn
@@ -121,6 +129,7 @@ final class GameModel {
 
     private func end() {
         guard phase != .finished else { return }
+        endedAt = startTime == nil ? nil : songTime()
         phase = .finished
         loop?.cancel()
         audio?.stop()
@@ -130,6 +139,21 @@ final class GameModel {
     }
 
     // MARK: 撮影・テスト用
+
+    /// エンドレスで、n 個叩いたあと 3 回外して終わった結果を作る（撮影用）
+    func simulateEndless(hits n: Int) {
+        let count = min(n, chart.notes.count - 3)
+        for i in 0..<count {
+            let note = chart.notes[i]
+            let wobble = [0.02, -0.04, 0.08, -0.02, 0.16, 0.03][i % 6]
+            session.touchDown(at: chart.seconds(atBeat: note.beat) + wobble)
+            session.touchUp(at: chart.seconds(atBeat: note.endBeat) + 0.05)
+        }
+        let end = chart.seconds(atBeat: chart.notes[count + 2].beat) + 0.5
+        session.advance(to: end)
+        endedAt = end
+        phase = .finished
+    }
 
     /// 最初の hits 個を拍どおりに叩いた途中の場面で止める
     func freezeForScreenshot(hits: Int) {
@@ -156,6 +180,7 @@ final class GameModel {
             session.touchUp(at: chart.seconds(atBeat: note.endBeat) + 0.05)
         }
         session.advance(to: chart.duration + 1)
+        endedAt = chart.duration
         phase = .finished
     }
 }

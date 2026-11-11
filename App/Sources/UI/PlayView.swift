@@ -109,9 +109,25 @@ struct PlayView: View {
             Text(game.request.endless ? "回" : "/ \(game.chart.notes.count)")
                 .font(Theme.serif(20))
                 .foregroundStyle(Theme.inkSoft)
+            if game.request.endless { bestGap(s.reps) }
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel("\(s.reps) 回")
+    }
+
+    /// エンドレス：自己ベストとの差（追いつくまで「あと N」、超えたら「+N」）
+    @ViewBuilder
+    private func bestGap(_ reps: Int) -> some View {
+        let best = app.progress.bestEndless
+        if best > 0 {
+            let over = reps > best
+            Text(over ? "ベスト +\(reps - best)" : "ベストまで \(best - reps + 1)")
+                .font(Theme.text(12, .semibold)).monospacedDigit()
+                .foregroundStyle(over ? Theme.peachDeep : Theme.inkSoft)
+                .padding(.horizontal, 8).padding(.vertical, 3)
+                .background(Capsule().fill(over ? Theme.peachSoft : Theme.paper.opacity(0.85)))
+                .padding(.leading, 6)
+        }
     }
 
     private var comboView: some View {
@@ -127,7 +143,7 @@ struct PlayView: View {
     }
 
     private var hint: some View {
-        Text(game.request.endless ? "3 回続けて外したら終わり。どこに触れても 1 回" : "鼻かあごで、どこに触れても 1 回")
+        Text(game.request.measure ? "できなくなったら左上の × で終える" : (game.request.endless ? "3 回続けて外したら終わり。どこに触れても 1 回" : "\(game.request.technique.title) ・ 鼻かあごで、どこに触れても 1 回"))
             .font(Theme.text(13))
             .foregroundStyle(Theme.inkSoft)
     }
@@ -294,24 +310,32 @@ private struct ReadyPanel: View {
             Spacer()
             VStack(alignment: .leading, spacing: 14) {
                 HStack(spacing: 14) {
-                    PlacementSketch().frame(width: 92, height: 92)
+                    if game.request.practice {
+                        PlacementSketch().frame(width: 92, height: 92)
+                    } else {
+                        BodyFigure(technique: game.request.technique)
+                            .frame(width: 112, height: 64)
+                            .background(RoundedRectangle(cornerRadius: Theme.rMid, style: .continuous).fill(Theme.skyMist))
+                    }
                     VStack(alignment: .leading, spacing: 4) {
-                        if game.request.practice {
-                            Caption("指でためす")
-                        } else if let plan = game.request.plan {
-                            Caption("Day \(plan.day) ・ \(plan.style)")
-                        } else {
-                            Caption(game.request.endless ? "フリー" : game.request.song.english)
-                        }
-                        Text(game.request.endless ? "外すまで続ける" : "\(game.chart.notes.count) 回")
+                        Caption(caption)
+                        Text(title)
                             .font(Theme.serif(30)).kerning(-1).foregroundStyle(Theme.ink)
-                        Text("\(game.request.song.title) ・ BPM \(Int(game.request.song.bpm))")
+                        Text("\(game.request.song.title) ・ BPM \(Int(game.chart.bpm))")
                             .font(Theme.text(13)).foregroundStyle(Theme.inkSoft)
                     }
                 }
                 Text(instructions)
                     .font(Theme.text(14)).foregroundStyle(Theme.ink)
                     .fixedSize(horizontal: false, vertical: true)
+                if !game.request.practice {
+                    VStack(alignment: .leading, spacing: 3) {
+                        ForEach(Array(game.request.technique.form.prefix(2)), id: \.self) { line in
+                            Text("・" + line).font(Theme.text(13)).foregroundStyle(Theme.inkSoft)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
+                    }
+                }
                 Button("はじめる") { game.begin() }
                     .buttonStyle(PrimaryButtonStyle())
             }
@@ -326,9 +350,28 @@ private struct ReadyPanel: View {
 }
 
 extension ReadyPanel {
+    var caption: String {
+        let r = game.request
+        if r.practice { return "指でためす" }
+        if r.measure { return "いまの自分をためす" }
+        if let plan = r.plan { return "Day \(plan.day) ・ \(r.technique.title)" }
+        if r.endless { return "エンドレス ・ \(r.technique.title)" }
+        return "\(r.song.english) ・ \(r.technique.title)"
+    }
+
+    var title: String {
+        let r = game.request
+        if r.measure { return "できるだけ続ける" }
+        if r.endless { return "外すまで続ける" }
+        return "\(game.chart.notes.count) 回"
+    }
+
     var instructions: String {
         if game.request.practice {
             return "まずは指でためしに 4 回。輪がレコードの縁に重なる瞬間に、画面のどこかに触れてください。"
+        }
+        if game.request.measure {
+            return "ふつうの腕立てで、フォームを崩さずに何回続くか。拍に合わなくても回数は数えます。押してから 5 秒で始まります。"
         }
         return "床に置いて、画面の上側に頭がくるように。押してから 5 秒で始まります。鼻かあごで、どこに触れても 1 回。"
     }

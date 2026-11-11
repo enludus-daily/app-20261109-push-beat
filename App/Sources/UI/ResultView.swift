@@ -8,6 +8,8 @@ struct ResultView: View {
     let result: ResultSummary
     @State private var shown: Double = 0
     @State private var shareImage: Image?
+    @State private var acceptedAdvice = false
+    @State private var usedBaseline = false
 
     var body: some View {
         ScrollView {
@@ -15,11 +17,12 @@ struct ResultView: View {
                 top
                 if hSize == .regular {
                     HStack(alignment: .top, spacing: 16) {
-                        tiles
+                        VStack(spacing: 16) { tiles; nextCards }
                         VStack(spacing: 16) { tendencyCard; planCard }
                     }
                 } else {
                     tiles
+                    nextCards
                     tendencyCard
                     planCard
                 }
@@ -53,13 +56,16 @@ struct ResultView: View {
 
     private var headline: String {
         if result.practice { return "ためし" }
+        if result.measure { return "いまの自分" }
+        if result.record.endless { return "エンドレス" }
         if result.quit { return "途中まで" }
-        return result.record.endless ? "フリー" : "Result"
+        return "Result"
     }
 
     private var subline: String {
         if result.practice { return "つかめたら、次は床に置いて腕立てで" }
-        if result.quit { return "ここまでの記録も残しました" }
+        if result.measure { return "\(result.record.reps) 回できた。これが、いまの自分" }
+        if result.quit, !result.record.endless { return "ここまでの記録も残しました" }
         return result.grade.line
     }
 
@@ -72,8 +78,12 @@ struct ResultView: View {
                 Text(result.song.title).font(Theme.serif(26, .medium)).foregroundStyle(Theme.ink)
                 Text(subline)
                     .font(Theme.text(14)).foregroundStyle(Theme.inkSoft)
+                if !result.practice {
+                    Text("やり方：\(result.record.resolvedTechnique.title) ・ 主に" + result.record.resolvedTechnique.mainMuscles.map(\.label).joined(separator: "・"))
+                        .font(Theme.text(12, .medium)).foregroundStyle(Theme.skyDeep)
+                }
                 if result.newBest {
-                    Text("フリーの自己ベスト更新").font(Theme.text(12, .semibold)).foregroundStyle(Theme.peachDeep)
+                    Text("エンドレスの自己ベスト更新").font(Theme.text(12, .semibold)).foregroundStyle(Theme.peachDeep)
                         .padding(.horizontal, 10).padding(.vertical, 4)
                         .background(Capsule().fill(Theme.peachSoft))
                 }
@@ -131,6 +141,122 @@ struct ResultView: View {
         .padding(.vertical, 10)
         .background(RoundedRectangle(cornerRadius: Theme.rMid, style: .continuous).fill(j == .perfect ? Theme.peachSoft : (j == .good ? Theme.skyMist : Theme.ground)))
     }
+
+    /// 結果の次の一歩：回数の提案・ためした回数で道を作る・エンドレスのベストとの差
+    @ViewBuilder private var nextCards: some View {
+        if result.measure, !result.practice { measureCard }
+        if result.plan != nil, !result.record.endless, !result.practice { adviceCard }
+        if let before = result.endlessBefore { endlessCompare(before) }
+    }
+
+    /// 次の回数の提案（勝手に変えず、1 タップで受け入れる）
+    private var adviceCard: some View {
+        let advice = result.advice
+        let r = result.record
+        let n = r.perfect + r.good + r.miss
+        let perfectPct = n == 0 ? 0 : Int((Double(r.perfect) / Double(n) * 100).rounded())
+        return Slab {
+            VStack(alignment: .leading, spacing: 10) {
+                HStack {
+                    Caption("次の回数")
+                    Spacer()
+                    Text("Perfect \(perfectPct)% ・ \(result.quit ? "途中まで" : "最後まで")")
+                        .font(Theme.text(12, .medium)).monospacedDigit().foregroundStyle(Theme.inkSoft)
+                }
+                switch advice {
+                case .keep:
+                    Text("ちょうどいい回数です").font(Theme.serif(20, .medium)).foregroundStyle(Theme.ink)
+                    Text("Day \(result.nextDay) は \(result.nextReps) 回。きつければホームの −／＋ でいつでも変えられます")
+                        .font(Theme.text(13)).foregroundStyle(Theme.inkSoft).fixedSize(horizontal: false, vertical: true)
+                case .up, .down:
+                    HStack(alignment: .firstTextBaseline, spacing: 8) {
+                        Text(advice.delta > 0 ? "少し上げてみる？" : "少し下げてみる？").font(Theme.serif(20, .medium)).foregroundStyle(Theme.ink)
+                        Spacer()
+                        Text("\(result.nextReps)").font(Theme.serif(20)).monospacedDigit().foregroundStyle(Theme.inkSoft).strikethrough(acceptedAdvice)
+                        Image(systemName: "arrow.right").font(.system(size: 12)).foregroundStyle(Theme.inkSoft)
+                        Text("\(result.nextRepsAfter) 回").font(Theme.serif(26, .medium)).monospacedDigit()
+                            .foregroundStyle(advice.delta > 0 ? Theme.peachDeep : Theme.skyDeep)
+                    }
+                    Text(advice.delta > 0
+                         ? "Perfect が多く、最後まで続きました。Day \(result.nextDay) から \(advice.delta) 回ふやす提案です"
+                         : (result.quit ? "今日は途中まで。Day \(result.nextDay) から \(-advice.delta) 回へらして、最後まで続けよう"
+                                        : "外した回が多め。Day \(result.nextDay) から \(-advice.delta) 回へらして、拍に乗ろう"))
+                        .font(Theme.text(13)).foregroundStyle(Theme.inkSoft).fixedSize(horizontal: false, vertical: true)
+                    if acceptedAdvice {
+                        Label("Day \(result.nextDay) から \(result.nextRepsAfter) 回にしました", systemImage: "checkmark")
+                            .font(Theme.text(13, .medium)).foregroundStyle(Theme.skyDeep)
+                    } else {
+                        HStack(spacing: 10) {
+                            Button(advice.delta > 0 ? "+\(advice.delta) 回にする" : "\(advice.delta) 回にする") {
+                                app.acceptAdvice(advice)
+                                withAnimation(.easeOut(duration: 0.25)) { acceptedAdvice = true }
+                            }
+                            .buttonStyle(PrimaryButtonStyle(fill: advice.delta > 0 ? Theme.peachDeep : Theme.skyDeep))
+                            Button("このまま") { withAnimation(.easeOut(duration: 0.25)) { acceptedAdvice = true } }
+                                .buttonStyle(QuietButtonStyle())
+                                .frame(maxWidth: 110)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /// ためした回数で、30 日の道を作る
+    private var measureCard: some View {
+        Slab {
+            VStack(alignment: .leading, spacing: 10) {
+                Caption("いまの自分の回数")
+                if usedBaseline {
+                    Label("\(result.record.reps) 回で 30 日の道を作りました", systemImage: "checkmark")
+                        .font(Theme.text(14, .medium)).foregroundStyle(Theme.skyDeep)
+                } else {
+                    Text("\(result.record.reps) 回をもとに、30 日の回数を合わせますか？").font(Theme.text(14)).foregroundStyle(Theme.ink)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                PlanPreview(baseline: max(1, result.record.reps), course: app.course)
+                if !usedBaseline {
+                    Button("この回数で道を作る") {
+                        app.useAsBaseline(max(1, result.record.reps))
+                        withAnimation(.easeOut(duration: 0.25)) { usedBaseline = true }
+                    }
+                    .buttonStyle(PrimaryButtonStyle())
+                }
+            }
+        }
+    }
+
+    /// エンドレス：今回と自己ベストを並べる
+    private func endlessCompare(_ before: EndlessBest) -> some View {
+        let r = result.record
+        return Slab {
+            VStack(alignment: .leading, spacing: 10) {
+                Caption("自己ベストと比べる")
+                HStack(spacing: 0) {
+                    compareColumn("回数", r.reps, before.reps, format: { "\($0)" })
+                    compareColumn("コンボ", r.maxCombo, before.combo, format: { "\($0)" })
+                    compareColumn("続いた時間", r.seconds ?? 0, before.seconds, format: { Self.time($0) })
+                }
+            }
+        }
+    }
+
+    private func compareColumn(_ label: String, _ now: Int, _ best: Int, format: (Int) -> String) -> some View {
+        let diff = now - best
+        let nowText = format(now)
+        let note: String = best == 0 ? "はじめて" : (diff > 0 ? "ベスト +" + format(diff) : (diff == 0 ? "ベストと同じ" : "ベストまで " + format(-diff)))
+        return VStack(spacing: 3) {
+            Text(nowText).font(Theme.serif(26, .medium)).monospacedDigit().foregroundStyle(Theme.ink)
+            Text(note)
+                .font(Theme.text(11, .semibold)).monospacedDigit()
+                .foregroundStyle(diff > 0 ? Theme.peachDeep : Theme.inkSoft)
+            Caption(label)
+        }
+        .frame(maxWidth: .infinity)
+        .accessibilityElement(children: .combine)
+    }
+
+    static func time(_ seconds: Int) -> String { String(format: "%d:%02d", seconds / 60, seconds % 60) }
 
     private var tendencyCard: some View {
         Slab {
@@ -261,7 +387,7 @@ struct ShareCard: View {
                 }
                 Text("Perfect \(result.record.perfect) ・ Good \(result.record.good) ・ Combo \(result.record.maxCombo)")
                     .font(Theme.text(14, .medium)).monospacedDigit().foregroundStyle(Theme.ink)
-                Text(result.song.title + (result.plan.map { " ・ Day \($0.day)" } ?? ""))
+                Text(result.song.title + " ・ " + result.record.resolvedTechnique.title + (result.plan.map { " ・ Day \($0.day)" } ?? ""))
                     .font(Theme.text(13)).foregroundStyle(Theme.inkSoft)
             }
             .padding(34)

@@ -41,7 +41,9 @@ enum Synth {
     static func frequency(_ midi: Int) -> Float { 440 * powf(2, Float(midi - 69) / 12) }
 
     /// モノラルの音を作る。music が false なら合図の音だけ、cues が false なら曲だけ
-    static func render(chart: Chart, mood: Mood, sampleRate: Double = 44_100, music: Bool = true, cues: Bool = true) -> [Float] {
+    /// cue はやり方の合図の性格（ゆっくり下ろすやり方では、下がっていく音で下ろす速さを伝える）
+    static func render(chart: Chart, mood: Mood, sampleRate: Double = 44_100, music: Bool = true, cues: Bool = true,
+                       cue: CueStyle = .bell) -> [Float] {
         let sr = Float(sampleRate)
         let spb = Float(chart.secondsPerBeat)
         let frames = Int(Float(chart.duration) * sr) + Int(sr)  // 余韻に 1 秒
@@ -123,8 +125,21 @@ enum Synth {
             if cues {
                 for note in chart.notes {
                     let at = Float(note.beat) * spb
-                    // 1 拍前の小さな音（下ろし始めの合図）
-                    add(at: at - spb, length: 0.08) { t in sinf(2 * .pi * 1318 * t) * expf(-t * 60) * 0.08 }
+                    switch cue {
+                    case .bell:
+                        // 1 拍前の小さな音（下ろし始めの合図）
+                        add(at: at - spb, length: 0.08) { t in sinf(2 * .pi * 1318 * t) * expf(-t * 60) * 0.08 }
+                    case .glide(let n):
+                        // n 拍かけて 1 オクターブ下がる音（この速さで下ろす）
+                        let len = Float(n) * spb
+                        let f0: Float = 1046, ratio: Float = 0.5
+                        let k = 2 * Float.pi * f0 * len / logf(ratio)
+                        add(at: at - len, length: len) { t in
+                            let phase = k * (powf(ratio, t / len) - 1)
+                            let env = min(1, t / 0.05) * (0.6 + 0.4 * t / len)
+                            return sinf(phase) * env * 0.06
+                        }
+                    }
                     // ノーツの音：やわらかいベル
                     add(at: at, length: 0.5) { t in
                         (sinf(2 * .pi * 880 * t) + 0.5 * sinf(2 * .pi * 1760 * t)) * expf(-t * 9) * 0.16

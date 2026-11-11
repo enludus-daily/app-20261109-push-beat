@@ -23,8 +23,8 @@ struct PlanDay: Equatable, Sendable {
     let day: Int
     let songID: String
     let reps: Int
-    /// やり方（ひざつき・ふつう・ワイド など）
-    let style: String
+    /// やり方（ひざつき・ふつう・ワイド など）。ホームで今日だけ変えられる
+    let technique: Technique
     let tip: String
     /// 軽めの日（7 日ごと）
     var isLight: Bool { day % 7 == 0 }
@@ -35,20 +35,45 @@ struct PlanDay: Equatable, Sendable {
 enum Program {
     static let length = 30
 
-    static func day(_ course: Course, _ n: Int) -> PlanDay {
+    /// baseline：いまの自分の回数（休まず何回できるか）。決めていなければ、はじめから用意した回数。
+    /// shift：−／＋ と提案で動かした分（軽い日は半分だけ効く）
+    static func day(_ course: Course, _ n: Int, baseline: Int? = nil, shift: Int = 0) -> PlanDay {
         let d = min(max(n, 1), length)
+        let r = reps(course, d, baseline: baseline, shift: shift)
         switch course {
         case .starter:
-            return PlanDay(course: course, day: d, songID: starterSong(d), reps: starterReps[d - 1],
-                           style: d <= 10 ? "ひざつき" : (d <= 20 ? "ふつう・ゆっくり" : "ふつう"), tip: starterTips[d - 1])
+            return PlanDay(course: course, day: d, songID: starterSong(d), reps: r,
+                           technique: d <= 10 ? .knee : .standard, tip: starterTips[d - 1])
         case .advanced:
-            let styles = ["ふつう", "ワイド", "ふつう", "ダイヤモンド", "キープ多め"]
-            return PlanDay(course: course, day: d, songID: advancedSongs[(d - 1) % advancedSongs.count], reps: advancedReps[d - 1],
-                           style: styles[(d - 1) % styles.count], tip: advancedTips[(d - 1) % advancedTips.count])
+            let techniques: [Technique] = [.standard, .wide, .standard, .diamond, .hold]
+            return PlanDay(course: course, day: d, songID: advancedSongs[(d - 1) % advancedSongs.count], reps: r,
+                           technique: techniques[(d - 1) % techniques.count], tip: advancedTips[(d - 1) % advancedTips.count])
         }
     }
 
-    static func days(_ course: Course) -> [PlanDay] { (1...length).map { day(course, $0) } }
+    static func days(_ course: Course, baseline: Int? = nil, shift: Int = 0) -> [PlanDay] {
+        (1...length).map { day(course, $0, baseline: baseline, shift: shift) }
+    }
+
+    static let minReps = 3
+    static let maxReps = 200
+
+    /// その日の回数。baseline があれば、その人に合わせた道（はじめ 6〜8 割 → 30 日目にだいたい 1.4〜1.7 倍＋α）
+    static func reps(_ course: Course, _ d: Int, baseline: Int?, shift: Int) -> Int {
+        let day = min(max(d, 1), length)
+        let light = day % 7 == 0
+        let base: Double
+        if let given = baseline {
+            let b = Double(min(max(given, 1), 150))
+            let (start, end): (Double, Double) = course == .starter ? (b * 0.6, b * 1.4 + 8) : (b * 0.8, b * 1.7 + 10)
+            let curve = start + (end - start) * Double(day - 1) / Double(length - 1)
+            base = light ? curve * 0.6 : curve
+        } else {
+            base = Double(course == .starter ? starterReps[day - 1] : advancedReps[day - 1])
+        }
+        let s = light ? Double(shift) / 2 : Double(shift)
+        return min(maxReps, max(minReps, Int((base + s).rounded())))
+    }
 
     // 回数：少しずつ増え、7 日ごとに軽い日
     static let starterReps = [6, 6, 8, 8, 10, 10, 6, 10, 12, 12, 14, 14, 16, 8, 16, 18, 18, 20, 20, 22, 10, 22, 24, 24, 26, 28, 28, 12, 30, 30]

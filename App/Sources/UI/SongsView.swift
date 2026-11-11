@@ -120,12 +120,12 @@ private struct SongDetail: View {
             if locked {
                 Text("Pro の曲を 1 回だけ、無料で試せます").font(Theme.text(13)).foregroundStyle(Theme.peachDeep)
             }
-            Button(locked ? "1 回だけ試す" : "この曲で \(reps) 回") {
-                app.start(PlayRequest(song: song, reps: reps))
+            Button(locked ? "1 回だけ試す" : "この曲で \(reps) 回（\(app.todayTechnique.title)）") {
+                app.start(PlayRequest(song: song, reps: reps, technique: app.todayTechnique))
             }
             .buttonStyle(PrimaryButtonStyle())
             if !locked {
-                Button("フリーで遊ぶ（3 回続けて外すまで）") { app.startEndless(song: song) }
+                Button("エンドレスで遊ぶ（3 回続けて外すまで）") { app.startEndless(song: song) }
                     .buttonStyle(QuietButtonStyle())
             }
         }

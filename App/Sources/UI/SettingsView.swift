@@ -13,6 +13,23 @@ struct SettingsView: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 16) {
+                    section("回数") {
+                        row(app.progress.baseline.map { "いまの自分の回数：\($0) 回" } ?? "いまの自分の回数を決める", "figure.strengthtraining.traditional") {
+                            app.sheet = .baseline
+                        }
+                        hairline
+                        HStack {
+                            Text(app.progress.repShift == 0 ? "回数の調整：なし" : "回数の調整：\(app.progress.repShift > 0 ? "+" : "")\(app.progress.repShift) 回")
+                                .font(Theme.text(14)).monospacedDigit().foregroundStyle(Theme.ink)
+                            Spacer()
+                            if app.progress.repShift != 0 {
+                                Button("もとに戻す") { app.progress.repShift = 0 }
+                                    .font(Theme.text(12)).foregroundStyle(Theme.skyDeep)
+                            }
+                        }
+                        Text("ホームの −／＋ と、結果の画面の提案で動いた分です。いまの自分の回数を決め直すと 0 に戻ります。")
+                            .font(Theme.text(12)).foregroundStyle(Theme.inkSoft).fixedSize(horizontal: false, vertical: true)
+                    }
                     section("音と振動") {
                         toggle("曲", "music.note", $app.progress.settings.music)
                         hairline
@@ -76,7 +93,7 @@ struct SettingsView: View {
                                 HStack {
                                     VStack(alignment: .leading, spacing: 2) {
                                         Text(c.title).font(Theme.text(14, .medium)).foregroundStyle(Theme.ink)
-                                        Text(c == .starter ? "ひざつき 6 回から、30 回まで（無料）" : "20 回から 60 回。キープ・ワイド・ダイヤモンド（Pro）")
+                                        Text(c == .starter ? "ひざつきから、ふつうへ（無料）" : "回数多め。ワイド・ダイヤモンド・キープの日（Pro）")
                                             .font(Theme.text(12)).foregroundStyle(Theme.inkSoft)
                                     }
                                     Spacer()

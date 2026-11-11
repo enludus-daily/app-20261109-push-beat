@@ -23,7 +23,7 @@ jobs:
       test-destination: "platform=iOS Simulator,name=iPhone Duo,OS=27.1"
       screenshot-device: iPhone Duo
       # 撮る画面（アプリが起動引数 -screenshotScene <名前> で開く画面。@dark でダークモード）。手順書 9.5
-      screenshot-scenes: launch home play result songs records settings pro onboarding
+      screenshot-scenes: launch home techniques baseline play endless endless-result result songs records settings pro onboarding
       # Duo の内側の画面（display3）を撮るため、開いた姿勢にしてから撮る（simctl ui posture がある Xcode でだけ効く）
       screenshot-posture: open
       guard-disabled: ${{ vars.DAILY_GUARD_DISABLED == 'true' && 'true' || 'false' }}

@@ -6,7 +6,7 @@ enum Route: Equatable {
 }
 
 enum Sheet: String, Identifiable {
-    case songs, records, settings, pro
+    case songs, records, settings, pro, techniques, baseline
     var id: String { rawValue }
 }
 
@@ -14,10 +14,13 @@ enum Sheet: String, Identifiable {
 struct PlayRequest: Equatable {
     let song: Song
     let reps: Int
+    var technique: Technique = .standard
     var plan: PlanDay?
     var endless = false
     /// 指でためす練習（記録しない）
     var practice = false
+    /// いまの自分の回数をためす（エンドレスで数え、結果の画面で道に使える）
+    var measure = false
 }
 
 /// アプリ全体の状態：進み具合（端末に保存）・課金・いまの画面
@@ -66,14 +69,29 @@ final class AppModel {
 
     var course: Course { isPro ? progress.settings.course : .starter }
     var todayPlan: PlanDay { progress.plan(course, today: today) }
+    /// 今日のやり方（ホームで選んだもの、なければ道の日のやり方）
+    var todayTechnique: Technique {
+        let t = progress.technique(for: todayPlan, today: today)
+        // お試しを使い終えた Pro のやり方は、道の日のやり方に戻す（今日の分が止まらないように）
+        return canUse(t) ? t : todayPlan.technique
+    }
+    /// やり方の画面で、筋肉から絞りこんでいるとき
+    var techniqueFilter: Muscle?
 
     func canPlay(_ song: Song) -> Bool { !song.isPro || isPro || !progress.usedProTrial }
+    func canUse(_ t: Technique) -> Bool { !t.isPro || isPro || !progress.usedTechniqueTrial }
+    /// Pro のやり方を、お試しの 1 回で使うことになるか
+    func isTrial(_ t: Technique) -> Bool { t.isPro && !isPro && !progress.usedTechniqueTrial }
 
     func start(_ request: PlayRequest) {
-        if request.song.isPro, !isPro {
-            guard !progress.usedProTrial else { sheet = .pro; return }
-            progress.usedProTrial = true
+        let proSong = request.song.isPro && !isPro
+        let proTechnique = request.technique.isPro && !isPro
+        if (proSong && progress.usedProTrial) || (proTechnique && progress.usedTechniqueTrial) {
+            sheet = .pro
+            return
         }
+        if proSong { progress.usedProTrial = true }
+        if proTechnique { progress.usedTechniqueTrial = true }
         sheet = nil
         game = GameModel(request: request, settings: progress.settings)
         lastResult = nil
@@ -82,7 +100,24 @@ final class AppModel {
 
     func startToday() {
         let plan = todayPlan
-        start(PlayRequest(song: plan.song, reps: plan.reps, plan: plan))
+        start(PlayRequest(song: plan.song, reps: plan.reps, technique: todayTechnique, plan: plan))
+    }
+
+    /// 今日のやり方を選ぶ（その日だけ。道の日のやり方に戻すなら nil にする）
+    func pickTechnique(_ t: Technique) {
+        progress.techniquePick = t == todayPlan.technique ? nil : TechniquePick(day: today, technique: t)
+        Feedback.select()
+    }
+
+    /// 今日の回数を −／＋（これからの日にも続く）
+    func nudgeReps(_ delta: Int) {
+        progress.nudge(delta, course: course, today: today)
+        Feedback.select()
+    }
+
+    /// いまの自分の回数を、エンドレスで数えてためす（ふつうの腕立て。3 回続けて外すか、やめるまで）
+    func startMeasure() {
+        start(PlayRequest(song: Songbook.all[0], reps: 300, technique: .standard, endless: true, measure: true))
     }
 
     /// はじめの案内から、指で 4 回だけためす
@@ -91,8 +126,25 @@ final class AppModel {
         start(PlayRequest(song: Songbook.all[0], reps: 4, practice: true))
     }
 
-    func startEndless(song: Song) {
-        start(PlayRequest(song: song, reps: 300, endless: true))
+    func startEndless(song: Song, technique: Technique? = nil) {
+        start(PlayRequest(song: song, reps: 300, technique: technique ?? todayTechnique, endless: true))
+    }
+
+    /// ホームのエンドレス：今日の曲と、今日のやり方で
+    func startEndlessToday() {
+        startEndless(song: todayPlan.song)
+    }
+
+    /// 結果の提案を受け入れる（次の日から回数が変わる）
+    func acceptAdvice(_ advice: RepAdvice) {
+        progress.repShift += advice.delta
+        Feedback.select()
+    }
+
+    /// ためした回数で、30 日の道を作る
+    func useAsBaseline(_ reps: Int) {
+        progress.setBaseline(reps)
+        Feedback.finished()
     }
 
     /// GameModel が終わったときに呼ぶ
@@ -105,7 +157,8 @@ final class AppModel {
         let record = SessionRecord(day: today, index: progress.nextIndex(on: today), songID: g.request.song.id, reps: s.reps,
                                    perfect: c.perfect, good: c.good, miss: c.miss, maxCombo: s.maxCombo, score: s.score,
                                    meanOffsetMs: s.meanOffsetMs, course: quit ? nil : g.request.plan?.course,
-                                   planDay: quit ? nil : g.request.plan?.day, endless: g.request.endless)
+                                   planDay: quit ? nil : g.request.plan?.day, endless: g.request.endless,
+                                   technique: g.request.technique, seconds: g.seconds)
         if g.request.practice {
             lastResult = ResultSummary(record: record, song: g.request.song, plan: nil, clearedPlan: false, newBest: false,
                                        streak: progress.streak(today: today), totalReps: progress.totalReps, quit: quit, practice: true)
@@ -113,11 +166,23 @@ final class AppModel {
             route = .result
             return
         }
+        let before = progress.endlessBest
         let wasBest = g.request.endless && s.reps > progress.bestEndless
         let advanced = progress.record(record, today: today)
-        lastResult = ResultSummary(record: record, song: g.request.song, plan: g.request.plan, clearedPlan: advanced,
-                                   newBest: wasBest, streak: progress.streak(today: today), totalReps: progress.totalReps,
-                                   quit: quit, practice: false)
+        var summary = ResultSummary(record: record, song: g.request.song, plan: g.request.plan, clearedPlan: advanced,
+                                    newBest: wasBest, streak: progress.streak(today: today), totalReps: progress.totalReps,
+                                    quit: quit, practice: false)
+        summary.endlessBefore = g.request.endless ? before : nil
+        summary.measure = g.request.measure
+        if g.request.plan != nil, !g.request.endless {
+            let advice = RepAdvice.suggest(reps: g.request.reps, perfect: c.perfect, good: c.good, miss: c.miss, finished: !quit)
+            summary.advice = advice
+            let next = progress.upcomingPlan(course)
+            summary.nextReps = next.reps
+            summary.nextRepsAfter = Program.day(next.course, next.day, baseline: progress.baseline, shift: progress.repShift + advice.delta).reps
+            summary.nextDay = next.day
+        }
+        lastResult = summary
         game = nil
         route = .result
     }
@@ -131,8 +196,10 @@ final class AppModel {
 
     func replay() {
         guard let r = lastResult else { return route = .home }
-        if r.record.endless { startEndless(song: r.song) } else {
-            start(PlayRequest(song: r.song, reps: r.plan?.reps ?? r.record.perfect + r.record.good + r.record.miss, plan: r.plan))
+        let technique = r.record.resolvedTechnique
+        if r.measure { startMeasure() } else if r.record.endless { startEndless(song: r.song, technique: technique) } else {
+            start(PlayRequest(song: r.song, reps: r.plan?.reps ?? r.record.perfect + r.record.good + r.record.miss,
+                              technique: technique, plan: r.plan))
         }
     }
 
@@ -148,14 +215,29 @@ final class AppModel {
         progress = Self.sampleProgress(today: today)
         switch scene {
         case "home": break
+        case "endless":
+            let plan = progress.plan(.starter, today: today)
+            game = GameModel(request: PlayRequest(song: plan.song, reps: 300, technique: .wide, endless: true), settings: progress.settings)
+            game?.freezeForScreenshot(hits: 19)
+            route = .play
+        case "endless-result":
+            let plan = progress.plan(.starter, today: today)
+            let g = GameModel(request: PlayRequest(song: plan.song, reps: 300, technique: .standard, endless: true),
+                              settings: progress.settings)
+            g.simulateEndless(hits: 27)
+            finish(g)
+        case "techniques": sheet = .techniques
+        case "baseline": sheet = .baseline
         case "play":
             let plan = progress.plan(.starter, today: today)
-            game = GameModel(request: PlayRequest(song: plan.song, reps: plan.reps, plan: plan), settings: progress.settings)
+            game = GameModel(request: PlayRequest(song: plan.song, reps: plan.reps, technique: plan.technique, plan: plan),
+                             settings: progress.settings)
             game?.freezeForScreenshot(hits: 7)
             route = .play
         case "result":
             let plan = progress.plan(.starter, today: today)
-            let g = GameModel(request: PlayRequest(song: plan.song, reps: plan.reps, plan: plan), settings: progress.settings)
+            let g = GameModel(request: PlayRequest(song: plan.song, reps: plan.reps, technique: plan.technique, plan: plan),
+                              settings: progress.settings)
             g.simulateWholeSong()
             finish(g)
         case "songs": sheet = .songs
@@ -167,24 +249,31 @@ final class AppModel {
         }
     }
 
-    /// 見本のデータ：12 日続けて、今日は 13 日目
+    /// 見本のデータ：12 日続けて、今日は 13 日目。いまの自分の回数は 12 回
     static func sampleProgress(today: String) -> Progress {
         var p = Progress()
         p.hasOnboarded = true
         p.hasSeenPaywall = true
+        p.baseline = 12
         guard let t = DayKey.ordinal(today) else { return p }
         let offsets = [-62, -48, -35, -40, -22, -18, -9, 4, -12, 6, 10, -5]
         for d in 0..<12 {
-            let plan = Program.day(.starter, d + 1)
+            let plan = p.planDay(.starter, d + 1)
             let day = DayKey.key(ordinal: t - 12 + d)
             let miss = d < 4 ? 2 : (d < 8 ? 1 : 0)
             let good = max(0, plan.reps / 4 - d / 4)
             let r = SessionRecord(day: day, index: 0, songID: plan.songID, reps: plan.reps, perfect: plan.reps - good - miss, good: good,
                                   miss: miss, maxCombo: plan.reps - miss * 2, score: plan.reps * 110, meanOffsetMs: offsets[d],
-                                  course: .starter, planDay: d + 1, endless: false)
+                                  course: .starter, planDay: d + 1, endless: false, technique: plan.technique, seconds: plan.reps * 3)
             p.record(r, today: day)
         }
-        p.bestEndless = 24
+        // この週のエンドレス（ワイド）を 2 回
+        for (back, reps, combo) in [(3, 18, 14), (1, 24, 21)] {
+            let r = SessionRecord(day: DayKey.key(ordinal: t - back), index: 1, songID: "sunset-walk", reps: reps, perfect: reps - 4, good: 2,
+                                  miss: 3, maxCombo: combo, score: reps * 100, meanOffsetMs: -8, course: nil, planDay: nil, endless: true,
+                                  technique: .wide, seconds: reps * 3 + 6)
+            p.record(r, today: r.day)
+        }
         return p
     }
 }
@@ -200,6 +289,15 @@ struct ResultSummary: Equatable {
     let totalReps: Int
     let quit: Bool
     let practice: Bool
+    /// エンドレスのとき、この回の前の自己ベスト
+    var endlessBefore: EndlessBest?
+    /// いまの自分の回数をためした回
+    var measure = false
+    /// 今日の道の回のとき：次の回数の提案と、受け入れる前と後の回数
+    var advice: RepAdvice = .keep
+    var nextReps = 0
+    var nextRepsAfter = 0
+    var nextDay = 0
 
     var grade: Grade { Grade.from(accuracy: record.accuracy) }
     var tendency: Tendency { Tendency.from(ms: record.meanOffsetMs) }

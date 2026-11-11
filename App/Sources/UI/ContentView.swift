@@ -33,6 +33,8 @@ struct ContentView: View {
                 case .records: RecordsView()
                 case .settings: SettingsView()
                 case .pro: ProView()
+                case .techniques: TechniquesView()
+                case .baseline: BaselineView()
                 }
             }
             .environment(app)

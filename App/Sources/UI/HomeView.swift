@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// ホーム：今日の 1 曲（はじめるボタンはスクロールせずに見える）・30 日の道・積み上げ
+/// ホーム：今日のコースとエンドレスが同じ大きさで並ぶ（はじめるボタンはスクロールせずに見える）・筋肉の入口・30 日の道・積み上げ
 struct HomeView: View {
     @Environment(AppModel.self) private var app
     @Environment(\.horizontalSizeClass) private var hSize
@@ -9,14 +9,21 @@ struct HomeView: View {
         ScrollView {
             VStack(spacing: 18) {
                 topBar
+                if app.progress.baseline == nil { BaselinePrompt() }
                 if hSize == .regular {
                     HStack(alignment: .top, spacing: 18) {
-                        VStack(spacing: 18) { TodayHero(); PathStrip() }
+                        TodayHero()
+                        EndlessCard()
+                    }
+                    HStack(alignment: .top, spacing: 18) {
+                        VStack(spacing: 18) { MuscleEntry(); PathStrip() }
                         VStack(spacing: 18) { StatsStrip(); WeekBars(); menu }
                             .frame(width: 320)
                     }
                 } else {
                     TodayHero()
+                    EndlessCard()
+                    MuscleEntry()
                     PathStrip()
                     StatsStrip()
                     WeekBars()
@@ -60,7 +67,7 @@ struct HomeView: View {
     private var menu: some View {
         HStack(spacing: 10) {
             menuButton("opticaldisc", "曲をえらぶ") { app.sheet = .songs }
-            menuButton("infinity", "フリー") { app.startEndless(song: Songbook.song(app.todayPlan.songID) ?? Songbook.all[0]) }
+            menuButton("figure.strengthtraining.functional", "やり方") { app.techniqueFilter = nil; app.sheet = .techniques }
             menuButton("chart.bar", "記録") { app.sheet = .records }
         }
     }
@@ -79,35 +86,50 @@ struct HomeView: View {
     }
 }
 
-/// 今日の 1 曲：マットの上のレコードと、大きな回数
+/// 今日のコース：マットの上のレコードと、大きな回数（−／＋ でいつでも変えられる）と、今日のやり方
 private struct TodayHero: View {
     @Environment(AppModel.self) private var app
 
     var body: some View {
         let plan = app.todayPlan
+        let technique = app.todayTechnique
         let done = app.progress.planDoneToday(app.course, today: app.today)
         let complete = app.progress.isCourseComplete(app.course) && !done
         VStack(alignment: .leading, spacing: 14) {
             HStack(alignment: .center, spacing: 14) {
-                RecordDisc(label: plan.song.title, angle: .degrees(-20)).frame(width: 112, height: 112)
+                RecordDisc(label: plan.song.title, angle: .degrees(-20)).frame(width: 96, height: 96)
                 VStack(alignment: .leading, spacing: 4) {
-                    HStack(spacing: 6) {
-                        Caption("Day \(plan.day) / \(Program.length)", color: Theme.skyDeep)
-                        Text(plan.style).font(Theme.label(10)).foregroundStyle(Theme.skyDeep)
-                            .padding(.horizontal, 6).padding(.vertical, 2)
-                            .background(Capsule().fill(Theme.paper.opacity(0.8)))
-                    }
-                    .lineLimit(1)
+                    Caption("今日のコース ・ Day \(plan.day) / \(Program.length)", color: Theme.skyDeep)
+                        .lineLimit(1).minimumScaleFactor(0.8)
                     HStack(alignment: .firstTextBaseline, spacing: 4) {
-                        Text(done ? "できた" : "今日は").font(Theme.serif(17)).foregroundStyle(Theme.inkSoft)
-                        Text("\(plan.reps)").font(Theme.serif(54)).kerning(-3).monospacedDigit().foregroundStyle(Theme.ink)
+                        Text(done ? "できた" : "今日は").font(Theme.serif(16)).foregroundStyle(Theme.inkSoft)
+                        Text("\(plan.reps)").font(Theme.serif(52)).kerning(-3).monospacedDigit().foregroundStyle(Theme.ink)
+                            .contentTransition(.numericText())
                         Text("回").font(Theme.serif(18)).foregroundStyle(Theme.inkSoft)
                     }
-                    Text("\(plan.song.title) ・ BPM \(Int(plan.song.bpm))").font(Theme.text(13)).foregroundStyle(Theme.ink)
-                    LevelDots(level: plan.song.level)
+                    Text("\(plan.song.title) ・ BPM \(Int(technique.bpm(for: plan.song)))").font(Theme.text(13)).foregroundStyle(Theme.ink)
+                        .lineLimit(1).minimumScaleFactor(0.8)
                 }
+                Spacer(minLength: 0)
             }
-            Text(complete ? "30 日をやりきりました。設定でコースを変えるか、好きな曲で続けよう" : plan.tip)
+            RepsAdjuster()
+            Button { app.techniqueFilter = nil; app.sheet = .techniques } label: {
+                HStack(spacing: 10) {
+                    BodyFigure(technique: technique, showPhone: false).frame(width: 64, height: 36)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("やり方：\(technique.title)").font(Theme.text(14, .medium)).foregroundStyle(Theme.ink)
+                        Text("主に" + technique.mainMuscles.map(\.label).joined(separator: "・") + " ・ " + technique.rhythmLine)
+                            .font(Theme.text(11)).foregroundStyle(Theme.inkSoft).lineLimit(1).minimumScaleFactor(0.8)
+                    }
+                    Spacer(minLength: 0)
+                    Text("かえる").font(Theme.text(12, .medium)).foregroundStyle(Theme.skyDeep)
+                }
+                .padding(.horizontal, 10).padding(.vertical, 6)
+                .background(RoundedRectangle(cornerRadius: Theme.rMid, style: .continuous).fill(Theme.paper.opacity(0.85)))
+            }
+            .buttonStyle(PressStyle())
+            .accessibilityLabel("今日のやり方 \(technique.title)。かえる")
+            Text(complete ? "30 日をやりきりました。設定でコースを変えるか、エンドレスで続けよう" : plan.tip)
                 .font(Theme.text(13)).foregroundStyle(Theme.ink)
                 .fixedSize(horizontal: false, vertical: true)
             Button(done ? "もう一回やる" : "はじめる") { app.startToday() }
@@ -126,6 +148,153 @@ private struct TodayHero: View {
     }
 }
 
+/// 今日の回数の −／＋（これからの日にも続く。いまの自分の回数への入口）
+private struct RepsAdjuster: View {
+    @Environment(AppModel.self) private var app
+
+    var body: some View {
+        let shift = app.progress.repShift
+        HStack(spacing: 8) {
+            step("minus", -1)
+            VStack(alignment: .leading, spacing: 1) {
+                Text(shift == 0 ? "回数を調整" : "いつもより \(shift > 0 ? "+" : "")\(shift) 回")
+                    .font(Theme.text(12, .medium)).monospacedDigit().foregroundStyle(Theme.ink)
+                Button {
+                    app.sheet = .baseline
+                } label: {
+                    Text(app.progress.baseline.map { "いまの自分 \($0) 回 ・ 変える" } ?? "いまの自分の回数を決める")
+                        .font(Theme.text(11)).foregroundStyle(Theme.skyDeep)
+                }
+                .buttonStyle(.plain)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            if shift != 0 {
+                Button("もとに戻す") { withAnimation(.easeOut(duration: 0.2)) { app.progress.repShift = 0 }; Feedback.select() }
+                    .font(Theme.text(11)).foregroundStyle(Theme.inkSoft)
+            }
+            step("plus", 1)
+        }
+    }
+
+    private func step(_ icon: String, _ delta: Int) -> some View {
+        Button {
+            withAnimation(.easeOut(duration: 0.2)) { app.nudgeReps(delta) }
+        } label: {
+            Image(systemName: icon).font(.system(size: 14, weight: .semibold)).foregroundStyle(Theme.ink)
+                .frame(width: 40, height: 36)
+                .background(RoundedRectangle(cornerRadius: Theme.rMid, style: .continuous).fill(Theme.paper))
+                .overlay(RoundedRectangle(cornerRadius: Theme.rMid, style: .continuous).stroke(Theme.line, lineWidth: 1))
+        }
+        .buttonStyle(PressStyle())
+        .accessibilityLabel(delta > 0 ? "今日の回数を 1 回ふやす" : "今日の回数を 1 回へらす")
+    }
+}
+
+/// エンドレス：今日のコースと並ぶ、もう 1 つの主役。自己ベスト 3 つと、ベストまでの差
+private struct EndlessCard: View {
+    @Environment(AppModel.self) private var app
+
+    var body: some View {
+        let best = app.progress.endlessBest
+        let technique = app.todayTechnique
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(alignment: .center, spacing: 14) {
+                ZStack {
+                    RecordDisc(label: "", angle: .degrees(30)).frame(width: 96, height: 96)
+                    Image(systemName: "infinity").font(.system(size: 20, weight: .medium)).foregroundStyle(Theme.ink)
+                }
+                .accessibilityHidden(true)
+                VStack(alignment: .leading, spacing: 4) {
+                    Caption("Endless", color: Theme.peachDeep)
+                    Text("エンドレス").font(Theme.serif(30, .medium)).kerning(-0.5).foregroundStyle(Theme.ink)
+                    Text("3 回続けて外すまで、どこまでも").font(Theme.text(13)).foregroundStyle(Theme.ink)
+                        .lineLimit(1).minimumScaleFactor(0.8)
+                }
+                Spacer(minLength: 0)
+            }
+            HStack(spacing: 0) {
+                stat("\(best.reps)", "最高の回数")
+                divider
+                stat("\(best.combo)", "最大コンボ")
+                divider
+                stat(EndlessCard.time(best.seconds), "続いた時間")
+            }
+            .padding(.vertical, 10)
+            .background(RoundedRectangle(cornerRadius: Theme.rMid, style: .continuous).fill(Theme.paper.opacity(0.9)))
+            Text(best.reps > 0 ? "\(best.reps + 1) 回で自己ベスト更新。やり方は今日と同じ\(technique.title)" : "まずは 1 回。続いた回数・コンボ・時間がベストとして残ります")
+                .font(Theme.text(13)).foregroundStyle(Theme.ink)
+                .fixedSize(horizontal: false, vertical: true)
+            Button("エンドレスをはじめる") { app.startEndlessToday() }
+                .buttonStyle(PrimaryButtonStyle(fill: Theme.peachDeep))
+        }
+        .padding(18)
+        .background(RoundedRectangle(cornerRadius: 24, style: .continuous).fill(Theme.peachSoft.opacity(0.55)))
+        .background(RoundedRectangle(cornerRadius: 24, style: .continuous).fill(Theme.paper))
+        .overlay(RoundedRectangle(cornerRadius: 24, style: .continuous).stroke(Theme.line, lineWidth: Theme.hairline))
+    }
+
+    private var divider: some View { Rectangle().fill(Theme.line).frame(width: 1, height: 30) }
+
+    private func stat(_ value: String, _ label: String) -> some View {
+        VStack(spacing: 1) {
+            Text(value).font(Theme.serif(22, .medium)).kerning(-0.5).monospacedDigit().foregroundStyle(Theme.ink)
+            Text(label).font(Theme.label(10)).foregroundStyle(Theme.inkSoft).lineLimit(1).minimumScaleFactor(0.7)
+        }
+        .frame(maxWidth: .infinity)
+        .accessibilityElement(children: .combine)
+    }
+
+    /// 秒を「1:05」の形に
+    static func time(_ seconds: Int) -> String { String(format: "%d:%02d", seconds / 60, seconds % 60) }
+}
+
+/// いまの自分の回数がまだ決まっていないときの案内（決めると、30 日の道がその人の回数になる）
+private struct BaselinePrompt: View {
+    @Environment(AppModel.self) private var app
+
+    var body: some View {
+        Button { app.sheet = .baseline } label: {
+            HStack(spacing: 12) {
+                Image(systemName: "slider.horizontal.below.square.filled.and.square").font(.system(size: 18)).foregroundStyle(Theme.skyDeep)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("回数を、自分に合わせる").font(Theme.text(14, .semibold)).foregroundStyle(Theme.ink)
+                    Text("休まず何回できるかを決めると、30 日の回数があなたに合わせて変わります")
+                        .font(Theme.text(12)).foregroundStyle(Theme.inkSoft).multilineTextAlignment(.leading)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                Spacer(minLength: 0)
+                Image(systemName: "chevron.right").font(.system(size: 12)).foregroundStyle(Theme.inkSoft)
+            }
+            .padding(14)
+            .background(RoundedRectangle(cornerRadius: Theme.rCard, style: .continuous).fill(Theme.paper))
+            .overlay(RoundedRectangle(cornerRadius: Theme.rCard, style: .continuous).stroke(Theme.skyDeep.opacity(0.5), lineWidth: 1))
+        }
+        .buttonStyle(PressStyle())
+    }
+}
+
+/// 筋肉から選ぶ入口：「今日は胸の日」
+private struct MuscleEntry: View {
+    @Environment(AppModel.self) private var app
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                Caption("筋肉から選ぶ")
+                Spacer()
+                Text("8 つのやり方").font(Theme.text(12, .medium)).foregroundStyle(Theme.inkSoft)
+            }
+            MuscleGrid(selected: nil, compact: true) { m in
+                app.techniqueFilter = m
+                app.sheet = .techniques
+            }
+        }
+        .padding(16)
+        .background(RoundedRectangle(cornerRadius: Theme.rCard, style: .continuous).fill(Theme.paper))
+        .overlay(RoundedRectangle(cornerRadius: Theme.rCard, style: .continuous).stroke(Theme.line, lineWidth: Theme.hairline))
+    }
+}
+
 /// 30 日の道（Duolingo の「1 本の道」を借りた）。今日のマスが peach の輪
 private struct PathStrip: View {
     @Environment(AppModel.self) private var app
@@ -134,6 +303,7 @@ private struct PathStrip: View {
         let course = app.course
         let next = app.progress.nextDay[course] ?? 1
         let todayDay = app.todayPlan.day
+        let days = app.progress.planDays(course)
         VStack(alignment: .leading, spacing: 10) {
             HStack {
                 Caption(course.title)
@@ -145,7 +315,7 @@ private struct PathStrip: View {
                     ZStack(alignment: .leading) {
                         Rectangle().fill(Theme.line).frame(height: 2).padding(.horizontal, 16)
                         HStack(spacing: 14) {
-                            ForEach(Program.days(course), id: \.day) { d in
+                            ForEach(days, id: \.day) { d in
                                 node(d, done: d.day < next, isToday: d.day == todayDay)
                                     .id(d.day)
                             }
@@ -181,7 +351,7 @@ private struct PathStrip: View {
     }
 }
 
-/// 積み上げ：これまでの回数・続けた日・フリーの自己ベスト
+/// 積み上げ：これまでの回数・続けた日・今週いちばん使った筋肉
 private struct StatsStrip: View {
     @Environment(AppModel.self) private var app
 
@@ -193,7 +363,8 @@ private struct StatsStrip: View {
             divider
             stat("\(streak)", streak > 0 ? "続けた日" : (p.activeDays > 0 ? "おかえり。合計 \(p.activeDays) 日" : "続けた日"))
             divider
-            stat("\(p.bestEndless)", "フリーの最高")
+            let balance = MuscleBalance(load: p.weekLoad(today: app.today))
+            stat(balance.top?.label ?? "-", "今週いちばん")
         }
         .padding(.vertical, 14)
         .background(RoundedRectangle(cornerRadius: Theme.rCard, style: .continuous).fill(Theme.paper))
