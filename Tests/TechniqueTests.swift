@@ -162,9 +162,9 @@ struct WeekRecordTests {
         #expect(week.map(\.technique) == [.wide, .diamond])
         #expect(week.map(\.reps) == [30, 6])
         let load = p.weekLoad(today: "2026-11-11")
-        #expect(load[.chest] == 30 + 3)
-        #expect(load[.shoulder] == 15)
-        #expect(load[.triceps] == 6)
+        #expect(load[.chest] == 33.0, "\(load)")
+        #expect(load[.shoulder] == 15.0)
+        #expect(load[.triceps] == 6.0)
         #expect(load[.core] == nil)
     }
 

@@ -7,18 +7,18 @@
       "referenceName": "Pro",
       "price": 480,
       "familySharable": true,
-      "reviewNote": "Pro を買うと、Pro の 12 曲（全 18 曲）・Pro のコース「つよくなる 30 日」・30 日の記録とタイミングのくせの移り変わりが使えます。課金の画面はホーム右上の「Pro」、または設定 > Pro について から開けます。",
+      "reviewNote": "Pro を買うと、Pro のやり方 5 つ（ダイヤモンド・ゆっくり下ろす・下でキープ・デクライン・パイク）と筋肉ごとのメニュー、週の筋肉の偏りの記録、Pro の 12 曲（全 18 曲）、Pro のコース「つよくなる 30 日」、30 日の記録とタイミングのくせの移り変わりが使えます。課金の画面はホーム右上の「Pro」、または設定 > Pro について から開けます。",
       "reviewScreenshot": "docs/iap/paywall.png",
       "localizations": [
         {
           "locale": "ja",
           "name": "うでたてビート Pro",
-          "description": "12 曲・つよくなる 30 日・詳しい記録"
+          "description": "5 つのやり方・筋肉の記録・12 曲・30 日コース"
         },
         {
           "locale": "en-US",
           "name": "Push Beat Pro",
-          "description": "12 more songs, a 30-day course and stats"
+          "description": "5 push-up styles, 12 songs, course, stats"
         }
       ]
     }
