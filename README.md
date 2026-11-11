@@ -89,7 +89,7 @@
 ## 開発
 
 - 処理は画面から切り離してテストする：`Engine/Technique.swift`（やり方・筋肉・譜面の性格）・`Engine/Chart.swift`（譜面）・`PlaySession.swift`（判定・コンボ・キープ・くせ）・`Program.swift`（30 日の道）・`Progress.swift`（記録・続けた日・道の進み）・`Audio/Synth.swift`（曲の合成）。テストは `Tests/`（Swift Testing）
-- 言語：日本語（開発の言語）と英語。画面の文はすべて `L("日本語の文", 引数…)`（`App/Sources/Localization.swift`）を通し、英語の訳は `App/Resources/en.lproj/Localizable.strings`（キーは日本語の文、数や名前は `%@`。テストで %@ の数がそろっていることを確かめる）。`ja.lproj` は日本語の端末で英語が選ばれないように置く。表示名は英語で「Push Beat」。App Store の英語の情報は `docs/app-store.json` の `en-US`
+- 言語：日本語（開発の言語）と英語。画面の文はすべて `L("日本語の文", 引数…)`（`App/Sources/Localization.swift`）を通し、訳は String Catalog の `App/Resources/Localizable.xcstrings`（ja・en。キーは日本語の文、数や名前は `%@`。テストで %@ の数がそろっていることを確かめる）。アプリ名は `InfoPlist.xcstrings`（英語は「Push Beat」）。CI の英語の画面は、場面の名前の後ろに `-en`（この版の daily-actions は `@en` を持たないため、アプリが名前を見て英語で出す）。App Store の英語の情報は `docs/app-store.json` の `en-US`
 - 時計は `CACurrentMediaTime`。曲は `AVAudioPlayerNode.play(at:)` で同じ時刻に頭を合わせる。音が出せなくても遊びは時計だけで進む
 - スクリーンショット：起動引数 `-screenshotScene <launch|home|techniques|baseline|play|endless|endless-result|result|songs|records|settings|pro|onboarding>`（見本のデータ 12 日分で開く）
 - 手元（Mac）：`brew install xcodegen && xcodegen generate && open PushBeat.xcodeproj`

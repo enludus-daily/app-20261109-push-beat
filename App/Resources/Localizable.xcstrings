@@ -1,0 +1,6738 @@
+{
+  "sourceLanguage": "ja",
+  "strings": {
+    "拍とからだが、ぴったり": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "拍とからだが、ぴったり"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your body and the beat, perfectly in sync"
+          }
+        }
+      }
+    },
+    "いいリズム。あと少しで S": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "いいリズム。あと少しで S"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nice rhythm. Almost an S"
+          }
+        }
+      }
+    },
+    "ちゃんと続いた。次は輪を見て": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ちゃんと続いた。次は輪を見て"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You kept going. Next, watch the ring"
+          }
+        }
+      }
+    },
+    "まずは最後までやれたのが一番": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "まずは最後までやれたのが一番"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finishing is what counts most"
+          }
+        }
+      }
+    },
+    "はやめ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "はやめ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Early"
+          }
+        }
+      }
+    },
+    "ちょうど": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ちょうど"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On time"
+          }
+        }
+      }
+    },
+    "おそめ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "おそめ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Late"
+          }
+        }
+      }
+    },
+    "下ろすのが少し急ぎ気味。輪が的に重なるまで待ってから": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下ろすのが少し急ぎ気味。輪が的に重なるまで待ってから"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You're lowering a bit early. Wait until the ring meets the target"
+          }
+        }
+      }
+    },
+    "拍どおり。このまま回数を増やそう": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "拍どおり。このまま回数を増やそう"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Right on the beat. Keep adding reps"
+          }
+        }
+      }
+    },
+    "下ろし始めが遅め。ひとつ前の小さな音で下ろし始めて": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下ろし始めが遅め。ひとつ前の小さな音で下ろし始めて"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You start lowering late. Begin on the small sound one beat before"
+          }
+        }
+      }
+    },
+    "はじめての 30 日": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "はじめての 30 日"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "First 30 Days"
+          }
+        }
+      }
+    },
+    "つよくなる 30 日": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "つよくなる 30 日"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stronger 30 Days"
+          }
+        }
+      }
+    },
+    "ひざをついてOK。画面の上に頭がくるように置こう": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ひざをついてOK。画面の上に頭がくるように置こう"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Knees down is fine. Place the phone so your head is above the screen"
+          }
+        }
+      }
+    },
+    "鼻でもあごでも、どこで触れてもいい。触れたら 1 回": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "鼻でもあごでも、どこで触れてもいい。触れたら 1 回"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nose or chin, anywhere works. Each touch is one rep"
+          }
+        }
+      }
+    },
+    "下ろすのは、輪が的に重なる瞬間。早すぎないように": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下ろすのは、輪が的に重なる瞬間。早すぎないように"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lower right as the ring meets the target. Not too early"
+          }
+        }
+      }
+    },
+    "手は肩の真下。指は前に向けて": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "手は肩の真下。指は前に向けて"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hands right under your shoulders, fingers forward"
+          }
+        }
+      }
+    },
+    "息は下ろすときに吸って、上げるときに吐く": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "息は下ろすときに吸って、上げるときに吐く"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Breathe in on the way down, out on the way up"
+          }
+        }
+      }
+    },
+    "おなかに少し力を入れると、腰が落ちない": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "おなかに少し力を入れると、腰が落ちない"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brace your belly a little so your hips don't sag"
+          }
+        }
+      }
+    },
+    "軽い日。6 回だけ、ていねいに": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "軽い日。6 回だけ、ていねいに"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light day. Just 6 reps, nice and clean"
+          }
+        }
+      }
+    },
+    "ひじは体から 45 度くらい。開きすぎない": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ひじは体から 45 度くらい。開きすぎない"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elbows about 45° from your body. Don't flare them"
+          }
+        }
+      }
+    },
+    "ひとつ前の小さな音で、下ろし始めると合う": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ひとつ前の小さな音で、下ろし始めると合う"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start lowering on the small sound one beat before"
+          }
+        }
+      }
+    },
+    "10 日目。ここまで来たら、もう習慣の入口": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10 日目。ここまで来たら、もう習慣の入口"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day 10. You're at the doorway of a habit"
+          }
+        }
+      }
+    },
+    "今日からひざを伸ばす。きつければ途中からひざつきでOK": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日からひざを伸ばす。きつければ途中からひざつきでOK"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Straighten your knees from today. Drop to your knees mid-song if needed"
+          }
+        }
+      }
+    },
+    "かかとから頭まで、まっすぐの板になるイメージ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "かかとから頭まで、まっすぐの板になるイメージ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Picture one straight plank from heels to head"
+          }
+        }
+      }
+    },
+    "ゆっくり下ろして、すっと上げる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ゆっくり下ろして、すっと上げる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lower slowly, push up smoothly"
+          }
+        }
+      }
+    },
+    "軽い日。8 回だけ。からだを休めるのも練習": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "軽い日。8 回だけ。からだを休めるのも練習"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light day. Just 8 reps. Resting is training too"
+          }
+        }
+      }
+    },
+    "拍がずれたら、次の輪で取り戻せばいい": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "拍がずれたら、次の輪で取り戻せばいい"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If you slip off the beat, catch the next ring"
+          }
+        }
+      }
+    },
+    "首は下に向けたまま。顔を上げると肩がつらい": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "首は下に向けたまま。顔を上げると肩がつらい"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep your neck neutral. Looking up strains your shoulders"
+          }
+        }
+      }
+    },
+    "Good でも回数はちゃんと数えている": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Good でも回数はちゃんと数えている"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Good still counts as a rep"
+          }
+        }
+      }
+    },
+    "20 回に近づいてきた。途中の休みの小節で息を整えて": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "20 回に近づいてきた。途中の休みの小節で息を整えて"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Getting close to 20. Catch your breath in the rest bars"
+          }
+        }
+      }
+    },
+    "胸が先に下りるように。おしりが先に下りないように": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "胸が先に下りるように。おしりが先に下りないように"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let your chest lead down, not your hips"
+          }
+        }
+      }
+    },
+    "ここで 3 分の 2。最初の日の 3 倍以上やっている": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ここで 3 分の 2。最初の日の 3 倍以上やっている"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Two-thirds done. You're doing 3× your first day"
+          }
+        }
+      }
+    },
+    "軽い日。10 回だけ。記録を見返してみよう": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "軽い日。10 回だけ。記録を見返してみよう"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light day. Just 10 reps. Look back at your stats"
+          }
+        }
+      }
+    },
+    "キープの曲は、下でじっと止まる。触れたまま 2 拍": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "キープの曲は、下でじっと止まる。触れたまま 2 拍"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On keep songs, stay still at the bottom. Hold the touch for 2 beats"
+          }
+        }
+      }
+    },
+    "肩がすくまないように、首を長く": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "肩がすくまないように、首を長く"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Don't shrug. Keep your neck long"
+          }
+        }
+      }
+    },
+    "手のひら全体で床を押す": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "手のひら全体で床を押す"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Press the floor with your whole palm"
+          }
+        }
+      }
+    },
+    "26 回。最初の日を思い出して": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "26 回。最初の日を思い出して"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "26 reps. Remember your first day"
+          }
+        }
+      }
+    },
+    "テンポのくせを記録で見てみよう。はやめ？おそめ？": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "テンポのくせを記録で見てみよう。はやめ？おそめ？"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check your timing habit in Stats. Early or late?"
+          }
+        }
+      }
+    },
+    "ラストスパート。休みの小節は全力で休む": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ラストスパート。休みの小節は全力で休む"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Final sprint. Rest fully in the rest bars"
+          }
+        }
+      }
+    },
+    "軽い日。12 回だけ。明日に向けて": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "軽い日。12 回だけ。明日に向けて"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light day. Just 12 reps. Saving up for tomorrow"
+          }
+        }
+      }
+    },
+    "30 回。ここまで来た自分をほめよう": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 回。ここまで来た自分をほめよう"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 reps. Give yourself some credit"
+          }
+        }
+      }
+    },
+    "最終日。30 回を、拍どおりに": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最終日。30 回を、拍どおりに"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last day. 30 reps, right on the beat"
+          }
+        }
+      }
+    },
+    "ワイドは手を肩幅の 1.5 倍に。胸に効く": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワイドは手を肩幅の 1.5 倍に。胸に効く"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wide: hands 1.5× shoulder width. Works the chest"
+          }
+        }
+      }
+    },
+    "ダイヤモンドは両手の親指と人さし指で三角形。二の腕に効く": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダイヤモンドは両手の親指と人さし指で三角形。二の腕に効く"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diamond: thumbs and index fingers make a triangle. Works the triceps"
+          }
+        }
+      }
+    },
+    "キープは下で止まる。触れたまま、からだをまっすぐ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "キープは下で止まる。触れたまま、からだをまっすぐ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep means stay down. Hold the touch, body straight"
+          }
+        }
+      }
+    },
+    "速い曲は、上げきらずに次へ。でも胸は床まで": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "速い曲は、上げきらずに次へ。でも胸は床まで"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On fast songs, don't lock out at the top. But chest goes all the way down"
+          }
+        }
+      }
+    },
+    "軽い日は回数を減らして、Perfect だけを狙う": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "軽い日は回数を減らして、Perfect だけを狙う"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light days: fewer reps, aim for Perfects only"
+          }
+        }
+      }
+    },
+    "60 回は 3 つに分けて考える。20 回ずつ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "60 回は 3 つに分けて考える。20 回ずつ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Think of 60 as three sets of 20"
+          }
+        }
+      }
+    },
+    "息を止めない。止めると後半で崩れる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "息を止めない。止めると後半で崩れる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Don't hold your breath. You'll fall apart in the second half"
+          }
+        }
+      }
+    },
+    "疲れてきたらひざをついてOK。曲は止めない": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "疲れてきたらひざをついてOK。曲は止めない"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tired? Drop to your knees. The song keeps going"
+          }
+        }
+      }
+    },
+    "3 拍の曲はうねりに乗る。体で拍を数えない": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3 拍の曲はうねりに乗る。体で拍を数えない"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ride the swing of 3-beat songs. Don't count with your body"
+          }
+        }
+      }
+    },
+    "キープの終わりまで待ってから上げる。早く上げると Good": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "キープの終わりまで待ってから上げる。早く上げると Good"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wait for the keep to end before pushing up. Early means Good"
+          }
+        }
+      }
+    },
+    "ダイヤモンドの日は、ひじを体に沿わせる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダイヤモンドの日は、ひじを体に沿わせる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diamond days: keep your elbows close to your body"
+          }
+        }
+      }
+    },
+    "記録の「くせ」を見て、ずれを直す日にしよう": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "記録の「くせ」を見て、ずれを直す日にしよう"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check your timing habit in Stats and fix the drift today"
+          }
+        }
+      }
+    },
+    "後半ほど拍がおそめになりやすい。気持ち早めに": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "後半ほど拍がおそめになりやすい。気持ち早めに"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You tend to drift late near the end. Go a touch early"
+          }
+        }
+      }
+    },
+    "ワイドの日は、胸をしっかり床へ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワイドの日は、胸をしっかり床へ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wide days: bring your chest all the way to the floor"
+          }
+        }
+      }
+    },
+    "最後の 10 回がいちばん効いている": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最後の 10 回がいちばん効いている"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The last 10 reps do the most work"
+          }
+        }
+      }
+    },
+    "今週はまだ記録がありません": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今週はまだ記録がありません"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No records this week yet"
+          }
+        }
+      }
+    },
+    "今週は%@ばかり": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今週は%@ばかり"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostly %@ this week"
+          }
+        }
+      }
+    },
+    "今週はバランスよく": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今週はバランスよく"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicely balanced this week"
+          }
+        }
+      }
+    },
+    "1 曲やると、どの筋肉をどれだけ使ったかがここに出ます": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 曲やると、どの筋肉をどれだけ使ったかがここに出ます"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do one song to see which muscles you used and how much"
+          }
+        }
+      }
+    },
+    "次は%@にしてみよう": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次は%@にしてみよう"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try a %@ next"
+          }
+        }
+      }
+    },
+    "この調子で。少ないのは%@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この調子で。少ないのは%@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep it up. Least used: %@"
+          }
+        }
+      }
+    },
+    "lo-fi カフェ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "lo-fi カフェ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "lo-fi café"
+          }
+        }
+      }
+    },
+    "さわやか": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "さわやか"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fresh"
+          }
+        }
+      }
+    },
+    "夕焼け": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "夕焼け"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sunset"
+          }
+        }
+      }
+    },
+    "雨の日": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "雨の日"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rainy day"
+          }
+        }
+      }
+    },
+    "元気": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "元気"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upbeat"
+          }
+        }
+      }
+    },
+    "夜ふかし": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "夜ふかし"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Late night"
+          }
+        }
+      }
+    },
+    "モーニング・ラテ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "モーニング・ラテ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Morning Latte"
+          }
+        }
+      }
+    },
+    "4 拍に 1 回。はじめての 1 曲": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "4 拍に 1 回。はじめての 1 曲"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One every 4 beats. Your first song"
+          }
+        }
+      }
+    },
+    "ソーダフロート": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ソーダフロート"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soda Float"
+          }
+        }
+      }
+    },
+    "3 回やって、ひと休み": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3 回やって、ひと休み"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Three reps, then a breather"
+          }
+        }
+      }
+    },
+    "サンセット・ウォーク": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "サンセット・ウォーク"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sunset Walk"
+          }
+        }
+      }
+    },
+    "2 拍と 4 拍がまざる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2 拍と 4 拍がまざる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2-beat and 4-beat mixed"
+          }
+        }
+      }
+    },
+    "雨の窓辺": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "雨の窓辺"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rainy Window"
+          }
+        }
+      }
+    },
+    "下で 2 拍止まるキープが 1 つ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下で 2 拍止まるキープが 1 つ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One keep: hold 2 beats at the bottom"
+          }
+        }
+      }
+    },
+    "シトラス・ステップ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "シトラス・ステップ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Citrus Step"
+          }
+        }
+      }
+    },
+    "2 拍ずつ 6 回、そして休み": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2 拍ずつ 6 回、そして休み"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "6 reps every 2 beats, then rest"
+          }
+        }
+      }
+    },
+    "ナイトドライブ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ナイトドライブ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Night Drive"
+          }
+        }
+      }
+    },
+    "3 拍のうねり。夜の高速みたいに": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3 拍のうねり。夜の高速みたいに"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A 3-beat swing, like a highway at night"
+          }
+        }
+      }
+    },
+    "ハニートースト": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ハニートースト"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Honey Toast"
+          }
+        }
+      }
+    },
+    "やさしいキープ入り": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "やさしいキープ入り"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "With gentle keeps"
+          }
+        }
+      }
+    },
+    "レモンスカッシュ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レモンスカッシュ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lemon Squash"
+          }
+        }
+      }
+    },
+    "最後に 3 拍の裏切り": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最後に 3 拍の裏切り"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A 3-beat twist at the end"
+          }
+        }
+      }
+    },
+    "ブルーアワー": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ブルーアワー"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blue Hour"
+          }
+        }
+      }
+    },
+    "3 拍キープで胸を床へ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3 拍キープで胸を床へ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3-beat keeps, chest to the floor"
+          }
+        }
+      }
+    },
+    "クラウドナイン": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クラウドナイン"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cloud Nine"
+          }
+        }
+      }
+    },
+    "ずっと 2 拍。息を止めない": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ずっと 2 拍。息を止めない"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every 2 beats. Keep breathing"
+          }
+        }
+      }
+    },
+    "ペトリコール": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ペトリコール"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Petrichor"
+          }
+        }
+      }
+    },
+    "キープが 2 つ。ゆっくり重い": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "キープが 2 つ。ゆっくり重い"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Two keeps. Slow and heavy"
+          }
+        }
+      }
+    },
+    "ゴールデンアワー": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ゴールデンアワー"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Golden Hour"
+          }
+        }
+      }
+    },
+    "3 拍と 2 拍の切りかえ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3 拍と 2 拍の切りかえ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Switching between 3 and 2 beats"
+          }
+        }
+      }
+    },
+    "ミッドナイトカフェ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ミッドナイトカフェ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Midnight Café"
+          }
+        }
+      }
+    },
+    "夜のカフェで、静かに 30 回": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "夜のカフェで、静かに 30 回"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 quiet reps in a late-night café"
+          }
+        }
+      }
+    },
+    "シーグラス": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "シーグラス"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sea Glass"
+          }
+        }
+      }
+    },
+    "いちばん速い。上級": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "いちばん速い。上級"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The fastest. Advanced"
+          }
+        }
+      }
+    },
+    "ネオンレイン": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ネオンレイン"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neon Rain"
+          }
+        }
+      }
+    },
+    "速さとキープの両方": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "速さとキープの両方"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speed and keeps"
+          }
+        }
+      }
+    },
+    "オレンジピール": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オレンジピール"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orange Peel"
+          }
+        }
+      }
+    },
+    "休みなし 8 連": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "休みなし 8 連"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "8 in a row, no rest"
+          }
+        }
+      }
+    },
+    "スターライト": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "スターライト"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Starlight"
+          }
+        }
+      }
+    },
+    "4 拍キープ。体幹の曲": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "4 拍キープ。体幹の曲"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "4-beat keeps. A core song"
+          }
+        }
+      }
+    },
+    "アフターパーティー": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アフターパーティー"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "After Party"
+          }
+        }
+      }
+    },
+    "ぜんぶ入り。最後の 1 曲": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ぜんぶ入り。最後の 1 曲"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Everything at once. The final song"
+          }
+        }
+      }
+    },
+    "胸": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "胸"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chest"
+          }
+        }
+      }
+    },
+    "二の腕": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "二の腕"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Triceps"
+          }
+        }
+      }
+    },
+    "肩の前": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "肩の前"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Front shoulders"
+          }
+        }
+      }
+    },
+    "体幹": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "体幹"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Core"
+          }
+        }
+      }
+    },
+    "の日": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "の日"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " day"
+          }
+        }
+      }
+    },
+    "ふつう": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ふつう"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard"
+          }
+        }
+      }
+    },
+    "ひざつき": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ひざつき"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Knee"
+          }
+        }
+      }
+    },
+    "ワイド": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワイド"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wide"
+          }
+        }
+      }
+    },
+    "ダイヤモンド": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダイヤモンド"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diamond"
+          }
+        }
+      }
+    },
+    "ゆっくり下ろす": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ゆっくり下ろす"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Slow lower"
+          }
+        }
+      }
+    },
+    "下でキープ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下でキープ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bottom hold"
+          }
+        }
+      }
+    },
+    "デクライン": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "デクライン"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Decline"
+          }
+        }
+      }
+    },
+    "パイク": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "パイク"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pike"
+          }
+        }
+      }
+    },
+    "曲の譜面を、少しゆっくり": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "曲の譜面を、少しゆっくり"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The song's chart, a bit slower"
+          }
+        }
+      }
+    },
+    "曲の譜面のまま": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "曲の譜面のまま"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The song's chart as is"
+          }
+        }
+      }
+    },
+    "1 小節に 1 回。1 回ずつ間を取る": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 小節に 1 回。1 回ずつ間を取る"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One per bar. A pause between reps"
+          }
+        }
+      }
+    },
+    "下がる音に合わせて 3 拍で下ろす": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下がる音に合わせて 3 拍で下ろす"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lower over 3 beats with the falling tone"
+          }
+        }
+      }
+    },
+    "触れたら下で 2〜3 拍止まる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "触れたら下で 2〜3 拍止まる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hold 2–3 beats at the bottom after touching"
+          }
+        }
+      }
+    },
+    "手は肩の真下、指は前へ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "手は肩の真下、指は前へ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hands under shoulders, fingers forward"
+          }
+        }
+      }
+    },
+    "かかとから頭まで 1 枚の板に": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "かかとから頭まで 1 枚の板に"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One straight plank from heels to head"
+          }
+        }
+      }
+    },
+    "ひじは体から 45 度くらい": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ひじは体から 45 度くらい"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elbows about 45° from your body"
+          }
+        }
+      }
+    },
+    "ひざをついて、ひざから頭までまっすぐ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ひざをついて、ひざから頭までまっすぐ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Knees down, straight from knees to head"
+          }
+        }
+      }
+    },
+    "おしりが上がらないように": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "おしりが上がらないように"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Don't let your hips rise"
+          }
+        }
+      }
+    },
+    "回数より、胸を床に近づけることを大事に": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "回数より、胸を床に近づけることを大事に"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Getting your chest near the floor beats doing more reps"
+          }
+        }
+      }
+    },
+    "手を肩幅の 1.5 倍に開く": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "手を肩幅の 1.5 倍に開く"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hands 1.5× shoulder width"
+          }
+        }
+      }
+    },
+    "胸から床へ下ろす": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "胸から床へ下ろす"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lower chest-first to the floor"
+          }
+        }
+      }
+    },
+    "ひじが肩より上に出ないように": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ひじが肩より上に出ないように"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep elbows below shoulder height"
+          }
+        }
+      }
+    },
+    "両手の親指と人さし指で三角形を作る": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "両手の親指と人さし指で三角形を作る"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Make a triangle with thumbs and index fingers"
+          }
+        }
+      }
+    },
+    "ひじを体に沿わせて下ろす": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ひじを体に沿わせて下ろす"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lower with elbows close to your body"
+          }
+        }
+      }
+    },
+    "きつければひざをついてOK": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "きつければひざをついてOK"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Knees down is fine if it's hard"
+          }
+        }
+      }
+    },
+    "下がる音に合わせて 3 拍かけて下ろす": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下がる音に合わせて 3 拍かけて下ろす"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lower over 3 beats with the falling tone"
+          }
+        }
+      }
+    },
+    "触れたら、ふつうの速さで上げる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "触れたら、ふつうの速さで上げる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Push up at normal speed after the touch"
+          }
+        }
+      }
+    },
+    "下ろす間も息を止めない": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下ろす間も息を止めない"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep breathing on the way down"
+          }
+        }
+      }
+    },
+    "触れたら、そのまま止まる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "触れたら、そのまま止まる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stay still after touching"
+          }
+        }
+      }
+    },
+    "おなかに力を入れて、腰を落とさない": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "おなかに力を入れて、腰を落とさない"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brace your belly, don't let your hips sag"
+          }
+        }
+      }
+    },
+    "上げるのは、終わりの音が鳴ってから": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "上げるのは、終わりの音が鳴ってから"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Push up only after the end sound"
+          }
+        }
+      }
+    },
+    "足を低い台（ソファのふちなど）にのせる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "足を低い台（ソファのふちなど）にのせる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Put your feet on a low step (like a sofa edge)"
+          }
+        }
+      }
+    },
+    "高さはひざくらいまで。滑らない台で": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "高さはひざくらいまで。滑らない台で"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "About knee height. Use something that won't slip"
+          }
+        }
+      }
+    },
+    "首を長く、頭から下ろす": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "首を長く、頭から下ろす"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep your neck long, lead with your head"
+          }
+        }
+      }
+    },
+    "おしりを高く上げて、体を「へ」の字に": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "おしりを高く上げて、体を「へ」の字に"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hips high, body in an upside-down V"
+          }
+        }
+      }
+    },
+    "頭を手の間へ下ろす。iPhone は手の少し前に": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "頭を手の間へ下ろす。iPhone は手の少し前に"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lower your head between your hands. Phone just in front of your hands"
+          }
+        }
+      }
+    },
+    "首を痛めないよう、ゆっくり": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "首を痛めないよう、ゆっくり"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Go slowly to protect your neck"
+          }
+        }
+      }
+    },
+    "%@に効く姿勢の絵": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@に効く姿勢の絵"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pose that works the %@"
+          }
+        }
+      }
+    },
+    "・": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "・"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · "
+          }
+        }
+      }
+    },
+    "%@の姿勢。主に%@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@の姿勢。主に%@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ pose. Mainly %@"
+          }
+        }
+      }
+    },
+    "うでたてビート": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "うでたてビート"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Push Beat"
+          }
+        }
+      }
+    },
+    "Pro について": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro について"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "About Pro"
+          }
+        }
+      }
+    },
+    "設定": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "設定"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
+          }
+        }
+      }
+    },
+    "曲をえらぶ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "曲をえらぶ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Songs"
+          }
+        }
+      }
+    },
+    "やり方": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "やり方"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Styles"
+          }
+        }
+      }
+    },
+    "記録": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "記録"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stats"
+          }
+        }
+      }
+    },
+    "今日のコース ・ Day %@ / %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日のコース ・ Day %@ / %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today's course · Day %@ / %@"
+          }
+        }
+      }
+    },
+    "できた": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "できた"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        }
+      }
+    },
+    "今日は": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日は"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today"
+          }
+        }
+      }
+    },
+    "回": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "回"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "reps"
+          }
+        }
+      }
+    },
+    "%@ ・ BPM %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ・ BPM %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · BPM %@"
+          }
+        }
+      }
+    },
+    "やり方：%@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "やり方：%@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Style: %@"
+          }
+        }
+      }
+    },
+    "主に": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "主に"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mainly "
+          }
+        }
+      }
+    },
+    " ・ ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " ・ "
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · "
+          }
+        }
+      }
+    },
+    "かえる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "かえる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Change"
+          }
+        }
+      }
+    },
+    "今日のやり方 %@。かえる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日のやり方 %@。かえる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today's style: %@. Change"
+          }
+        }
+      }
+    },
+    "30 日をやりきりました。設定でコースを変えるか、エンドレスで続けよう": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 日をやりきりました。設定でコースを変えるか、エンドレスで続けよう"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You finished all 30 days. Change course in Settings, or keep going in Endless"
+          }
+        }
+      }
+    },
+    "もう一回やる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "もう一回やる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Go again"
+          }
+        }
+      }
+    },
+    "はじめる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "はじめる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start"
+          }
+        }
+      }
+    },
+    "今日の分": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日の分"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done today"
+          }
+        }
+      }
+    },
+    "回数を調整": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "回数を調整"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adjust reps"
+          }
+        }
+      }
+    },
+    "いつもより %@%@ 回": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "いつもより %@%@ 回"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@%@ vs. usual"
+          }
+        }
+      }
+    },
+    "いまの自分 %@ 回 ・ 変える": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "いまの自分 %@ 回 ・ 変える"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your max: %@ · change"
+          }
+        }
+      }
+    },
+    "いまの自分の回数を決める": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "いまの自分の回数を決める"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set your max reps"
+          }
+        }
+      }
+    },
+    "もとに戻す": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "もとに戻す"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reset"
+          }
+        }
+      }
+    },
+    "今日の回数を 1 回ふやす": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日の回数を 1 回ふやす"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One more rep today"
+          }
+        }
+      }
+    },
+    "今日の回数を 1 回へらす": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日の回数を 1 回へらす"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One less rep today"
+          }
+        }
+      }
+    },
+    "エンドレス": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "エンドレス"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Endless"
+          }
+        }
+      }
+    },
+    "3 回続けて外すまで、どこまでも": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3 回続けて外すまで、どこまでも"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Until 3 misses in a row"
+          }
+        }
+      }
+    },
+    "最高の回数": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最高の回数"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Best reps"
+          }
+        }
+      }
+    },
+    "最大コンボ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最大コンボ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Best combo"
+          }
+        }
+      }
+    },
+    "続いた時間": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "続いた時間"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Longest"
+          }
+        }
+      }
+    },
+    "%@ 回で自己ベスト更新。やり方は今日と同じ%@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 回で自己ベスト更新。やり方は今日と同じ%@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ reps for a new best. Same style as today: %@"
+          }
+        }
+      }
+    },
+    "まずは 1 回。続いた回数・コンボ・時間がベストとして残ります": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "まずは 1 回。続いた回数・コンボ・時間がベストとして残ります"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start with one. Your reps, combo and time are kept as bests"
+          }
+        }
+      }
+    },
+    "エンドレスをはじめる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "エンドレスをはじめる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start Endless"
+          }
+        }
+      }
+    },
+    "回数を、自分に合わせる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "回数を、自分に合わせる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fit the reps to you"
+          }
+        }
+      }
+    },
+    "休まず何回できるかを決めると、30 日の回数があなたに合わせて変わります": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "休まず何回できるかを決めると、30 日の回数があなたに合わせて変わります"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tell us how many you can do in a row, and your 30 days adapt to you"
+          }
+        }
+      }
+    },
+    "筋肉から選ぶ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "筋肉から選ぶ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "By muscle"
+          }
+        }
+      }
+    },
+    "8 つのやり方": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "8 つのやり方"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "8 styles"
+          }
+        }
+      }
+    },
+    "%@ / %@ 日": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / %@ 日"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / %@ days"
+          }
+        }
+      }
+    },
+    " できた": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " できた"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", done"
+          }
+        }
+      }
+    },
+    " 今日": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " 今日"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", today"
+          }
+        }
+      }
+    },
+    "%@ 日目 %@ 回%@%@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 日目 %@ 回%@%@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day %@, %@ reps%@%@"
+          }
+        }
+      }
+    },
+    "これまでの回数": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "これまでの回数"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total reps"
+          }
+        }
+      }
+    },
+    "続けた日": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "続けた日"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day streak"
+          }
+        }
+      }
+    },
+    "おかえり。合計 %@ 日": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "おかえり。合計 %@ 日"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welcome back. %@ days total"
+          }
+        }
+      }
+    },
+    "今週いちばん": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今週いちばん"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Top this week"
+          }
+        }
+      }
+    },
+    "この 7 日": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この 7 日"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last 7 days"
+          }
+        }
+      }
+    },
+    "この 7 日の回数 ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この 7 日の回数 "
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reps in the last 7 days "
+          }
+        }
+      }
+    },
+    "、": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "、"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", "
+          }
+        }
+      }
+    },
+    "腕立てが、\n音ゲーになる。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "腕立てが、\n音ゲーになる。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Push-ups become\na rhythm game."
+          }
+        }
+      }
+    },
+    "輪がレコードに重なる瞬間に、体を下ろして画面に触れる。拍に合うと Perfect。数えなくても、曲が終われば今日の分。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "輪がレコードに重なる瞬間に、体を下ろして画面に触れる。拍に合うと Perfect。数えなくても、曲が終われば今日の分。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lower your body and touch the screen as the ring meets the record. On the beat is Perfect. No counting — when the song ends, today's set is done."
+          }
+        }
+      }
+    },
+    "置き方": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "置き方"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup"
+          }
+        }
+      }
+    },
+    "床に置いて、\n鼻かあごで触れる。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "床に置いて、\n鼻かあごで触れる。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Put it on the floor,\ntouch with your nose or chin."
+          }
+        }
+      }
+    },
+    "画面の上側に頭がくるように置く。どこに触れても 1 回。下で止まる「キープ」は、触れたまま拍を待つ。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "画面の上側に頭がくるように置く。どこに触れても 1 回。下で止まる「キープ」は、触れたまま拍を待つ。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Place it so your head is above the top of the screen. Any touch counts as one rep. For a \"keep\", stay down and hold for the beats."
+          }
+        }
+      }
+    },
+    "自分に合わせる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自分に合わせる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Made for you"
+          }
+        }
+      }
+    },
+    "回数も、やり方も、\n自分で決める。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "回数も、やり方も、\n自分で決める。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your reps, your style,\nyour call."
+          }
+        }
+      }
+    },
+    "いまの自分の回数から 30 日の道を作り、毎回の結果で次の回数を提案します。胸・二の腕・肩・体幹から、今日のやり方を選べます。記録はこの iPhone の中だけ。カメラもマイクも使いません。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "いまの自分の回数から 30 日の道を作り、毎回の結果で次の回数を提案します。胸・二の腕・肩・体幹から、今日のやり方を選べます。記録はこの iPhone の中だけ。カメラもマイクも使いません。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We build 30 days from your current max and suggest the next count after each set. Pick today's style by chest, triceps, shoulders or core. Records stay on this iPhone. No camera, no microphone."
+          }
+        }
+      }
+    },
+    "スキップ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "スキップ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip"
+          }
+        }
+      }
+    },
+    "次へ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次へ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next"
+          }
+        }
+      }
+    },
+    "まず指でためす（4 回）": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "まず指でためす（4 回）"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try with a finger first (4 reps)"
+          }
+        }
+      }
+    },
+    "触れる面。拍に合わせて、どこでも触れる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "触れる面。拍に合わせて、どこでも触れる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Touch area. Touch anywhere on the beat"
+          }
+        }
+      }
+    },
+    "やめる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "やめる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quit"
+          }
+        }
+      }
+    },
+    "%@ 回": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 回"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ reps"
+          }
+        }
+      }
+    },
+    "ベスト +%@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ベスト +%@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Best +%@"
+          }
+        }
+      }
+    },
+    "ベストまで %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ベストまで %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ to best"
+          }
+        }
+      }
+    },
+    "できなくなったら左上の × で終える": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "できなくなったら左上の × で終える"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap × at top left when you can't go on"
+          }
+        }
+      }
+    },
+    "3 回続けて外したら終わり。どこに触れても 1 回": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3 回続けて外したら終わり。どこに触れても 1 回"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ends after 3 misses in a row. Any touch is one rep"
+          }
+        }
+      }
+    },
+    "%@ ・ 鼻かあごで、どこに触れても 1 回": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ・ 鼻かあごで、どこに触れても 1 回"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · touch anywhere with nose or chin"
+          }
+        }
+      }
+    },
+    "位置について": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "位置について"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Get in position"
+          }
+        }
+      }
+    },
+    "カウント": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カウント"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Count"
+          }
+        }
+      }
+    },
+    "つぎ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "つぎ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next"
+          }
+        }
+      }
+    },
+    "キープ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "キープ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep"
+          }
+        }
+      }
+    },
+    "タッチ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タッチ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Touch"
+          }
+        }
+      }
+    },
+    "%.1f 拍": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%.1f 拍"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%.1f beats"
+          }
+        }
+      }
+    },
+    "あと少し": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "あと少し"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Almost there"
+          }
+        }
+      }
+    },
+    "指でためす": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "指でためす"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try with a finger"
+          }
+        }
+      }
+    },
+    "いまの自分をためす": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "いまの自分をためす"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test your max"
+          }
+        }
+      }
+    },
+    "Day %@ ・ %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day %@ ・ %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day %@ · %@"
+          }
+        }
+      }
+    },
+    "エンドレス ・ %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "エンドレス ・ %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Endless · %@"
+          }
+        }
+      }
+    },
+    "%@ ・ %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ・ %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@"
+          }
+        }
+      }
+    },
+    "できるだけ続ける": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "できるだけ続ける"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "As many as you can"
+          }
+        }
+      }
+    },
+    "外すまで続ける": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "外すまで続ける"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Until you miss"
+          }
+        }
+      }
+    },
+    "まずは指でためしに 4 回。輪がレコードの縁に重なる瞬間に、画面のどこかに触れてください。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "まずは指でためしに 4 回。輪がレコードの縁に重なる瞬間に、画面のどこかに触れてください。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "First, try 4 reps with a finger. Touch anywhere on the screen as the ring meets the record's edge."
+          }
+        }
+      }
+    },
+    "ふつうの腕立てで、フォームを崩さずに何回続くか。拍に合わなくても回数は数えます。押してから 5 秒で始まります。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ふつうの腕立てで、フォームを崩さずに何回続くか。拍に合わなくても回数は数えます。押してから 5 秒で始まります。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard push-ups with good form — how many in a row? Off-beat reps still count. Starts 5 seconds after you tap."
+          }
+        }
+      }
+    },
+    "床に置いて、画面の上側に頭がくるように。押してから 5 秒で始まります。鼻かあごで、どこに触れても 1 回。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "床に置いて、画面の上側に頭がくるように。押してから 5 秒で始まります。鼻かあごで、どこに触れても 1 回。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Put it on the floor with your head above the top of the screen. Starts 5 seconds after you tap. Nose or chin, any touch is one rep."
+          }
+        }
+      }
+    },
+    "とじる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "とじる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close"
+          }
+        }
+      }
+    },
+    "ありがとう。ぜんぶ使えます": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ありがとう。ぜんぶ使えます"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thank you. Everything is unlocked"
+          }
+        }
+      }
+    },
+    "腕立てを、\nもっと長く楽しく。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "腕立てを、\nもっと長く楽しく。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "More push-ups,\nmore fun."
+          }
+        }
+      }
+    },
+    "1 回買えば、ずっと使えます。家族共有にも対応しています。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 回買えば、ずっと使えます。家族共有にも対応しています。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buy once, keep forever. Family Sharing supported."
+          }
+        }
+      }
+    },
+    "5 つのやり方と、筋肉のメニュー": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "5 つのやり方と、筋肉のメニュー"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "5 styles and muscle menus"
+          }
+        }
+      }
+    },
+    "ダイヤモンド（二の腕）・ゆっくり下ろす・下でキープ（体幹）・デクライン・パイク（肩の前）。やり方ごとに譜面と合図の音が変わる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダイヤモンド（二の腕）・ゆっくり下ろす・下でキープ（体幹）・デクライン・パイク（肩の前）。やり方ごとに譜面と合図の音が変わる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diamond (triceps), Slow lower, Bottom hold (core), Decline, Pike (front shoulders). Each style changes the chart and cue sounds"
+          }
+        }
+      }
+    },
+    "今週は胸ばかり、が分かる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今週は胸ばかり、が分かる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See when it's all chest"
+          }
+        }
+      }
+    },
+    "この 7 日に使った筋肉を、体の絵と棒で。少ない筋肉の日をすすめます": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この 7 日に使った筋肉を、体の絵と棒で。少ない筋肉の日をすすめます"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Muscles used in the last 7 days, as a body figure and bars. Suggests the muscle you've skipped"
+          }
+        }
+      }
+    },
+    "12 曲がふえる（全 18 曲）": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "12 曲がふえる（全 18 曲）"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "12 more songs (18 total)"
+          }
+        }
+      }
+    },
+    "キープ・3 拍のうねり・BPM 100 の速い曲まで。むずかしさ 5 の曲は Pro だけ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "キープ・3 拍のうねり・BPM 100 の速い曲まで。むずかしさ 5 の曲は Pro だけ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keeps, 3-beat swings, up to BPM 100. Level-5 songs are Pro only"
+          }
+        }
+      }
+    },
+    "はじめての 30 日のあとに。回数多めで、ワイド・ダイヤモンド・キープの日が入る": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "はじめての 30 日のあとに。回数多めで、ワイド・ダイヤモンド・キープの日が入る"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "After the First 30 Days. More reps, with Wide, Diamond and Keep days"
+          }
+        }
+      }
+    },
+    "30 日の回数と、くせの移り変わり": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 日の回数と、くせの移り変わり"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30-day reps and timing trends"
+          }
+        }
+      }
+    },
+    "はやめ・おそめのくせが、日ごとにどう直ってきたかが分かる。1 曲ずつの段階も残る": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "はやめ・おそめのくせが、日ごとにどう直ってきたかが分かる。1 曲ずつの段階も残る"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See how your early/late habit improves day by day. Grades for every song are kept"
+          }
+        }
+      }
+    },
+    "購入を復元": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "購入を復元"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore Purchases"
+          }
+        }
+      }
+    },
+    "復元しました": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "復元しました"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restored"
+          }
+        }
+      }
+    },
+    "復元できる購入が見つかりませんでした": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "復元できる購入が見つかりませんでした"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No purchases to restore"
+          }
+        }
+      }
+    },
+    "回数の調整・エンドレス・基本の 3 つのやり方（ふつう・ひざつき・ワイド）・はじめての 30 日・無料の 6 曲・7 日の記録は、Pro がなくてもずっと使えます。広告はありません。Pro の曲と Pro のやり方は、それぞれ 1 回だけ無料で試せます。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "回数の調整・エンドレス・基本の 3 つのやり方（ふつう・ひざつき・ワイド）・はじめての 30 日・無料の 6 曲・7 日の記録は、Pro がなくてもずっと使えます。広告はありません。Pro の曲と Pro のやり方は、それぞれ 1 回だけ無料で試せます。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reps adjustment, Endless, the 3 basic styles (Standard, Knee, Wide), the First 30 Days, 6 free songs and 7-day stats stay free forever. No ads. You can try one Pro song and one Pro style once each for free."
+          }
+        }
+      }
+    },
+    "Pro を使っています": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro を使っています"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You're using Pro"
+          }
+        }
+      }
+    },
+    "ようこそ Pro へ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ようこそ Pro へ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welcome to Pro"
+          }
+        }
+      }
+    },
+    "購入の承認を待っています": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "購入の承認を待っています"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waiting for purchase approval"
+          }
+        }
+      }
+    },
+    "購入できませんでした。時間をおいてもう一度お試しください": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "購入できませんでした。時間をおいてもう一度お試しください"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchase failed. Please try again later"
+          }
+        }
+      }
+    },
+    "%@ で Pro にする（買い切り）": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ で Pro にする（買い切り）"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Get Pro for %@ (one-time)"
+          }
+        }
+      }
+    },
+    "サブスクではありません。1 回の購入で、ずっと使えます。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "サブスクではありません。1 回の購入で、ずっと使えます。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not a subscription. Buy once, use forever."
+          }
+        }
+      }
+    },
+    "いまは購入できません": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "いまは購入できません"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchases are unavailable right now"
+          }
+        }
+      }
+    },
+    "通信をたしかめて、もう一度読みこんでください": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "通信をたしかめて、もう一度読みこんでください"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check your connection and reload"
+          }
+        }
+      }
+    },
+    "もう一度読みこむ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "もう一度読みこむ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reload"
+          }
+        }
+      }
+    },
+    "まだ記録がありません": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "まだ記録がありません"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No records yet"
+          }
+        }
+      }
+    },
+    "今日の 1 曲を遊ぶと、ここに回数とタイミングのくせがたまっていきます。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日の 1 曲を遊ぶと、ここに回数とタイミングのくせがたまっていきます。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Play today's song and your reps and timing habit will build up here."
+          }
+        }
+      }
+    },
+    "今日の 1 曲をはじめる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日の 1 曲をはじめる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start today's song"
+          }
+        }
+      }
+    },
+    "これまで": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "これまで"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "So far"
+          }
+        }
+      }
+    },
+    "%@ 日 ・ %@ 曲": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 日 ・ %@ 曲"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ days · %@ songs"
+          }
+        }
+      }
+    },
+    "続けて %@ 日": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "続けて %@ 日"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@-day streak"
+          }
+        }
+      }
+    },
+    "最近 10 曲のくせ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最近 10 曲のくせ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Timing, last 10 songs"
+          }
+        }
+      }
+    },
+    "%@（%@%@ ms）": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@（%@%@ ms）"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ (%@%@ ms)"
+          }
+        }
+      }
+    },
+    "週の筋肉の偏り・30 日の回数・くせの移り変わり・1 曲ずつの記録は Pro で": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "週の筋肉の偏り・30 日の回数・くせの移り変わり・1 曲ずつの記録は Pro で"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weekly muscle balance, 30-day reps, timing trends and per-song history are Pro"
+          }
+        }
+      }
+    },
+    "Pro を見る": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro を見る"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See Pro"
+          }
+        }
+      }
+    },
+    "この 30 日の回数": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この 30 日の回数"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reps in the last 30 days"
+          }
+        }
+      }
+    },
+    "日": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "日"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day"
+          }
+        }
+      }
+    },
+    "回数": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "回数"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reps"
+          }
+        }
+      }
+    },
+    "くせの移り変わり（ms・0 がちょうど）": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "くせの移り変わり（ms・0 がちょうど）"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Timing trend (ms, 0 = on time)"
+          }
+        }
+      }
+    },
+    "1 曲ずつ（新しい順）": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 曲ずつ（新しい順）"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per song (newest first)"
+          }
+        }
+      }
+    },
+    "この 7 日のやり方": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この 7 日のやり方"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Styles, last 7 days"
+          }
+        }
+      }
+    },
+    "やり方を見る": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "やり方を見る"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See styles"
+          }
+        }
+      }
+    },
+    "この 7 日はまだ記録がありません。1 曲やると、やり方ごとの回数がここに並びます。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この 7 日はまだ記録がありません。1 曲やると、やり方ごとの回数がここに並びます。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No records in the last 7 days. Play a song to see reps by style here."
+          }
+        }
+      }
+    },
+    "この 7 日の筋肉": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この 7 日の筋肉"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Muscles, last 7 days"
+          }
+        }
+      }
+    },
+    "数は「回数 × 効き方」（主に効く所は 1、補助は 0.5）の目安です。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "数は「回数 × 効き方」（主に効く所は 1、補助は 0.5）の目安です。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Values are \"reps × load\" (1 for main muscles, 0.5 for support), as a guide."
+          }
+        }
+      }
+    },
+    "今日の 1 曲": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日の 1 曲"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today's song"
+          }
+        }
+      }
+    },
+    "床に置いて、3 分だけ。拍に合わせて腕立てを。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "床に置いて、3 分だけ。拍に合わせて腕立てを。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Floor, 3 minutes. Push-ups to the beat."
+          }
+        }
+      }
+    },
+    "ためし": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ためし"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Practice"
+          }
+        }
+      }
+    },
+    "いまの自分": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "いまの自分"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your max"
+          }
+        }
+      }
+    },
+    "途中まで": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "途中まで"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partial"
+          }
+        }
+      }
+    },
+    "つかめたら、次は床に置いて腕立てで": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "つかめたら、次は床に置いて腕立てで"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Got it? Next, put it on the floor and do push-ups"
+          }
+        }
+      }
+    },
+    "%@ 回できた。これが、いまの自分": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 回できた。これが、いまの自分"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ reps. That's where you are now"
+          }
+        }
+      }
+    },
+    "ここまでの記録も残しました": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ここまでの記録も残しました"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your progress so far was saved"
+          }
+        }
+      }
+    },
+    "今日の 1 曲へ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日の 1 曲へ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To today's song"
+          }
+        }
+      }
+    },
+    "ホームへ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ホームへ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Home"
+          }
+        }
+      }
+    },
+    "やり方：%@ ・ 主に": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "やり方：%@ ・ 主に"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Style: %@ · Mainly "
+          }
+        }
+      }
+    },
+    "エンドレスの自己ベスト更新": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "エンドレスの自己ベスト更新"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New Endless best"
+          }
+        }
+      }
+    },
+    "段階 %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "段階 %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grade %@"
+          }
+        }
+      }
+    },
+    "次の回数": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次の回数"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next count"
+          }
+        }
+      }
+    },
+    "最後まで": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最後まで"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "to the end"
+          }
+        }
+      }
+    },
+    "Perfect %@%% ・ %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perfect %@%% ・ %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perfect %@%% · %@"
+          }
+        }
+      }
+    },
+    "ちょうどいい回数です": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ちょうどいい回数です"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Just the right count"
+          }
+        }
+      }
+    },
+    "Day %@ は %@ 回。きつければホームの −／＋ でいつでも変えられます": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day %@ は %@ 回。きつければホームの −／＋ でいつでも変えられます"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day %@: %@ reps. Too hard? Use − / + on Home anytime"
+          }
+        }
+      }
+    },
+    "少し上げてみる？": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "少し上げてみる？"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bump it up a bit?"
+          }
+        }
+      }
+    },
+    "少し下げてみる？": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "少し下げてみる？"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ease off a bit?"
+          }
+        }
+      }
+    },
+    "Perfect が多く、最後まで続きました。Day %@ から %@ 回ふやす提案です": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perfect が多く、最後まで続きました。Day %@ から %@ 回ふやす提案です"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lots of Perfects and you finished. Suggesting %2$@ more from Day %1$@"
+          }
+        }
+      }
+    },
+    "今日は途中まで。Day %@ から %@ 回へらして、最後まで続けよう": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日は途中まで。Day %@ から %@ 回へらして、最後まで続けよう"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stopped partway today. %2$@ fewer from Day %1$@ to finish the song"
+          }
+        }
+      }
+    },
+    "外した回が多め。Day %@ から %@ 回へらして、拍に乗ろう": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "外した回が多め。Day %@ から %@ 回へらして、拍に乗ろう"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quite a few misses. %2$@ fewer from Day %1$@ to ride the beat"
+          }
+        }
+      }
+    },
+    "Day %@ から %@ 回にしました": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day %@ から %@ 回にしました"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day %@ is now %@ reps"
+          }
+        }
+      }
+    },
+    "+%@ 回にする": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+%@ 回にする"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+%@ reps"
+          }
+        }
+      }
+    },
+    "%@ 回にする": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 回にする"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ reps"
+          }
+        }
+      }
+    },
+    "このまま": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このまま"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep as is"
+          }
+        }
+      }
+    },
+    "いまの自分の回数": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "いまの自分の回数"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your max reps"
+          }
+        }
+      }
+    },
+    "%@ 回で 30 日の道を作りました": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 回で 30 日の道を作りました"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Built your 30 days from %@ reps"
+          }
+        }
+      }
+    },
+    "%@ 回をもとに、30 日の回数を合わせますか？": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 回をもとに、30 日の回数を合わせますか？"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fit your 30 days to %@ reps?"
+          }
+        }
+      }
+    },
+    "この回数で道を作る": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この回数で道を作る"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Build my days from this"
+          }
+        }
+      }
+    },
+    "自己ベストと比べる": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自己ベストと比べる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compared to your best"
+          }
+        }
+      }
+    },
+    "コンボ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コンボ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Combo"
+          }
+        }
+      }
+    },
+    "はじめて": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "はじめて"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "First time"
+          }
+        }
+      }
+    },
+    "ベスト +": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ベスト +"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Best +"
+          }
+        }
+      }
+    },
+    "ベストと同じ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ベストと同じ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Same as best"
+          }
+        }
+      }
+    },
+    "ベストまで ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ベストまで "
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To best: "
+          }
+        }
+      }
+    },
+    "タイミングのくせ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タイミングのくせ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Timing habit"
+          }
+        }
+      }
+    },
+    "Day %@ クリア": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day %@ クリア"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day %@ cleared"
+          }
+        }
+      }
+    },
+    "Day %@ はまた今度": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day %@ はまた今度"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day %@ another time"
+          }
+        }
+      }
+    },
+    "Day %@ をもう一度": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day %@ をもう一度"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day %@ again"
+          }
+        }
+      }
+    },
+    "%@ 日連続 ・ 合計 %@ 回": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 日連続 ・ 合計 %@ 回"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@-day streak · %@ reps total"
+          }
+        }
+      }
+    },
+    "合計 %@ 回": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "合計 %@ 回"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ reps total"
+          }
+        }
+      }
+    },
+    "もう一回": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "もう一回"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Again"
+          }
+        }
+      }
+    },
+    "うでたてビートの記録": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "うでたてビートの記録"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "My Push Beat result"
+          }
+        }
+      }
+    },
+    "記録を共有": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "記録を共有"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share result"
+          }
+        }
+      }
+    },
+    "はやい": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "はやい"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Early"
+          }
+        }
+      }
+    },
+    "おそい": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "おそい"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Late"
+          }
+        }
+      }
+    },
+    "タイミングのくせ %@ ミリ秒": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タイミングのくせ %@ ミリ秒"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Timing habit %@ ms"
+          }
+        }
+      }
+    },
+    "Push Beat ・ うでたてビート": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Push Beat ・ うでたてビート"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Push Beat"
+          }
+        }
+      }
+    },
+    "Perfect %@ ・ Good %@ ・ Combo %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perfect %@ ・ Good %@ ・ Combo %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perfect %@ · Good %@ · Combo %@"
+          }
+        }
+      }
+    },
+    " ・ Day %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " ・ Day %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · Day %@"
+          }
+        }
+      }
+    },
+    "いまの自分の回数：%@ 回": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "いまの自分の回数：%@ 回"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your max: %@ reps"
+          }
+        }
+      }
+    },
+    "回数の調整：なし": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "回数の調整：なし"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rep adjustment: none"
+          }
+        }
+      }
+    },
+    "回数の調整：%@%@ 回": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "回数の調整：%@%@ 回"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rep adjustment: %@%@"
+          }
+        }
+      }
+    },
+    "ホームの −／＋ と、結果の画面の提案で動いた分です。いまの自分の回数を決め直すと 0 に戻ります。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ホームの −／＋ と、結果の画面の提案で動いた分です。いまの自分の回数を決め直すと 0 に戻ります。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Changes from − / + on Home and from result suggestions. Resets when you set your max again."
+          }
+        }
+      }
+    },
+    "音と振動": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "音と振動"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sound & haptics"
+          }
+        }
+      }
+    },
+    "曲": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "曲"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Music"
+          }
+        }
+      }
+    },
+    "合図の音（ノーツ・触れた音）": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "合図の音（ノーツ・触れた音）"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cue sounds (notes, touches)"
+          }
+        }
+      }
+    },
+    "振動": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "振動"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haptics"
+          }
+        }
+      }
+    },
+    "毎日のお知らせ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "毎日のお知らせ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daily reminder"
+          }
+        }
+      }
+    },
+    "毎日 ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "毎日 "
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daily at "
+          }
+        }
+      }
+    },
+    " 時にお知らせ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " 時にお知らせ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ":00 reminder"
+          }
+        }
+      }
+    },
+    "%@ 時": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 時"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@:00"
+          }
+        }
+      }
+    },
+    "通知が許可されていません。設定アプリの「通知」で許可すると、お知らせが届きます。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "通知が許可されていません。設定アプリの「通知」で許可すると、お知らせが届きます。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications are off. Allow them in the Settings app under Notifications to get reminders."
+          }
+        }
+      }
+    },
+    "設定アプリを開く": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "設定アプリを開く"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Settings"
+          }
+        }
+      }
+    },
+    "タイミングの調整": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タイミングの調整"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Timing offset"
+          }
+        }
+      }
+    },
+    "いつも「おそめ」と出るなら、判定をおそくすると合いやすくなります。Bluetooth のイヤホンでは音が遅れるので、＋100 ms くらいから試してください。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "いつも「おそめ」と出るなら、判定をおそくすると合いやすくなります。Bluetooth のイヤホンでは音が遅れるので、＋100 ms くらいから試してください。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If you keep getting \"Late\", delay the judgment. Bluetooth earphones lag, so try about +100 ms."
+          }
+        }
+      }
+    },
+    "30 日のコース": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 日のコース"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30-day course"
+          }
+        }
+      }
+    },
+    "ひざつきから、ふつうへ（無料）": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ひざつきから、ふつうへ（無料）"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Knees to standard (free)"
+          }
+        }
+      }
+    },
+    "回数多め。ワイド・ダイヤモンド・キープの日（Pro）": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "回数多め。ワイド・ダイヤモンド・キープの日（Pro）"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "More reps. Wide, Diamond and Keep days (Pro)"
+          }
+        }
+      }
+    },
+    "そのほか": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "そのほか"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other"
+          }
+        }
+      }
+    },
+    "使い方をもう一度見る": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使い方をもう一度見る"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show the intro again"
+          }
+        }
+      }
+    },
+    "プライバシー": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "プライバシー"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacy"
+          }
+        }
+      }
+    },
+    "記録はこの iPhone の中だけに保存し、外に送りません。カメラ・マイク・位置情報は使いません。ログインも広告もありません。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "記録はこの iPhone の中だけに保存し、外に送りません。カメラ・マイク・位置情報は使いません。ログインも広告もありません。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Records stay on this iPhone and are never sent anywhere. No camera, microphone or location. No login, no ads."
+          }
+        }
+      }
+    },
+    "バージョン": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "バージョン"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version"
+          }
+        }
+      }
+    },
+    "調整なし": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "調整なし"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No offset"
+          }
+        }
+      }
+    },
+    "おそく": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "おそく"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "later"
+          }
+        }
+      }
+    },
+    "はやく": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "はやく"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "earlier"
+          }
+        }
+      }
+    },
+    "判定を ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "判定を "
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Judge "
+          }
+        }
+      }
+    },
+    "無料の 6 曲": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "無料の 6 曲"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "6 free songs"
+          }
+        }
+      }
+    },
+    "Pro の 12 曲": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro の 12 曲"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "12 Pro songs"
+          }
+        }
+      }
+    },
+    "、Pro": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "、Pro"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", Pro"
+          }
+        }
+      }
+    },
+    "%@、むずかしさ %@%@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@、むずかしさ %@%@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@, level %@%@"
+          }
+        }
+      }
+    },
+    "BPM %@ ・ %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BPM %@ ・ %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BPM %@ · %@"
+          }
+        }
+      }
+    },
+    "譜面の形（はじめの 16 拍）": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "譜面の形（はじめの 16 拍）"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chart shape (first 16 beats)"
+          }
+        }
+      }
+    },
+    "キープ（下で止まる）": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "キープ（下で止まる）"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep (hold at the bottom)"
+          }
+        }
+      }
+    },
+    "Pro の曲は、Pro で遊べます（お試しの 1 回は使いました）": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro の曲は、Pro で遊べます（お試しの 1 回は使いました）"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Play Pro songs with Pro (your free try is used)"
+          }
+        }
+      }
+    },
+    "Pro の曲を 1 回だけ、無料で試せます": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro の曲を 1 回だけ、無料で試せます"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try one Pro song once, free"
+          }
+        }
+      }
+    },
+    "1 回だけ試す": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 回だけ試す"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try once"
+          }
+        }
+      }
+    },
+    "この曲で %@ 回（%@）": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この曲で %@ 回（%@）"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ reps with this song (%@)"
+          }
+        }
+      }
+    },
+    "エンドレスで遊ぶ（3 回続けて外すまで）": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "エンドレスで遊ぶ（3 回続けて外すまで）"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Play Endless (until 3 misses in a row)"
+          }
+        }
+      }
+    },
+    "今日はどこに効かせる？": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日はどこに効かせる？"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Where do you want to work today?"
+          }
+        }
+      }
+    },
+    "%@のやり方": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@のやり方"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ styles"
+          }
+        }
+      }
+    },
+    "すべて見る": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "すべて見る"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See all"
+          }
+        }
+      }
+    },
+    "効く所は、一般的なフォームで主に使われる筋肉の目安です。痛みがあるときは休んでください。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "効く所は、一般的なフォームで主に使われる筋肉の目安です。痛みがあるときは休んでください。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Muscles shown are a general guide to what each form mainly uses. Rest if anything hurts."
+          }
+        }
+      }
+    },
+    "やり方と筋肉": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "やり方と筋肉"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Styles & muscles"
+          }
+        }
+      }
+    },
+    "%@ つ": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ つ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@"
+          }
+        }
+      }
+    },
+    "Pro で使える": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro で使える"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock with Pro"
+          }
+        }
+      }
+    },
+    "今日のやり方": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日のやり方"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today's style"
+          }
+        }
+      }
+    },
+    "1 回だけ試す（今日のやり方にする）": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 回だけ試す（今日のやり方にする）"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try once (use today)"
+          }
+        }
+      }
+    },
+    "今日はこれにする": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日はこれにする"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use this today"
+          }
+        }
+      }
+    },
+    "いまの自分は、\n休まず何回できる？": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "いまの自分は、\n休まず何回できる？"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How many can you do\nin a row right now?"
+          }
+        }
+      }
+    },
+    "ふつうの腕立てで、フォームを崩さずに続けられる回数。ひざをついてやっとなら 3〜5 回で。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ふつうの腕立てで、フォームを崩さずに続けられる回数。ひざをついてやっとなら 3〜5 回で。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard push-ups with good form. If you can barely do them on your knees, pick 3–5."
+          }
+        }
+      }
+    },
+    "3 以下": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3 以下"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3 or less"
+          }
+        }
+      }
+    },
+    "この回数で 30 日の道を作る": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この回数で 30 日の道を作る"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Build my 30 days from this"
+          }
+        }
+      }
+    },
+    "ためして決める（エンドレスで数える）": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ためして決める（エンドレスで数える）"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test it (count in Endless)"
+          }
+        }
+      }
+    },
+    "あとから設定でいつでも変えられます。毎回の結果で、次の回数を少し上げ下げする提案も出ます。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "あとから設定でいつでも変えられます。毎回の結果で、次の回数を少し上げ下げする提案も出ます。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You can change this anytime in Settings. After each set, we'll suggest nudging the next count up or down."
+          }
+        }
+      }
+    },
+    "1 回ふやす": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 回ふやす"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One more"
+          }
+        }
+      }
+    },
+    "1 回へらす": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 回へらす"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One less"
+          }
+        }
+      }
+    },
+    "Day 1 は %@ 回 → Day 30 は %@ 回": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day 1 は %@ 回 → Day 30 は %@ 回"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day 1: %@ reps → Day 30: %@ reps"
+          }
+        }
+      }
+    },
+    "7 日ごとに軽い日。はじめは今の 6 割から、少しずつ増えます。": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "7 日ごとに軽い日。はじめは今の 6 割から、少しずつ増えます。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A light day every 7 days. Starts at 60% of your max and builds up."
+          }
+        }
+      }
+    },
+    "1 日目 %@ 回から 30 日目 %@ 回まで": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 日目 %@ 回から 30 日目 %@ 回まで"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "From %@ reps on day 1 to %@ reps on day 30"
+          }
+        }
+      }
+    },
+    "むずかしさ %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "むずかしさ %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Level %@"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

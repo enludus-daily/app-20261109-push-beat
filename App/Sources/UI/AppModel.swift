@@ -210,7 +210,9 @@ final class AppModel {
 
     // MARK: 撮影用（CI のスクリーンショット。起動引数 -screenshotScene <名前>）
 
-    func applyScreenshotScene(_ scene: String) {
+    func applyScreenshotScene(_ name: String) {
+        // 「-en」で終わる名前は英語で撮る（Localization.bundle）。開く画面は同じ
+        let scene = name.hasSuffix("-en") ? String(name.dropLast(3)) : name
         persist = false
         progress = Self.sampleProgress(today: today)
         switch scene {

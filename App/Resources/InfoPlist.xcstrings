@@ -1,0 +1,23 @@
+{
+  "sourceLanguage": "ja",
+  "strings": {
+    "CFBundleDisplayName": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "うでたてビート"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Push Beat"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}
