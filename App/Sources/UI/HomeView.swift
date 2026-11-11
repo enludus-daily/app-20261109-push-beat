@@ -118,7 +118,7 @@ private struct TodayHero: View {
                     BodyFigure(technique: technique, showPhone: false).frame(width: 64, height: 36)
                     VStack(alignment: .leading, spacing: 2) {
                         Text(L("やり方：%@", "\(technique.title)")).font(Theme.text(14, .medium)).foregroundStyle(Theme.ink)
-                        Text(L("主に") + technique.mainMuscles.map(\.label).joined(separator: L("・")) + L(" ・ ") + technique.rhythmLine)
+                        Text(L("主に") + technique.mainMuscles.map(\.label).joined(separator: L("・")))
                             .font(Theme.text(11)).foregroundStyle(Theme.inkSoft).lineLimit(1).minimumScaleFactor(0.8)
                     }
                     Spacer(minLength: 0)

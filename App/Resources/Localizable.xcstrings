@@ -1832,7 +1832,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Front shoulders"
+            "value": "Shoulders"
           }
         }
       }
@@ -4110,7 +4110,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Diamond (triceps), Slow lower, Bottom hold (core), Decline, Pike (front shoulders). Each style changes the chart and cue sounds"
+            "value": "Diamond (triceps), Slow lower, Bottom hold (core), Decline, Pike (shoulders). Each style changes the chart and cue sounds"
           }
         }
       }
@@ -6729,6 +6729,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "Level %@"
+          }
+        }
+      }
+    },
+    "補助：%@": {
+      "extractionState": "manual",
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "補助：%@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also: %@"
           }
         }
       }

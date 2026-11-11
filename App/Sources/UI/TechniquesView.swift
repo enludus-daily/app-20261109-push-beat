@@ -178,19 +178,22 @@ struct MuscleTags: View {
     var focus: Muscle?
 
     var body: some View {
-        HStack(spacing: 4) {
-            ForEach(technique.mainMuscles) { m in
-                Text(m.label).font(Theme.label(10)).foregroundStyle(Theme.ink)
-                    .padding(.horizontal, 6).padding(.vertical, 2)
-                    .background(Capsule().fill(m == focus ? Theme.peach : Theme.peachSoft))
+        // 主に効く所は札、補助は 1 行の文（英語で札が長くなっても切れないように）
+        VStack(alignment: .leading, spacing: 3) {
+            HStack(spacing: 4) {
+                ForEach(technique.mainMuscles) { m in
+                    Text(m.label).font(Theme.label(10)).foregroundStyle(Theme.ink)
+                        .fixedSize()
+                        .padding(.horizontal, 6).padding(.vertical, 2)
+                        .background(Capsule().fill(m == focus ? Theme.peach : Theme.peachSoft))
+                }
             }
-            ForEach(technique.subMuscles) { m in
-                Text(m.label).font(Theme.label(10)).foregroundStyle(Theme.inkSoft)
-                    .padding(.horizontal, 6).padding(.vertical, 2)
-                    .overlay(Capsule().stroke(Theme.line, lineWidth: 1))
+            if !technique.subMuscles.isEmpty {
+                Text(L("補助：%@", technique.subMuscles.map(\.label).joined(separator: L("・"))))
+                    .font(Theme.label(10)).foregroundStyle(Theme.inkSoft)
+                    .fixedSize(horizontal: false, vertical: true)
             }
         }
-        .lineLimit(1)
         .accessibilityElement()
         .accessibilityLabel(L("主に") + technique.mainMuscles.map(\.label).joined(separator: L("・")))
     }
