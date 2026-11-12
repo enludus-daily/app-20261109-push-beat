@@ -31,8 +31,12 @@ final class GameModel {
         return max(0, Int((end - chart.seconds(atBeat: Double(Chart.countIn))).rounded()))
     }
 
-    /// 位置につくまでの待ち時間（秒）。はじめるを押してから、床に置いて構えるまで。指の練習は短く
-    var leadIn: Double { request.practice ? 2 : 5 }
+    /// 位置につくまでの待ち時間（秒）。はじめるを押してから、床に置いて構えるまで。指の練習は短く。デモは待たない
+    var leadIn: Double { autoplay ? 1.2 : (request.practice ? 2 : 5) }
+
+    /// デモ（起動引数 -demo）：拍に合わせて自動で触れる。ところどころ Good にずらし、1 回だけ外す
+    @ObservationIgnored var autoplay = false
+    @ObservationIgnored private var autoIndex = 0
 
     @ObservationIgnored private let audio: AudioPlayer?
     @ObservationIgnored private var loop: Task<Void, Never>?
@@ -87,6 +91,7 @@ final class GameModel {
 
     private func tick() {
         let t = songTime()
+        if autoplay { autoTouch(at: t) }
         let events = session.advance(to: t)
         if let e = events.last { show(e) }
         if session.isFinished(at: t) { end() }
@@ -136,6 +141,23 @@ final class GameModel {
         UIApplication.shared.isIdleTimerDisabled = false
         if settings.haptics { Feedback.finished() }
         onFinish?(self)
+    }
+
+    /// デモの指：ノーツの拍で下ろし、終わりの拍で上げる
+    private func autoTouch(at t: Double) {
+        guard autoIndex < chart.notes.count else { return }
+        let note = chart.notes[autoIndex]
+        let wobble = [0.02, -0.03, 0.04, 0.18, 0.01, -0.02][autoIndex % 6]
+        if autoIndex == 5 {  // 1 回だけ外す（Miss も見せる）
+            if t > chart.seconds(atBeat: note.endBeat) + 0.3 { autoIndex += 1 }
+            return
+        }
+        if !touching, t >= chart.seconds(atBeat: note.beat) + wobble {
+            touchDown()
+        } else if touching, t >= chart.seconds(atBeat: note.endBeat) + 0.05 {
+            touchUp()
+            autoIndex += 1
+        }
     }
 
     // MARK: 撮影・テスト用

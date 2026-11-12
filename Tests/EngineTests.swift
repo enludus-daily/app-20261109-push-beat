@@ -190,3 +190,19 @@ struct SynthTests {
         #expect(Synth.hitSound(.perfect, sampleRate: 4_000).contains { $0 != 0 })
     }
 }
+
+/// デモ（起動引数 -demo）：保存データを書き換えず、遊ぶ画面で自動で叩き始める
+@MainActor
+struct DemoTests {
+    @Test func demoStartsPlayWithoutSaving() {
+        let defaults = UserDefaults(suiteName: "demo-test-\(UUID().uuidString)")!
+        let app = AppModel(defaults: defaults)
+        app.startDemo()
+        #expect(app.route == .play)
+        #expect(app.game?.autoplay == true)
+        #expect(app.game?.request.reps == 10)
+        #expect(app.game?.leadIn == 1.2)
+        app.game?.quit()
+        #expect(defaults.data(forKey: "progress.v1") == nil)
+    }
+}

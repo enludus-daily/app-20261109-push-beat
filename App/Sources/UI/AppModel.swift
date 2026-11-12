@@ -208,6 +208,20 @@ final class AppModel {
         route = .home
     }
 
+    // MARK: デモ（起動引数 -demo。YouTube の録画用。保存データは読み書きしない）
+
+    /// 見本の進み具合で今日の 1 曲を短く（10 回）始め、自動で叩く。終わると結果の画面になる
+    func startDemo() {
+        persist = false
+        progress = Self.sampleProgress(today: today)
+        let plan = progress.plan(.starter, today: today)
+        let g = GameModel(request: PlayRequest(song: plan.song, reps: 10, technique: plan.technique, plan: plan), settings: progress.settings)
+        g.autoplay = true
+        game = g
+        route = .play
+        g.begin()
+    }
+
     // MARK: 撮影用（CI のスクリーンショット。起動引数 -screenshotScene <名前>）
 
     func applyScreenshotScene(_ name: String) {
